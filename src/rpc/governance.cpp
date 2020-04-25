@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2020 The Dash Core developers
+// Copyright (c) 2014-2020 The Ubicoin Core developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1084,7 +1084,7 @@ UniValue getsuperblockbudget(const JSONRPCRequest& request)
 static const CRPCCommand commands[] =
 { //  category              name                      actor (function)         okSafe argNames
   //  --------------------- ------------------------  -----------------------  ------ ----------
-    /* Dash features */
+    /* Ubicoin features */
     { "ubicoin",               "getgovernanceinfo",      &getgovernanceinfo,      true,  {} },
     { "ubicoin",               "getsuperblockbudget",    &getsuperblockbudget,    true,  {"index"} },
     { "ubicoin",               "gobject",                &gobject,                true,  {} },

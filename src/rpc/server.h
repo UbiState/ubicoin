@@ -137,7 +137,7 @@ public:
 };
 
 /**
- * Dash RPC command dispatcher.
+ * Ubicoin RPC command dispatcher.
  */
 class CRPCTable
 {
