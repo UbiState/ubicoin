@@ -327,12 +327,12 @@ public:
         vSeeds.emplace_back("dnsseed.dash.org", true);
         vSeeds.emplace_back("dnsseed.dashdot.io", true);
 
-        // Dash addresses start with 'X'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,76);
-        // Dash script addresses start with '7'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
-        // Dash private keys start with '7' or 'X'
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
+        // Dash addresses start with 'U'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,68);
+        // Dash script addresses start with '2'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,3);
+        // Dash private keys start with 's'
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,125);
         // Dash BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         // Dash BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
