@@ -367,7 +367,7 @@ See detailed [set of changes](https://github.com/UbiState/ubicoin/compare/v0.12.
 - [`d9b28fe1a`](https://github.com/UbiState/ubicoin/commit/d9b28fe1a) Introduce dummy (ping-like) contributions for the dummy DKG (#2542)
 - [`df0d0cce7`](https://github.com/UbiState/ubicoin/commit/df0d0cce7) Watch for changes in operator key and disable local MN (#2541)
 - [`511dc3714`](https://github.com/UbiState/ubicoin/commit/511dc3714) Remove ProTxs from mempool that refer to a ProRegTx for which the collateral was spent (#2539)
-- [`225c2135e`](https://github.com/UbiState/ubicoin/commit/225c2135e) Allow skipping of MN payments with zero duffs (#2534)
+- [`225c2135e`](https://github.com/UbiState/ubicoin/commit/225c2135e) Allow skipping of MN payments with zero ketela (#2534)
 - [`60867978d`](https://github.com/UbiState/ubicoin/commit/60867978d) Avoid printing DIP3/DIP4 related logs twice (#2525)
 - [`7037f7c99`](https://github.com/UbiState/ubicoin/commit/7037f7c99) Bail out from GetBlockTxOuts in case nBlockHeight is above tip+1 (#2523)
 - [`022491420`](https://github.com/UbiState/ubicoin/commit/022491420) Print the state object when ProcessSpecialTxsInBlock fails in ConnectBlock (#2516)

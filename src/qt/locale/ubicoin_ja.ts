@@ -2623,8 +2623,8 @@ https://www.transifex.com/projects/p/ubicoin/</translation>
         <translation>プライベートセンド</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
-        <translation>カスタマイズされた手数料が1000duffsに設定され、トランザクションが250 bytesしかなかった場合、キロバイトあたりでは250 duffsしか手数料を支払いませんが&lt;br /&gt;最低でも1000 duffs支払います。1キロバイト以上のトランザクションに対しては、1キロバイトあたり1000duffs支払います。</translation>
+        <source>If the custom fee is set to 1000 ketela and the transaction is only 250 bytes, then "per kilobyte" only pays 250 ketela in fee,&lt;br /&gt;while "at least" pays 1000 ketela. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <translation>カスタマイズされた手数料が1000ketelaに設定され、トランザクションが250 bytesしかなかった場合、キロバイトあたりでは250 ketelaしか手数料を支払いませんが&lt;br /&gt;最低でも1000 ketela支払います。1キロバイト以上のトランザクションに対しては、1キロバイトあたり1000ketela支払います。</translation>
     </message>
     <message>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for ubicoin transactions than the network can process.</source>

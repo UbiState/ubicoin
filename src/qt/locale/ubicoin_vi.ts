@@ -2686,7 +2686,7 @@ https://www.transifex.com/projects/p/ubicoin/</translation>
         <translation>PrivateSend</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 ketela and the transaction is only 250 bytes, then "per kilobyte" only pays 250 ketela in fee,&lt;br /&gt;while "at least" pays 1000 ketela. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation>Nếu mức phí tuỳ chỉnh được đặt là 1000 duff và giao dịch chỉ có 250 byte, thì "theo kilobyte" chỉ trả 250 duff cho phí,&lt;br /&gt;trong khi "ít nhất" phải trả 1000 duff. Cho các giao dịch lớn hơn 1 kilobyte thì cả hai đều trả theo kilobyte.</translation>
     </message>
     <message>

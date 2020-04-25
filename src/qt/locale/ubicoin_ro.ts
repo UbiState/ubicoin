@@ -2622,7 +2622,7 @@ https://www.transifex.com/projects/p/ubicoin/</translation>
         <translation>TrimitePrivat</translation>
     </message>
     <message>
-        <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
+        <source>If the custom fee is set to 1000 ketela and the transaction is only 250 bytes, then "per kilobyte" only pays 250 ketela in fee,&lt;br /&gt;while "at least" pays 1000 ketela. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation>Dacă taxa vamală este stabilită la 1000 de duffi și tranzacția are doar 250 de octeți, atunci "per kilobyte" plătește doar 250 de duffi în taxă,&lt;br /&gt;în timp ce "cel puțin" plătește 1000 de duffi. Pentru tranzacțiile mai mari decât un kilobyte, ambele plătesc cu kilobyte.</translation>
     </message>
     <message>

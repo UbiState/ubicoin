@@ -22,7 +22,7 @@ QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
     unitlist.append(UBI);
     unitlist.append(mUBI);
     unitlist.append(uUBI);
-    unitlist.append(duffs);
+    unitlist.append(ketela);
     return unitlist;
 }
 
@@ -33,7 +33,7 @@ bool BitcoinUnits::valid(int unit)
     case UBI:
     case mUBI:
     case uUBI:
-    case duffs:
+    case ketela:
         return true;
     default:
         return false;
@@ -49,7 +49,7 @@ QString BitcoinUnits::name(int unit)
             case UBI: return QString("UBI");
             case mUBI: return QString("mUBI");
             case uUBI: return QString::fromUtf8("μUBI");
-            case duffs: return QString("duffs");
+            case ketela: return QString("ketela");
             default: return QString("???");
         }
     }
@@ -60,7 +60,7 @@ QString BitcoinUnits::name(int unit)
             case UBI: return QString("tUBI");
             case mUBI: return QString("mtUBI");
             case uUBI: return QString::fromUtf8("μtUBI");
-            case duffs: return QString("tduffs");
+            case ketela: return QString("tketela");
             default: return QString("???");
         }
     }
@@ -75,7 +75,7 @@ QString BitcoinUnits::description(int unit)
             case UBI: return QString("Ubicoin");
             case mUBI: return QString("Milli-Ubicoin (1 / 1" THIN_SP_UTF8 "000)");
             case uUBI: return QString("Micro-Ubicoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Ubicoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case ketela: return QString("Ten Nano-Ubicoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -86,7 +86,7 @@ QString BitcoinUnits::description(int unit)
             case UBI: return QString("TestUbicoins");
             case mUBI: return QString("Milli-TestUbicoin (1 / 1" THIN_SP_UTF8 "000)");
             case uUBI: return QString("Micro-TestUbicoin (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestUbicoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case ketela: return QString("Ten Nano-TestUbicoin (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
     }
@@ -99,7 +99,7 @@ qint64 BitcoinUnits::factor(int unit)
     case UBI:  return 100000000;
     case mUBI: return 100000;
     case uUBI: return 100;
-    case duffs: return 1;
+    case ketela: return 1;
     default:   return 100000000;
     }
 }
@@ -111,7 +111,7 @@ int BitcoinUnits::decimals(int unit)
     case UBI: return 8;
     case mUBI: return 5;
     case uUBI: return 2;
-    case duffs: return 0;
+    case ketela: return 0;
     default: return 0;
     }
 }
