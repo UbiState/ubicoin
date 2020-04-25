@@ -356,7 +356,7 @@ See detailed [set of changes](https://github.com/UbiState/ubicoin/compare/v0.13.
 - [`4ae52758b`](https://github.com/UbiState/ubicoin/commit/4ae52758b) Remove size check in CDKGSessionManager::GetVerifiedContributions
 - [`e21da2d99`](https://github.com/UbiState/ubicoin/commit/e21da2d99) Move simple PoSe tests into llmq-simplepose.py
 - [`6488135f4`](https://github.com/UbiState/ubicoin/commit/6488135f4) Track index into self.nodes in mninfo
-- [`f30ea6dfd`](https://github.com/UbiState/ubicoin/commit/f30ea6dfd) Replace BITCOIN_UNORDERED_LRU_CACHE_H with DASH_UNORDERED_LRU_CACHE_H
+- [`f30ea6dfd`](https://github.com/UbiState/ubicoin/commit/f30ea6dfd) Replace BITCOIN_UNORDERED_LRU_CACHE_H with UBI_UNORDERED_LRU_CACHE_H
 - [`e763310b5`](https://github.com/UbiState/ubicoin/commit/e763310b5) Add missing LOCK(cs_main)
 - [`3a5e7c433`](https://github.com/UbiState/ubicoin/commit/3a5e7c433) Do not hold cs_vNodes in CSigSharesManager::SendMessages() for too long (#2758)
 - [`fbf0dcb08`](https://github.com/UbiState/ubicoin/commit/fbf0dcb08) Various small cleanups (#2761)

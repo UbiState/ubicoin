@@ -1,4 +1,4 @@
-TOR SUPPORT IN DASH CORE
+TOR SUPPORT IN UBI CORE
 =======================
 
 It is possible to run Ubicoin Core as a Tor hidden service, and connect to such services.

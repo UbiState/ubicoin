@@ -188,7 +188,7 @@
         <translation>ウォレットの暗号化を確認</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR DASH&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR UBI&lt;/b&gt;!</source>
         <translation>警告: ウォレットを暗号化しパスフレーズを紛失した場合、あなたは &lt;b&gt;すべてのUbicoin&lt;/b&gt;を失います!</translation>
     </message>
     <message>
@@ -1589,8 +1589,8 @@ https://www.transifex.com/projects/p/ubicoin/</translation>
         <translation>金額とラウンド</translation>
     </message>
     <message>
-        <source>0 DASH / 0 Rounds</source>
-        <translation>0 DASH / 0 ラウンド</translation>
+        <source>0 UBI / 0 Rounds</source>
+        <translation>0 UBI / 0 ラウンド</translation>
     </message>
     <message>
         <source>Submitted Denom:</source>

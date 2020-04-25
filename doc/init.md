@@ -104,7 +104,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 Copy ubicoind.init to /etc/init.d/ubicoind. Test by running `service ubicoind start`.
 
 Using this script, you can adjust the path and flags to the ubicoind program by
-setting the DASHD and FLAGS environment variables in the file
+setting the UBID and FLAGS environment variables in the file
 /etc/sysconfig/ubicoind. You can also use the DAEMONOPTS environment variable here.
 
 4e) Mac OS X
