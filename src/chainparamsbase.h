@@ -11,7 +11,7 @@
 
 /**
  * CBaseChainParams defines the base parameters (shared between ubicoin-cli and ubicoind)
- * of a given instance of the Dash system.
+ * of a given instance of the Ubicoin system.
  */
 class CBaseChainParams
 {

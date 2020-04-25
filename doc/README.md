@@ -1,11 +1,11 @@
-Dash Core
+Ubicoin Core
 ==========
 
-This is the official reference wallet for Dash digital currency and comprises the backbone of the Dash peer-to-peer network. You can [download Dash Core](https://www.ubicoin.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the official reference wallet for Ubicoin digital currency and comprises the backbone of the Ubicoin peer-to-peer network. You can [download Ubicoin Core](https://www.ubicoin.org/downloads/) or [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
-The following are some helpful notes on how to run Dash on your native platform.
+The following are some helpful notes on how to run Ubicoin on your native platform.
 
 ### Unix
 
@@ -20,20 +20,20 @@ Unpack the files into a directory, and then run ubicoin-qt.exe.
 
 ### OS X
 
-Drag Dash-Qt to your applications folder, and then run Dash-Qt.
+Drag Ubicoin-Qt to your applications folder, and then run Ubicoin-Qt.
 
 ### Need Help?
 
-* See the [Dash documentation](https://docs.ubicoin.org)
+* See the [Ubicoin documentation](https://docs.ubicoin.org)
 for help and more information.
-* See the [Dash Developer Documentation](https://ubicoin-docs.github.io/) 
+* See the [Ubicoin Developer Documentation](https://ubicoin-docs.github.io/) 
 for technical specifications and implementation details.
-* Ask for help on [Dash Nation Discord](http://ubicoinchat.org)
-* Ask for help on the [Dash Forum](https://ubicoin.org/forum)
+* Ask for help on [Ubicoin Nation Discord](http://ubicoinchat.org)
+* Ask for help on the [Ubicoin Forum](https://ubicoin.org/forum)
 
 Building
 ---------------------
-The following are developer notes on how to build Dash Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Ubicoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
@@ -43,7 +43,7 @@ The following are developer notes on how to build Dash Core on your native platf
 
 Development
 ---------------------
-The Dash Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Ubicoin Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
@@ -59,8 +59,8 @@ The Dash Core repo's [root README](/README.md) contains relevant information on 
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Dash Forum](https://ubicoin.org/forum), in the Development & Technical Discussion board.
-* Discuss on [Dash Nation Discord](http://ubicoinchat.org)
+* Discuss on the [Ubicoin Forum](https://ubicoin.org/forum), in the Development & Technical Discussion board.
+* Discuss on [Ubicoin Nation Discord](http://ubicoinchat.org)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  ubicoind The Dash Core server.
+#  ubicoind The Ubicoin Core server.
 #
 #
 # chkconfig: 345 80 20

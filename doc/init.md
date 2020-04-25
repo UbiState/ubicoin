@@ -68,9 +68,9 @@ can then be controlled by group membership.
 3b) Mac OS X
 
 Binary:              `/usr/local/bin/ubicoind`  
-Configuration file:  `~/Library/Application Support/DashCore/ubicoin.conf`  
-Data directory:      `~/Library/Application Support/DashCore`
-Lock file:           `~/Library/Application Support/DashCore/.lock`
+Configuration file:  `~/Library/Application Support/UbicoinCore/ubicoin.conf`  
+Data directory:      `~/Library/Application Support/UbicoinCore`
+Lock file:           `~/Library/Application Support/UbicoinCore/.lock`
 
 4. Installing Service Configuration
 -----------------------------------

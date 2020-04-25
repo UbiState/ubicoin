@@ -83,7 +83,7 @@ libconftest.dylib*
 *.qm
 Makefile
 ubicoin-qt
-Dash-Qt.app
+Ubicoin-Qt.app
 !/depends/Makefile
 
 # Unit-tests

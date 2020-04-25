@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Dash"
-            VALUE "FileDescription",    "ubicoind (Dash node with a JSON-RPC server)"
+            VALUE "CompanyName",        "Ubicoin"
+            VALUE "FileDescription",    "ubicoind (Ubicoin node with a JSON-RPC server)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "ubicoind"
             VALUE "LegalCopyright",     COPYRIGHT_STR
