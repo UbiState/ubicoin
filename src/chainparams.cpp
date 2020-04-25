@@ -324,8 +324,7 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x00000290985ac99d4156b7ca20b77d5b2b1793ec79f2ec39850039cae4d91fd6"));
         assert(genesis.hashMerkleRoot == uint256S("0xa41b10be70b2df9a5d259254854e965d28e3da6ecdd14107168c11865e78b4da"));
 
-        vSeeds.emplace_back("dnsseed.ubicoin.org", true);
-        vSeeds.emplace_back("dnsseed.ubicoindot.io", true);
+        vSeeds.emplace_back("51.143.38.195", true);
 
         // Ubicoin addresses start with 'U'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,68);
@@ -361,7 +360,7 @@ public:
         nPoolMaxParticipants = 5;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-        vSporkAddresses = {"UN1aC5e2DrZeEA9CwXi1wye4L2725TFJ42"};
+        vSporkAddresses = {"UPFb44Ps7xzKUMtbvx9v8k4RrfH1TEdoLG"};
         nMinSporkKeys = 1;
         fBIP9CheckMasternodesUpgraded = true;
 
