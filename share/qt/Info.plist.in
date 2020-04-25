@@ -68,7 +68,7 @@
         <string>application/x-dash-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>dashpaymentrequest</string>
+          <string>UbiStatementrequest</string>
         </array>
       </dict>
     </dict>

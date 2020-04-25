@@ -32,7 +32,7 @@ packages:
 - "libxkbcommon0"
 - "ccache"
 remotes:
-- "url": "https://github.com/dashpay/dash.git"
+- "url": "https://github.com/UbiState/dash.git"
   "dir": "dash"
 files: []
 script: |

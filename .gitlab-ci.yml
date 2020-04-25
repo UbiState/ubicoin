@@ -88,7 +88,7 @@ stages:
     - echo "Commit log:" && git log --format=fuller -1
 
     # Build dash_hash
-    - git clone https://github.com/dashpay/dash_hash
+    - git clone https://github.com/UbiState/dash_hash
     - cd dash_hash && python3 setup.py install
 
     # Install build target specific packages

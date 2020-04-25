@@ -49,20 +49,20 @@ for(int i = 0; i < targets.size(); i++) {
           // restore cache
           def hasCache = false
           try {
-            copyArtifacts(projectName: "dashpay-dash/${BRANCH_NAME}", optional: true, selector: lastSuccessful(), filter: "ci-cache-${target}.tar.gz")
+            copyArtifacts(projectName: "UbiState-dash/${BRANCH_NAME}", optional: true, selector: lastSuccessful(), filter: "ci-cache-${target}.tar.gz")
           } catch (Exception e) {
           }
           if (fileExists("ci-cache-${target}.tar.gz")) {
             hasCache = true
-            echo "Using cache from dashpay-dash/${BRANCH_NAME}"
+            echo "Using cache from UbiState-dash/${BRANCH_NAME}"
           } else {
             try {
-              copyArtifacts(projectName: 'dashpay-dash/develop', optional: true, selector: lastSuccessful(), filter: "ci-cache-${target}.tar.gz");
+              copyArtifacts(projectName: 'UbiState-dash/develop', optional: true, selector: lastSuccessful(), filter: "ci-cache-${target}.tar.gz");
             } catch (Exception e) {
             }
             if (fileExists("ci-cache-${target}.tar.gz")) {
               hasCache = true
-              echo "Using cache from dashpay-dash/develop"
+              echo "Using cache from UbiState-dash/develop"
             }
           }
 
