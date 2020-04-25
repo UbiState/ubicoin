@@ -3,18 +3,18 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $DIR/..
 
-DOCKER_IMAGE=${DOCKER_IMAGE:-UbiState/dashd-develop}
+DOCKER_IMAGE=${DOCKER_IMAGE:-UbiState/ubicoind-develop}
 DOCKER_TAG=${DOCKER_TAG:-latest}
 
 BUILD_DIR=${BUILD_DIR:-.}
 
 rm docker/bin/*
 mkdir docker/bin
-cp $BUILD_DIR/src/dashd docker/bin/
-cp $BUILD_DIR/src/dash-cli docker/bin/
-cp $BUILD_DIR/src/dash-tx docker/bin/
-strip docker/bin/dashd
-strip docker/bin/dash-cli
-strip docker/bin/dash-tx
+cp $BUILD_DIR/src/ubicoind docker/bin/
+cp $BUILD_DIR/src/ubicoin-cli docker/bin/
+cp $BUILD_DIR/src/ubicoin-tx docker/bin/
+strip docker/bin/ubicoind
+strip docker/bin/ubicoin-cli
+strip docker/bin/ubicoin-tx
 
 docker build --pull -t $DOCKER_IMAGE:$DOCKER_TAG -f docker/Dockerfile docker

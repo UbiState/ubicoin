@@ -39,9 +39,9 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *_platformStyle, QWidget *par
     ui->deleteButton_is->setIcon(QIcon(":/icons/remove"));
     ui->deleteButton_s->setIcon(QIcon(":/icons/remove"));
       
-    // normal dash address field
+    // normal ubicoin address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
-    // just a label for displaying dash address(es)
+    // just a label for displaying ubicoin address(es)
     ui->payTo_is->setFont(GUIUtil::fixedPitchFont());
 
     // Connect signals

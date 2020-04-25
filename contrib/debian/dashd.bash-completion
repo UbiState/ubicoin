@@ -1,2 +1,2 @@
-contrib/dashd.bash-completion	dashd
-contrib/dash-cli.bash-completion    dash-cli
+contrib/ubicoind.bash-completion	ubicoind
+contrib/ubicoin-cli.bash-completion    ubicoin-cli

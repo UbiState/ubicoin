@@ -34,7 +34,7 @@ for(int i = 0; i < targets.size(); i++) {
         "JOB_NUMBER=${BUILD_NUMBER}",
       ]
       withEnv(env) {
-        def builderImageName="dash-builder-${target}"
+        def builderImageName="ubicoin-builder-${target}"
 
         def builderImage
         stage("${target}/builder-image") {
@@ -44,49 +44,49 @@ for(int i = 0; i < targets.size(); i++) {
         builderImage.inside("-t") {
           // copy source into fixed path
           // we must build under the same path everytime as otherwise caches won't work properly
-          sh "cp -ra ${pwd}/. /dash-src/"
+          sh "cp -ra ${pwd}/. /ubicoin-src/"
 
           // restore cache
           def hasCache = false
           try {
-            copyArtifacts(projectName: "UbiState-dash/${BRANCH_NAME}", optional: true, selector: lastSuccessful(), filter: "ci-cache-${target}.tar.gz")
+            copyArtifacts(projectName: "UbiState-ubicoin/${BRANCH_NAME}", optional: true, selector: lastSuccessful(), filter: "ci-cache-${target}.tar.gz")
           } catch (Exception e) {
           }
           if (fileExists("ci-cache-${target}.tar.gz")) {
             hasCache = true
-            echo "Using cache from UbiState-dash/${BRANCH_NAME}"
+            echo "Using cache from UbiState-ubicoin/${BRANCH_NAME}"
           } else {
             try {
-              copyArtifacts(projectName: 'UbiState-dash/develop', optional: true, selector: lastSuccessful(), filter: "ci-cache-${target}.tar.gz");
+              copyArtifacts(projectName: 'UbiState-ubicoin/develop', optional: true, selector: lastSuccessful(), filter: "ci-cache-${target}.tar.gz");
             } catch (Exception e) {
             }
             if (fileExists("ci-cache-${target}.tar.gz")) {
               hasCache = true
-              echo "Using cache from UbiState-dash/develop"
+              echo "Using cache from UbiState-ubicoin/develop"
             }
           }
 
           if (hasCache) {
-            sh "cd /dash-src && tar xzf ${pwd}/ci-cache-${target}.tar.gz"
+            sh "cd /ubicoin-src && tar xzf ${pwd}/ci-cache-${target}.tar.gz"
           } else {
-            sh "mkdir -p /dash-src/ci-cache-${target}"
+            sh "mkdir -p /ubicoin-src/ci-cache-${target}"
           }
 
           stage("${target}/depends") {
-            sh 'cd /dash-src && ./ci/build_depends.sh'
+            sh 'cd /ubicoin-src && ./ci/build_depends.sh'
           }
           stage("${target}/build") {
-            sh 'cd /dash-src && ./ci/build_src.sh'
+            sh 'cd /ubicoin-src && ./ci/build_src.sh'
           }
           stage("${target}/test") {
-            sh 'cd /dash-src && ./ci/test_unittests.sh'
+            sh 'cd /ubicoin-src && ./ci/test_unittests.sh'
           }
           stage("${target}/test") {
-            sh 'cd /dash-src && ./ci/test_integrationtests.sh'
+            sh 'cd /ubicoin-src && ./ci/test_integrationtests.sh'
           }
 
           // archive cache and copy it into the jenkins workspace
-          sh "cd /dash-src && tar czfv ci-cache-${target}.tar.gz ci-cache-${target} && cp ci-cache-${target}.tar.gz ${pwd}/"
+          sh "cd /ubicoin-src && tar czfv ci-cache-${target}.tar.gz ci-cache-${target} && cp ci-cache-${target}.tar.gz ${pwd}/"
         }
 
         // upload cache
