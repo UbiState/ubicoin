@@ -2824,7 +2824,7 @@
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>ubicoin-core</name>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
         <translation>La Poda se ha configurado por debajo del minimo de %d MiB. Por favor utiliza un valor mas alto.</translation>

@@ -3032,7 +3032,7 @@
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>ubicoin-core</name>
     <message>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
         <translation>Šířen pod softwarovou licencí MIT, viz přiložený soubor %s nebo %s</translation>

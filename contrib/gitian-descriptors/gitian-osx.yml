@@ -159,7 +159,7 @@ script: |
     find . -name "lib*.la" -delete
     find . -name "lib*.a" -delete
     
-    # Ubicoin: Delete libbitcoin from binary distribution for now, see #192
+    # Ubicoin: Delete libubicoin from binary distribution for now, see #192
     rm -rf ${DISTNAME}/lib/
     rm -rf ${DISTNAME}/include/
     # Ubicoin: ends

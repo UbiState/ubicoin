@@ -18,8 +18,8 @@ UBICOINQT=${BITCOINQT:-$BINDIR/qt/ubicoin-qt}
 ÜBIVER=($($UBICOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }'))
 
 # Create a footer file with copyright content.
-# This gets autodetected fine for bitcoind if --version-string is not set,
-# but has different outcomes for bitcoin-qt and bitcoin-cli.
+# This gets autodetected fine for ubicoind if --version-string is not set,
+# but has different outcomes for ubicoin-qt and ubicoin-cli.
 echo "[COPYRIGHT]" > footer.h2m
 $UBICOIND --version | sed -n '1!p' >> footer.h2m
 

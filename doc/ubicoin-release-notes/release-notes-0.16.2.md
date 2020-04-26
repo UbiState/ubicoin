@@ -112,11 +112,11 @@ weights.
 - #12804 `4bdb0ce` Fix intermittent rpc_net.py failure. (jnewbery)
 - #12553 `0e98f96` Prefer wait_until over polling with time.sleep (Empact)
 - #12486 `cfebd40` Round target fee to 8 decimals in assert_fee_amount (kallewoof)
-- #12843 `df38b13` Test starting bitcoind with -h and -version (jnewbery)
+- #12843 `df38b13` Test starting ubicoind with -h and -version (jnewbery)
 - #12475 `41c29f6` Fix python TypeError in script.py (MarcoFalke)
 - #12638 `0a76ed2` Cache only chain and wallet for regtest datadir (MarcoFalke)
 - #12902 `7460945` Handle potential cookie race when starting node (sdaftuar)
-- #12904 `6c26df0` Ensure bitcoind processes are cleaned up when tests end (sdaftuar)
+- #12904 `6c26df0` Ensure ubicoind processes are cleaned up when tests end (sdaftuar)
 - #13049 `9ea62a3` Backports (MarcoFalke)
 - #13201 `b8aacd6` Handle disconnect_node race (sdaftuar)
 - #13061 `170b309` Make tests pass after 2020 (bmwiedemann)
@@ -125,7 +125,7 @@ weights.
 - #13545 `e15e3a9` tests: Fix test case `streams_serializedata_xor` Remove Boost dependency. (practicalswift)
 - #13304 `cbdabef` qa: Fix `wallet_listreceivedby` race (MarcoFalke)
 - #13852 `b64f02f` Make signrawtransaction give an error when amount is needed but missing (ajtowns)
-- #13797 `6518bcd` bitcoinconsensus: invalid flags should be set to bitcoinconsensus_error type, add test cases covering bitcoinconsensus error codes (Thomas Kerin)
+- #13797 `6518bcd` ubicoinconsensus: invalid flags should be set to ubicoinconsensus_error type, add test cases covering ubicoinconsensus error codes (Thomas Kerin)
 
 ### Miscellaneous
 - #12518 `a17fecf` Bump leveldb subtree (MarcoFalke)

@@ -262,7 +262,7 @@ Low-level RPC changes
 
  - A new RPC command `getmemoryinfo` has been added which will return information
    about the memory usage of Ubicoin Core. This was added in conjunction with
-   optimizations to memory management. See [Pull #8753](https://github.com/bitcoin/bitcoin/pull/8753)
+   optimizations to memory management. See [Pull #8753](https://github.com/ubicoin/ubicoin/pull/8753)
    for more information.
 
  - A new RPC command `bumpfee` has been added which allows replacing an
@@ -414,7 +414,7 @@ this parameter.
 
 Additional information relating to running on low-memory systems can be found
 here, originally written for Bitcoin but can also be used for Ubicoin:
-[reducing-bitcoind-memory-usage.md](https://gist.github.com/laanwj/efe29c7661ce9b6620a7).
+[reducing-ubicoind-memory-usage.md](https://gist.github.com/laanwj/efe29c7661ce9b6620a7).
 
 Credits
 =======

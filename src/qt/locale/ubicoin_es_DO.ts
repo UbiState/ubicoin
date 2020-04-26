@@ -1226,7 +1226,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>ubicoin-core</name>
     <message>
         <source>Ubicoin Core</source>
         <translation>Núcleo de Ubicoin</translation>
