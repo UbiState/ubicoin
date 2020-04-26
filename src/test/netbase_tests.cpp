@@ -1,11 +1,10 @@
-// Copyright (c) 2012-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Ubicoin Core developers
+// Copyright (c) 2012-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "netbase.h"
-#include "test/test_ubicoin.h"
-#include "utilstrencodings.h"
+#include <netbase.h>
+#include <test/test_bitcoin.h>
+#include <utilstrencodings.h>
 
 #include <string>
 
@@ -40,7 +39,7 @@ BOOST_AUTO_TEST_CASE(netbase_networks)
     BOOST_CHECK(ResolveIP("::1").GetNetwork()                                    == NET_UNROUTABLE);
     BOOST_CHECK(ResolveIP("8.8.8.8").GetNetwork()                                == NET_IPV4);
     BOOST_CHECK(ResolveIP("2001::8888").GetNetwork()                             == NET_IPV6);
-    BOOST_CHECK(ResolveIP("FD87:D87E:EB43:edb1:8e4:3588:e546:35ca").GetNetwork() == NET_TOR);
+    BOOST_CHECK(ResolveIP("FD87:D87E:EB43:edb1:8e4:3588:e546:35ca").GetNetwork() == NET_ONION);
     BOOST_CHECK(CreateInternal("foo.com").GetNetwork()                           == NET_INTERNAL);
 
 }
@@ -68,7 +67,7 @@ BOOST_AUTO_TEST_CASE(netbase_properties)
     BOOST_CHECK(ResolveIP("8.8.8.8").IsRoutable());
     BOOST_CHECK(ResolveIP("2001::1").IsRoutable());
     BOOST_CHECK(ResolveIP("127.0.0.1").IsValid());
-    BOOST_CHECK(CreateInternal("FD6B:88C0:8724:edb1:8e4:3588:e546:35ca").IsInternal());
+    BOOST_CHECK(CreateInternal("FD6C:E9FE:4549:edb1:8e4:3588:e546:35ca").IsInternal());
     BOOST_CHECK(CreateInternal("bar.com").IsInternal());
 
 }
@@ -83,20 +82,20 @@ bool static TestSplitHost(std::string test, std::string host, int port)
 
 BOOST_AUTO_TEST_CASE(netbase_splithost)
 {
-    BOOST_CHECK(TestSplitHost("www.bitcoin.org", "www.bitcoin.org", -1));
-    BOOST_CHECK(TestSplitHost("[www.bitcoin.org]", "www.bitcoin.org", -1));
-    BOOST_CHECK(TestSplitHost("www.bitcoin.org:80", "www.bitcoin.org", 80));
-    BOOST_CHECK(TestSplitHost("[www.bitcoin.org]:80", "www.bitcoin.org", 80));
+    BOOST_CHECK(TestSplitHost("www.bitcoincore.org", "www.bitcoincore.org", -1));
+    BOOST_CHECK(TestSplitHost("[www.bitcoincore.org]", "www.bitcoincore.org", -1));
+    BOOST_CHECK(TestSplitHost("www.bitcoincore.org:80", "www.bitcoincore.org", 80));
+    BOOST_CHECK(TestSplitHost("[www.bitcoincore.org]:80", "www.bitcoincore.org", 80));
     BOOST_CHECK(TestSplitHost("127.0.0.1", "127.0.0.1", -1));
-    BOOST_CHECK(TestSplitHost("127.0.0.1:9999", "127.0.0.1", 9999));
+    BOOST_CHECK(TestSplitHost("127.0.0.1:8333", "127.0.0.1", 8333));
     BOOST_CHECK(TestSplitHost("[127.0.0.1]", "127.0.0.1", -1));
-    BOOST_CHECK(TestSplitHost("[127.0.0.1]:9999", "127.0.0.1", 9999));
+    BOOST_CHECK(TestSplitHost("[127.0.0.1]:8333", "127.0.0.1", 8333));
     BOOST_CHECK(TestSplitHost("::ffff:127.0.0.1", "::ffff:127.0.0.1", -1));
-    BOOST_CHECK(TestSplitHost("[::ffff:127.0.0.1]:9999", "::ffff:127.0.0.1", 9999));
-    BOOST_CHECK(TestSplitHost("[::]:9999", "::", 9999));
-    BOOST_CHECK(TestSplitHost("::9999", "::9999", -1));
-    BOOST_CHECK(TestSplitHost(":9999", "", 9999));
-    BOOST_CHECK(TestSplitHost("[]:9999", "", 9999));
+    BOOST_CHECK(TestSplitHost("[::ffff:127.0.0.1]:8333", "::ffff:127.0.0.1", 8333));
+    BOOST_CHECK(TestSplitHost("[::]:8333", "::", 8333));
+    BOOST_CHECK(TestSplitHost("::8333", "::8333", -1));
+    BOOST_CHECK(TestSplitHost(":8333", "", 8333));
+    BOOST_CHECK(TestSplitHost("[]:8333", "", 8333));
     BOOST_CHECK(TestSplitHost("", "", -1));
 }
 
@@ -109,17 +108,17 @@ bool static TestParse(std::string src, std::string canon)
 BOOST_AUTO_TEST_CASE(netbase_lookupnumeric)
 {
     BOOST_CHECK(TestParse("127.0.0.1", "127.0.0.1:65535"));
-    BOOST_CHECK(TestParse("127.0.0.1:9999", "127.0.0.1:9999"));
+    BOOST_CHECK(TestParse("127.0.0.1:8333", "127.0.0.1:8333"));
     BOOST_CHECK(TestParse("::ffff:127.0.0.1", "127.0.0.1:65535"));
     BOOST_CHECK(TestParse("::", "[::]:65535"));
-    BOOST_CHECK(TestParse("[::]:9999", "[::]:9999"));
+    BOOST_CHECK(TestParse("[::]:8333", "[::]:8333"));
     BOOST_CHECK(TestParse("[127.0.0.1]", "127.0.0.1:65535"));
     BOOST_CHECK(TestParse(":::", "[::]:0"));
 
     // verify that an internal address fails to resolve
-    BOOST_CHECK(TestParse("[fd6b:88c0:8724:1:2:3:4:5]", "[::]:0"));
+    BOOST_CHECK(TestParse("[fd6c:e9fe:4549:1:2:3:4:5]", "[::]:0"));
     // and that a one-off resolves correctly
-    BOOST_CHECK(TestParse("[fd6c:88c0:8724:1:2:3:4:5]", "[fd6c:88c0:8724:1:2:3:4:5]:65535"));
+    BOOST_CHECK(TestParse("[fd6d:e9fe:4549:1:2:3:4:5]", "[fd6d:e9fe:4549:1:2:3:4:5]:65535"));
 }
 
 BOOST_AUTO_TEST_CASE(onioncat_test)
@@ -294,7 +293,7 @@ BOOST_AUTO_TEST_CASE(netbase_getgroup)
     BOOST_CHECK(ResolveIP("64:FF9B::102:304").GetGroup() == std::vector<unsigned char>({(unsigned char)NET_IPV4, 1, 2})); // RFC6052
     BOOST_CHECK(ResolveIP("2002:102:304:9999:9999:9999:9999:9999").GetGroup() == std::vector<unsigned char>({(unsigned char)NET_IPV4, 1, 2})); // RFC3964
     BOOST_CHECK(ResolveIP("2001:0:9999:9999:9999:9999:FEFD:FCFB").GetGroup() == std::vector<unsigned char>({(unsigned char)NET_IPV4, 1, 2})); // RFC4380
-    BOOST_CHECK(ResolveIP("FD87:D87E:EB43:edb1:8e4:3588:e546:35ca").GetGroup() == std::vector<unsigned char>({(unsigned char)NET_TOR, 239})); // Tor
+    BOOST_CHECK(ResolveIP("FD87:D87E:EB43:edb1:8e4:3588:e546:35ca").GetGroup() == std::vector<unsigned char>({(unsigned char)NET_ONION, 239})); // Tor
     BOOST_CHECK(ResolveIP("2001:470:abcd:9999:9999:9999:9999:9999").GetGroup() == std::vector<unsigned char>({(unsigned char)NET_IPV6, 32, 1, 4, 112, 175})); //he.net
     BOOST_CHECK(ResolveIP("2001:2001:9999:9999:9999:9999:9999:9999").GetGroup() == std::vector<unsigned char>({(unsigned char)NET_IPV6, 32, 1, 32, 1})); //IPv6
 

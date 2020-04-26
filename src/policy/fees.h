@@ -1,17 +1,18 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin Core developers
+// Copyright (c) 2009-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-#ifndef BITCOIN_POLICYESTIMATOR_H
-#define BITCOIN_POLICYESTIMATOR_H
+#ifndef BITCOIN_POLICY_FEES_H
+#define BITCOIN_POLICY_FEES_H
 
-#include "amount.h"
-#include "feerate.h"
-#include "uint256.h"
-#include "random.h"
-#include "sync.h"
+#include <amount.h>
+#include <policy/feerate.h>
+#include <uint256.h>
+#include <random.h>
+#include <sync.h>
 
 #include <map>
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -48,7 +49,7 @@ class TxConfirmStats;
  * in each bucket and the total amount of feerate paid in each bucket. Then we
  * calculate how many blocks Y it took each transaction to be mined.  We convert
  * from a number of blocks to a number of periods Y' each encompassing "scale"
- * blocks.  This is is tracked in 3 different data sets each up to a maximum
+ * blocks.  This is tracked in 3 different data sets each up to a maximum
  * number of periods. Within each data set we have an array of counters in each
  * feerate bucket and we increment all the counters from Y' up to max periods
  * representing that a tx was successfully confirmed in less than or equal to
@@ -68,7 +69,7 @@ class TxConfirmStats;
 
 /* Identifier for each of the 3 different TxConfirmStats which will track
  * history over different time horizons. */
-enum FeeEstimateHorizon {
+enum class FeeEstimateHorizon {
     SHORT_HALFLIFE = 0,
     MED_HALFLIFE = 1,
     LONG_HALFLIFE = 2
@@ -149,11 +150,11 @@ private:
     /** Historical estimates that are older than this aren't valid */
     static const unsigned int OLDEST_ESTIMATE_HISTORY = 6 * 1008;
 
-    /** Decay of .962 is a half-life of 18 blocks or about 45 minutes */
+    /** Decay of .962 is a half-life of 18 blocks or about 3 hours */
     static constexpr double SHORT_DECAY = .962;
-    /** Decay of .998 is a half-life of 144 blocks or about 6 hours */
+    /** Decay of .998 is a half-life of 144 blocks or about 1 day */
     static constexpr double MED_DECAY = .9952;
-    /** Decay of .9995 is a half-life of 1008 blocks or about 2 days */
+    /** Decay of .9995 is a half-life of 1008 blocks or about 1 week */
     static constexpr double LONG_DECAY = .99931;
 
     /** Require greater than 60% of X feerate transactions to be confirmed within Y/2 blocks*/
@@ -223,7 +224,7 @@ public:
     bool Read(CAutoFile& filein);
 
     /** Empty mempool transactions on shutdown to record failure to confirm for txs still in mempool */
-    void FlushUnconfirmed(CTxMemPool& pool);
+    void FlushUnconfirmed();
 
     /** Calculation of highest target that estimates are tracked for */
     unsigned int HighestTargetTracked(FeeEstimateHorizon horizon) const;
@@ -245,9 +246,9 @@ private:
     std::map<uint256, TxStatsInfo> mapMemPoolTxs;
 
     /** Classes to track historical data on transaction confirmations */
-    TxConfirmStats* feeStats;
-    TxConfirmStats* shortStats;
-    TxConfirmStats* longStats;
+    std::unique_ptr<TxConfirmStats> feeStats;
+    std::unique_ptr<TxConfirmStats> shortStats;
+    std::unique_ptr<TxConfirmStats> longStats;
 
     unsigned int trackedTxs;
     unsigned int untrackedTxs;
@@ -272,4 +273,26 @@ private:
     unsigned int MaxUsableEstimate() const;
 };
 
-#endif /*BITCOIN_POLICYESTIMATOR_H */
+class FeeFilterRounder
+{
+private:
+    static constexpr double MAX_FILTER_FEERATE = 1e7;
+    /** FEE_FILTER_SPACING is just used to provide some quantization of fee
+     * filter results.  Historically it reused FEE_SPACING, but it is completely
+     * unrelated, and was made a separate constant so the two concepts are not
+     * tied together */
+    static constexpr double FEE_FILTER_SPACING = 1.1;
+
+public:
+    /** Create new FeeFilterRounder */
+    explicit FeeFilterRounder(const CFeeRate& minIncrementalFee);
+
+    /** Quantize a minimum fee for privacy purpose before broadcast **/
+    CAmount round(CAmount currentMinFee);
+
+private:
+    std::set<double> feeset;
+    FastRandomContext insecure_rand;
+};
+
+#endif // BITCOIN_POLICY_FEES_H

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2016 The Bitcoin Core developers
+# Copyright (c) 2014-2018 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 """
     ZMQ example using python3's asyncio
 
-    Ubicoin should be started with the command line arguments:
+    Ubicoind should be started with the command line arguments:
         ubicoind -testnet -daemon \
                 -zmqpubrawtx=tcp://127.0.0.1:28332 \
                 -zmqpubrawblock=tcp://127.0.0.1:28332 \
@@ -30,9 +30,9 @@ import signal
 import struct
 import sys
 
-if not (sys.version_info.major >= 3 and sys.version_info.minor >= 5):
+if (sys.version_info.major, sys.version_info.minor) < (3, 5):
     print("This example only works with Python 3.5 and greater")
-    exit(1)
+    sys.exit(1)
 
 port = 28332
 
@@ -43,21 +43,9 @@ class ZMQHandler():
 
         self.zmqSubSocket = self.zmqContext.socket(zmq.SUB)
         self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "hashblock")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "hashchainlock")
         self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "hashtx")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "hashtxlock")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "hashgovernancevote")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "hashgovernanceobject")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "hashinstantsenddoublespend")
         self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "rawblock")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "rawchainlock")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "rawchainlocksig")
         self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "rawtx")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "rawtxlock")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "rawtxlocksig")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "rawgovernancevote")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "rawgovernanceobject")
-        self.zmqSubSocket.setsockopt_string(zmq.SUBSCRIBE, "rawinstantsenddoublespend")
         self.zmqSubSocket.connect("tcp://127.0.0.1:%i" % port)
 
     async def handle(self) :
@@ -65,59 +53,21 @@ class ZMQHandler():
         topic = msg[0]
         body = msg[1]
         sequence = "Unknown"
-
         if len(msg[-1]) == 4:
           msgSequence = struct.unpack('<I', msg[-1])[-1]
           sequence = str(msgSequence)
-
         if topic == b"hashblock":
             print('- HASH BLOCK ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
-        elif topic == b"hashchainlock":
-            print('- HASH CHAINLOCK ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
+            print(binascii.hexlify(body))
         elif topic == b"hashtx":
-            print ('- HASH TX ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
-        elif topic == b"hashtxlock":
-            print('- HASH TX LOCK ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
-        elif topic == b"hashgovernancevote":
-            print('- HASH GOVERNANCE VOTE ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
-        elif topic == b"hashgovernanceobject":
-            print('- HASH GOVERNANCE OBJECT ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
-        elif topic == b"hashinstantsenddoublespend":
-            print('- HASH IS DOUBLE SPEND ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
+            print('- HASH TX  ('+sequence+') -')
+            print(binascii.hexlify(body))
         elif topic == b"rawblock":
             print('- RAW BLOCK HEADER ('+sequence+') -')
-            print(binascii.hexlify(body[:80]).decode("utf-8"))
-        elif topic == b"rawchainlock":
-            print('- RAW CHAINLOCK ('+sequence+') -')
-            print(binascii.hexlify(body[:80]).decode("utf-8"))
-        elif topic == b"rawchainlocksig":
-            print('- RAW CHAINLOCK SIG ('+sequence+') -')
-            print(binascii.hexlify(body[:80]).decode("utf-8"))
+            print(binascii.hexlify(body[:80]))
         elif topic == b"rawtx":
             print('- RAW TX ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
-        elif topic == b"rawtxlock":
-            print('- RAW TX LOCK ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
-        elif topic == b"rawtxlocksig":
-            print('- RAW TX LOCK SIG ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
-        elif topic == b"rawgovernancevote":
-            print('- RAW GOVERNANCE VOTE ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
-        elif topic == b"rawgovernanceobject":
-            print('- RAW GOVERNANCE OBJECT ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
-        elif topic == b"rawinstantsenddoublespend":
-            print('- RAW IS DOUBLE SPEND ('+sequence+') -')
-            print(binascii.hexlify(body).decode("utf-8"))
+            print(binascii.hexlify(body))
         # schedule ourselves to receive the next message
         asyncio.ensure_future(self.handle())
 

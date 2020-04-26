@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2015 The Bitcoin Core developers
+// Copyright (c) 2012-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -6,43 +6,31 @@
 #define BITCOIN_LIMITEDMAP_H
 
 #include <assert.h>
-#include <algorithm>
-#include <unordered_map>
-#include <vector>
+#include <map>
 
 /** STL-like map container that only keeps the N elements with the highest value. */
-// WARNING, this was initially the "limitedmap" class from Bitcoin, but now does not maintain ordering. If any backports
-// ever start using this map in a way that requires ordering, do NOT use this as it is but instead reintroduce the original
-// limitedmap
-template <typename K, typename V, typename Hash = std::hash<K>>
-class unordered_limitedmap
+template <typename K, typename V>
+class limitedmap
 {
 public:
     typedef K key_type;
     typedef V mapped_type;
     typedef std::pair<const key_type, mapped_type> value_type;
-    typedef typename std::unordered_map<K, V, Hash>::const_iterator const_iterator;
-    typedef typename std::unordered_map<K, V, Hash>::size_type size_type;
+    typedef typename std::map<K, V>::const_iterator const_iterator;
+    typedef typename std::map<K, V>::size_type size_type;
 
 protected:
-    std::unordered_map<K, V, Hash> map;
-    typedef typename std::unordered_map<K, V, Hash>::iterator iterator;
-    std::unordered_multimap<V, iterator> rmap;
-    typedef typename std::unordered_multimap<V, iterator>::iterator rmap_iterator;
+    std::map<K, V> map;
+    typedef typename std::map<K, V>::iterator iterator;
+    std::multimap<V, iterator> rmap;
+    typedef typename std::multimap<V, iterator>::iterator rmap_iterator;
     size_type nMaxSize;
-    size_type nPruneAfterSize;
 
 public:
-    unordered_limitedmap(size_type nMaxSizeIn, size_type nPruneAfterSizeIn = 0)
+    explicit limitedmap(size_type nMaxSizeIn)
     {
         assert(nMaxSizeIn > 0);
         nMaxSize = nMaxSizeIn;
-        if (nPruneAfterSizeIn == 0) {
-            nPruneAfterSize = nMaxSize;
-        } else {
-            nPruneAfterSize = nPruneAfterSizeIn;
-        }
-        assert(nPruneAfterSize >= nMaxSize);
     }
     const_iterator begin() const { return map.begin(); }
     const_iterator end() const { return map.end(); }
@@ -54,7 +42,10 @@ public:
     {
         std::pair<iterator, bool> ret = map.insert(x);
         if (ret.second) {
-            prune();
+            if (map.size() > nMaxSize) {
+                map.erase(rmap.begin()->second);
+                rmap.erase(rmap.begin());
+            }
             rmap.insert(make_pair(x.second, ret.first));
         }
     }
@@ -79,7 +70,7 @@ public:
         // since it is a constant time operation in C++11. For more details, see
         // https://stackoverflow.com/questions/765148/how-to-remove-constness-of-const-iterator
         iterator itTarget = map.erase(itIn, itIn);
-        
+
         if (itTarget == map.end())
             return;
         std::pair<rmap_iterator, rmap_iterator> itPair = rmap.equal_range(itTarget->second);
@@ -94,42 +85,15 @@ public:
         assert(0);
     }
     size_type max_size() const { return nMaxSize; }
-    size_type max_size(size_type nMaxSizeIn, size_type nPruneAfterSizeIn = 0)
+    size_type max_size(size_type s)
     {
-        assert(nMaxSizeIn > 0);
-        nMaxSize = nMaxSizeIn;
-        if (nPruneAfterSizeIn == 0) {
-            nPruneAfterSize = nMaxSize;
-        } else {
-            nPruneAfterSize = nPruneAfterSizeIn;
+        assert(s > 0);
+        while (map.size() > s) {
+            map.erase(rmap.begin()->second);
+            rmap.erase(rmap.begin());
         }
-        assert(nPruneAfterSize >= nMaxSize);
-        prune();
+        nMaxSize = s;
         return nMaxSize;
-    }
-    void prune()
-    {
-        if (map.size() <= nPruneAfterSize) {
-            return;
-        }
-
-        std::vector<rmap_iterator> sortedIterators;
-        sortedIterators.reserve(map.size());
-        for (auto it = rmap.begin(); it != rmap.end(); ++it) {
-            sortedIterators.emplace_back(it);
-        }
-        std::sort(sortedIterators.begin(), sortedIterators.end(), [](const rmap_iterator& it1, const rmap_iterator& it2) {
-            return it1->first < it2->first;
-        });
-
-        size_type tooMuch = map.size() - nMaxSize;
-        assert(tooMuch > 0);
-        sortedIterators.resize(tooMuch);
-
-        for (auto& it : sortedIterators) {
-            map.erase(it->second);
-            rmap.erase(it);
-        }
     }
 };
 

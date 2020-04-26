@@ -1,18 +1,16 @@
-// Copyright (c) 2011-2015 The Bitcoin Core developers
+// Copyright (c) 2011-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_SENDCOINSDIALOG_H
 #define BITCOIN_QT_SENDCOINSDIALOG_H
 
-#include "walletmodel.h"
+#include <qt/walletmodel.h>
 
 #include <QDialog>
 #include <QMessageBox>
 #include <QString>
 #include <QTimer>
-
-static const int MAX_SEND_POPUP_ENTRIES = 10;
 
 class ClientModel;
 class PlatformStyle;
@@ -53,15 +51,16 @@ public Q_SLOTS:
     void accept();
     SendCoinsEntry *addEntry();
     void updateTabsAndLabels();
-    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance,
-                    const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
+    void setBalance(const interfaces::WalletBalances& balances);
+
+Q_SIGNALS:
+    void coinsSent(const uint256& txid);
 
 private:
     Ui::SendCoinsDialog *ui;
     ClientModel *clientModel;
     WalletModel *model;
     bool fNewRecipientAllowed;
-    void send(QList<SendCoinsRecipient> recipients);
     bool fFeeMinimized;
     const PlatformStyle *platformStyle;
 
@@ -79,6 +78,7 @@ private Q_SLOTS:
     void on_buttonChooseFee_clicked();
     void on_buttonMinimizeFee_clicked();
     void removeEntry(SendCoinsEntry* entry);
+    void useAvailableBalance(SendCoinsEntry* entry);
     void updateDisplayUnit();
     void coinControlFeatureChanged(bool);
     void coinControlButtonClicked();
@@ -103,13 +103,14 @@ Q_SIGNALS:
 };
 
 
+#define SEND_CONFIRM_DELAY   3
 
 class SendConfirmationDialog : public QMessageBox
 {
     Q_OBJECT
 
 public:
-    SendConfirmationDialog(const QString &title, const QString &text, int secDelay = 0, QWidget *parent = 0);
+    SendConfirmationDialog(const QString &title, const QString &text, int secDelay = SEND_CONFIRM_DELAY, QWidget *parent = 0);
     int exec();
 
 private Q_SLOTS:

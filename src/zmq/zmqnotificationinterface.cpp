@@ -1,14 +1,14 @@
-// Copyright (c) 2015 The Bitcoin Core developers
+// Copyright (c) 2015-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "zmqnotificationinterface.h"
-#include "zmqpublishnotifier.h"
+#include <zmq/zmqnotificationinterface.h>
+#include <zmq/zmqpublishnotifier.h>
 
-#include "version.h"
-#include "validation.h"
-#include "streams.h"
-#include "util.h"
+#include <version.h>
+#include <validation.h>
+#include <streams.h>
+#include <util.h>
 
 void zmqError(const char *str)
 {
@@ -29,6 +29,15 @@ CZMQNotificationInterface::~CZMQNotificationInterface()
     }
 }
 
+std::list<const CZMQAbstractNotifier*> CZMQNotificationInterface::GetActiveNotifiers() const
+{
+    std::list<const CZMQAbstractNotifier*> result;
+    for (const auto* n : notifiers) {
+        result.push_back(n);
+    }
+    return result;
+}
+
 CZMQNotificationInterface* CZMQNotificationInterface::Create()
 {
     CZMQNotificationInterface* notificationInterface = nullptr;
@@ -36,31 +45,19 @@ CZMQNotificationInterface* CZMQNotificationInterface::Create()
     std::list<CZMQAbstractNotifier*> notifiers;
 
     factories["pubhashblock"] = CZMQAbstractNotifier::Create<CZMQPublishHashBlockNotifier>;
-    factories["pubhashchainlock"] = CZMQAbstractNotifier::Create<CZMQPublishHashChainLockNotifier>;
     factories["pubhashtx"] = CZMQAbstractNotifier::Create<CZMQPublishHashTransactionNotifier>;
-    factories["pubhashtxlock"] = CZMQAbstractNotifier::Create<CZMQPublishHashTransactionLockNotifier>;
-    factories["pubhashgovernancevote"] = CZMQAbstractNotifier::Create<CZMQPublishHashGovernanceVoteNotifier>;
-    factories["pubhashgovernanceobject"] = CZMQAbstractNotifier::Create<CZMQPublishHashGovernanceObjectNotifier>;
-    factories["pubhashinstantsenddoublespend"] = CZMQAbstractNotifier::Create<CZMQPublishHashInstantSendDoubleSpendNotifier>;
     factories["pubrawblock"] = CZMQAbstractNotifier::Create<CZMQPublishRawBlockNotifier>;
-    factories["pubrawchainlock"] = CZMQAbstractNotifier::Create<CZMQPublishRawChainLockNotifier>;
-    factories["pubrawchainlocksig"] = CZMQAbstractNotifier::Create<CZMQPublishRawChainLockSigNotifier>;
     factories["pubrawtx"] = CZMQAbstractNotifier::Create<CZMQPublishRawTransactionNotifier>;
-    factories["pubrawtxlock"] = CZMQAbstractNotifier::Create<CZMQPublishRawTransactionLockNotifier>;
-    factories["pubrawtxlocksig"] = CZMQAbstractNotifier::Create<CZMQPublishRawTransactionLockSigNotifier>;
-    factories["pubrawgovernancevote"] = CZMQAbstractNotifier::Create<CZMQPublishRawGovernanceVoteNotifier>;
-    factories["pubrawgovernanceobject"] = CZMQAbstractNotifier::Create<CZMQPublishRawGovernanceObjectNotifier>;
-    factories["pubrawinstantsenddoublespend"] = CZMQAbstractNotifier::Create<CZMQPublishRawInstantSendDoubleSpendNotifier>;
 
-    for (std::map<std::string, CZMQNotifierFactory>::const_iterator i=factories.begin(); i!=factories.end(); ++i)
+    for (const auto& entry : factories)
     {
-        std::string arg("-zmq" + i->first);
+        std::string arg("-zmq" + entry.first);
         if (gArgs.IsArgSet(arg))
         {
-            CZMQNotifierFactory factory = i->second;
+            CZMQNotifierFactory factory = entry.second;
             std::string address = gArgs.GetArg(arg, "");
             CZMQAbstractNotifier *notifier = factory();
-            notifier->SetType(i->first);
+            notifier->SetType(entry.first);
             notifier->SetAddress(address);
             notifiers.push_back(notifier);
         }
@@ -132,7 +129,7 @@ void CZMQNotificationInterface::Shutdown()
         }
         zmq_ctx_destroy(pcontext);
 
-        pcontext = 0;
+        pcontext = nullptr;
     }
 }
 
@@ -156,24 +153,7 @@ void CZMQNotificationInterface::UpdatedBlockTip(const CBlockIndex *pindexNew, co
     }
 }
 
-void CZMQNotificationInterface::NotifyChainLock(const CBlockIndex *pindex, const llmq::CChainLockSig& clsig)
-{
-    for (std::list<CZMQAbstractNotifier*>::iterator i = notifiers.begin(); i!=notifiers.end(); )
-    {
-        CZMQAbstractNotifier *notifier = *i;
-        if (notifier->NotifyChainLock(pindex, clsig))
-        {
-            i++;
-        }
-        else
-        {
-            notifier->Shutdown();
-            i = notifiers.erase(i);
-        }
-    }
-}
-
-void CZMQNotificationInterface::TransactionAddedToMempool(const CTransactionRef& ptx, int64_t nAcceptTime)
+void CZMQNotificationInterface::TransactionAddedToMempool(const CTransactionRef& ptx)
 {
     // Used by BlockConnected and BlockDisconnected as well, because they're
     // all the same external callback.
@@ -198,78 +178,16 @@ void CZMQNotificationInterface::BlockConnected(const std::shared_ptr<const CBloc
 {
     for (const CTransactionRef& ptx : pblock->vtx) {
         // Do a normal notify for each transaction added in the block
-        TransactionAddedToMempool(ptx, 0);
+        TransactionAddedToMempool(ptx);
     }
 }
 
-void CZMQNotificationInterface::BlockDisconnected(const std::shared_ptr<const CBlock>& pblock, const CBlockIndex* pindexDisconnected)
+void CZMQNotificationInterface::BlockDisconnected(const std::shared_ptr<const CBlock>& pblock)
 {
     for (const CTransactionRef& ptx : pblock->vtx) {
         // Do a normal notify for each transaction removed in block disconnection
-        TransactionAddedToMempool(ptx, 0);
+        TransactionAddedToMempool(ptx);
     }
 }
 
-void CZMQNotificationInterface::NotifyTransactionLock(const CTransaction &tx, const llmq::CInstantSendLock& islock)
-{
-    for (std::list<CZMQAbstractNotifier*>::iterator i = notifiers.begin(); i!=notifiers.end(); )
-    {
-        CZMQAbstractNotifier *notifier = *i;
-        if (notifier->NotifyTransactionLock(tx, islock))
-        {
-            i++;
-        }
-        else
-        {
-            notifier->Shutdown();
-            i = notifiers.erase(i);
-        }
-    }
-}
-
-void CZMQNotificationInterface::NotifyGovernanceVote(const CGovernanceVote &vote)
-{
-    for (std::list<CZMQAbstractNotifier*>::iterator i = notifiers.begin(); i != notifiers.end(); )
-    {
-        CZMQAbstractNotifier *notifier = *i;
-        if (notifier->NotifyGovernanceVote(vote))
-        {
-            i++;
-        }
-        else
-        {
-            notifier->Shutdown();
-            i = notifiers.erase(i);
-        }
-    }
-}
-
-void CZMQNotificationInterface::NotifyGovernanceObject(const CGovernanceObject &object)
-{
-    for (std::list<CZMQAbstractNotifier*>::iterator i = notifiers.begin(); i != notifiers.end(); )
-    {
-        CZMQAbstractNotifier *notifier = *i;
-        if (notifier->NotifyGovernanceObject(object))
-        {
-            i++;
-        }
-        else
-        {
-            notifier->Shutdown();
-            i = notifiers.erase(i);
-        }
-    }
-}
-
-void CZMQNotificationInterface::NotifyInstantSendDoubleSpendAttempt(const CTransaction &currentTx, const CTransaction &previousTx)
-{
-    for (auto it = notifiers.begin(); it != notifiers.end();) {
-        CZMQAbstractNotifier *notifier = *it;
-        if (notifier->NotifyInstantSendDoubleSpendAttempt(currentTx, previousTx)) {
-            ++it;
-        } else {
-            notifier->Shutdown();
-            it = notifiers.erase(it);
-        }
-    }
-}
+CZMQNotificationInterface* g_zmq_notification_interface = nullptr;

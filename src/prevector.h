@@ -1,9 +1,9 @@
-// Copyright (c) 2015 The Bitcoin Core developers
+// Copyright (c) 2015-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef _BITCOIN_PREVECTOR_H_
-#define _BITCOIN_PREVECTOR_H_
+#ifndef BITCOIN_PREVECTOR_H
+#define BITCOIN_PREVECTOR_H
 
 #include <assert.h>
 #include <stdlib.h>
@@ -394,21 +394,6 @@ public:
         fill(ptr, first, last);
     }
 
-    inline void resize_uninitialized(size_type new_size) {
-        // resize_uninitialized changes the size of the prevector but does not initialize it.
-        // If size < new_size, the added elements must be initialized explicitly.
-        if (capacity() < new_size) {
-            change_capacity(new_size);
-            _size += new_size - size();
-            return;
-        }
-        if (new_size < size()) {
-            erase(item_ptr(new_size), end());
-        } else {
-            _size += new_size - size();
-        }
-    }
-
     iterator erase(iterator pos) {
         return erase(pos, pos + 1);
     }
@@ -541,4 +526,4 @@ public:
 };
 #pragma pack(pop)
 
-#endif
+#endif // BITCOIN_PREVECTOR_H

@@ -12,6 +12,7 @@ Tool to verify that every merge commit was signed by a developer using the above
 Construct a linear, no-fork, best version of the blockchain.
 
 ### [Qos](/contrib/qos) ###
+
 A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the Ubicoin network. This means one can have an always-on ubicoind instance running, and another local ubicoind/ubicoin-qt instance which connects to this node and receives blocks from it.
 
 ### [Seeds](/contrib/seeds) ###
@@ -20,12 +21,13 @@ Utility to generate the pnSeed[] array that is compiled into the client.
 Build Tools and Keys
 ---------------------
 
-### [Debian](/contrib/debian) ###
-Contains files used to package ubicoind/ubicoin-qt
-for Debian-based Linux systems. If you compile ubicoind/ubicoin-qt yourself, there are some useful files here.
+### Packaging ###
+The [Debian](/contrib/debian) subfolder contains the copyright file.
+
+All other packaging related files can be found in the [bitcoin-core/packaging](https://github.com/bitcoin-core/packaging) repository.
 
 ### [Gitian-descriptors](/contrib/gitian-descriptors) ###
-Notes on getting Gitian builds up and running using KVM.
+Files used during the gitian build process. For more information about gitian, see the [the Bitcoin Core documentation repository](https://github.com/bitcoin-core/docs).
 
 ### [Gitian-keys](/contrib/gitian-keys)
 PGP keys used for signing Ubicoin Core [Gitian release](/doc/release-process.md) results.
@@ -43,4 +45,4 @@ Test and Verify Tools
 Utilities to generate test vectors for the data-driven Ubicoin tests.
 
 ### [Verify Binaries](/contrib/verifybinaries) ###
-This script attempts to download and verify the signature file SHA256SUMS.asc from bitcoin.org.
+This script attempts to download and verify the signature file SHA256SUMS.asc from ubicoin.org.

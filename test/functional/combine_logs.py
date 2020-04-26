@@ -13,7 +13,7 @@ import re
 import sys
 
 # Matches on the date format at the start of the log event
-TIMESTAMP_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d{6}")
+TIMESTAMP_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{6}Z")
 
 LogEvent = namedtuple('LogEvent', ['timestamp', 'source', 'event'])
 
@@ -63,7 +63,7 @@ def get_log_events(source, logfile):
     Log events may be split over multiple lines. We use the timestamp
     regex match as the marker for a new log event."""
     try:
-        with open(logfile, 'r') as infile:
+        with open(logfile, 'r', encoding='utf-8') as infile:
             event = ''
             timestamp = ''
             for line in infile:
@@ -106,7 +106,7 @@ def print_logs(log_events, color=False, html=False):
         except ImportError:
             print("jinja2 not found. Try `pip install jinja2`")
             sys.exit(1)
-        print(jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(os.path.abspath(__file__))))
+        print(jinja2.Environment(loader=jinja2.FileSystemLoader('./'))
                     .get_template('combined_log_template.html')
                     .render(title="Combined Logs from testcase", log_events=[event._asdict() for event in log_events]))
 

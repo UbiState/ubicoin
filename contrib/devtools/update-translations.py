@@ -25,22 +25,24 @@ import xml.etree.ElementTree as ET
 # Name of transifex tool
 TX = 'tx'
 # Name of source language file
-SOURCE_LANG = 'ubicoin_en.ts'
+SOURCE_LANG = 'bitcoin_en.ts'
 # Directory with locale files
 LOCALE_DIR = 'src/qt/locale'
 # Minimum number of messages for translation to be considered at all
 MIN_NUM_MESSAGES = 10
+# Regexp to check for Bitcoin addresses
+ADDRESS_REGEXP = re.compile('([13]|bc1)[a-zA-Z0-9]{30,}')
 
 def check_at_repository_root():
     if not os.path.exists('.git'):
         print('No .git directory found')
         print('Execute this script at the root of the repository', file=sys.stderr)
-        exit(1)
+        sys.exit(1)
 
 def fetch_all_translations():
     if subprocess.call([TX, 'pull', '-f', '-a']):
         print('Error while fetching translations', file=sys.stderr)
-        exit(1)
+        sys.exit(1)
 
 def find_format_specifiers(s):
     '''Find all format specifiers in a string.'''
@@ -50,10 +52,7 @@ def find_format_specifiers(s):
         percent = s.find('%', pos)
         if percent < 0:
             break
-        try:
-            specifiers.append(s[percent+1])
-        except:
-            print('Failed to get specifier')
+        specifiers.append(s[percent+1])
         pos = percent+2
     return specifiers
 
@@ -86,7 +85,7 @@ def check_format_specifiers(source, translation, errors, numerus):
     source_f = split_format_specifiers(find_format_specifiers(source))
     # assert that no source messages contain both Qt and strprintf format specifiers
     # if this fails, go change the source as this is hacky and confusing!
-    #assert(not(source_f[0] and source_f[1]))
+    assert(not(source_f[0] and source_f[1]))
     try:
         translation_f = split_format_specifiers(find_format_specifiers(translation))
     except IndexError:
@@ -124,6 +123,12 @@ def escape_cdata(text):
     text = text.replace("'", '&apos;')
     text = text.replace('"', '&quot;')
     return text
+
+def contains_bitcoin_addr(text, errors):
+    if text != None and ADDRESS_REGEXP.search(text) != None:
+        errors.append('Translation "%s" contains a bitcoin address. This will be removed.' % (text))
+        return True
+    return False
 
 def postprocess_translations(reduce_diff_hacks=False):
     print('Checking and postprocessing...')
@@ -163,7 +168,7 @@ def postprocess_translations(reduce_diff_hacks=False):
                     if translation is None:
                         continue
                     errors = []
-                    valid = check_format_specifiers(source, translation, errors, numerus)
+                    valid = check_format_specifiers(source, translation, errors, numerus) and not contains_bitcoin_addr(translation, errors)
 
                     for error in errors:
                         print('%s: %s' % (filename, error))
@@ -205,6 +210,6 @@ def postprocess_translations(reduce_diff_hacks=False):
 
 if __name__ == '__main__':
     check_at_repository_root()
-    # fetch_all_translations()
+    fetch_all_translations()
     postprocess_translations()
 

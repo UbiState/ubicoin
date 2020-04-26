@@ -1,23 +1,21 @@
-Ubicoin Core staging tree 0.15
-===========================
+Ubicoin Core integration/staging tree
+=====================================
 
-`master:` [![Build Status](https://travis-ci.org/UbiState/ubicoin.svg?branch=master)](https://travis-ci.org/UbiState/ubicoin) `develop:` [![Build Status](https://travis-ci.org/UbiState/ubicoin.svg?branch=develop)](https://travis-ci.org/UbiState/ubicoin/branches)
+[![Build Status](https://travis-ci.org/ubicoin-project/ubicoin.svg?branch=master)](https://travis-ci.org/ubicoin-project/ubicoin)
 
-https://www.ubicoin.org
-
+https://ubicoin.org
 
 What is Ubicoin?
--------------
+----------------
 
-Ubicoin is an experimental digital currency that enables instant, private
-payments to anyone, anywhere in the world. Ubicoin uses peer-to-peer technology
-to operate with no central authority: managing transactions and issuing money
-are carried out collectively by the network. Ubicoin Core is the name of the open
-source software which enables the use of this currency.
+Ubicoin is an experimental digital currency that enables instant payments to
+anyone, anywhere in the world. Ubicoin uses peer-to-peer technology to operate
+with no central authority: managing transactions and issuing money are carried
+out collectively by the network. Ubicoin Core is the name of open source
+software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Ubicoin Core software, see https://www.ubicoin.org/get-ubicoin/.
-
+the Ubicoin Core software, see [https://ubicoin.org](https://ubicoin.org).
 
 License
 -------
@@ -28,11 +26,17 @@ information or see https://opensource.org/licenses/MIT.
 Development Process
 -------------------
 
-The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/UbiState/ubicoin/tags) are created to indicate new official,
-stable release versions of Ubicoin Core.
+The `master` branch is regularly built and tested, but is not guaranteed to be
+completely stable. [Tags](https://github.com/ubicoin-project/ubicoin/tags) are created
+regularly to indicate new official, stable release versions of Ubicoin Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+The developer [mailing list](https://groups.google.com/forum/#!forum/ubicoin-dev)
+should be used to discuss complicated or controversial changes before working
+on a patch set.
+
+Developer IRC can be found on Freenode at #ubicoin-dev.
 
 Testing
 -------
@@ -53,7 +57,7 @@ There are also [regression and integration tests](/test), written
 in Python, that are run automatically on the build server.
 These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
 
-The Travis CI system makes sure that every pull request is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
+The Travis CI system makes sure that every pull request is built for Windows, Linux, and macOS, and that unit/sanity tests are run automatically.
 
 ### Manual Quality Assurance (QA) Testing
 
@@ -65,13 +69,11 @@ not straightforward.
 Translations
 ------------
 
-Changes to translations as well as new translations can be submitted to
-[Ubicoin Core's Transifex page](https://www.transifex.com/projects/p/ubicoin/).
+We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
+Translations are converted to Ubicoin periodically.
 
 Translations are periodically pulled from Transifex and merged into the git repository. See the
 [translation process](doc/translation_process.md) for details on how this works.
 
 **Important**: We do not accept translation changes as GitHub pull requests because the next
 pull from Transifex would automatically overwrite them again.
-
-Translators should also follow the [forum](https://www.ubicoin.org/forum/topic/ubicoin-worldwide-collaboration.88/).

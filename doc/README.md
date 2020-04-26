@@ -1,11 +1,15 @@
 Ubicoin Core
-==========
+=============
 
-This is the official reference wallet for Ubicoin digital currency and comprises the backbone of the Ubicoin peer-to-peer network. You can [download Ubicoin Core](https://www.ubicoin.org/downloads/) or [build it yourself](#building) using the guides below.
+Setup
+---------------------
+Ubicoin Core is the original Ubicoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Ubicoin transactions (which is currently more than 7 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+
+To download Ubicoin Core, visit [ubicoin.org](https://ubicoin.org).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Ubicoin on your native platform.
+The following are some helpful notes on how to run Ubicoin Core on your native platform.
 
 ### Unix
 
@@ -18,37 +22,36 @@ Unpack the files into a directory and run:
 
 Unpack the files into a directory, and then run ubicoin-qt.exe.
 
-### OS X
+### macOS
 
-Drag Ubicoin-Qt to your applications folder, and then run Ubicoin-Qt.
+Drag Ubicoin Core to your applications folder, and then run Ubicoin Core.
 
 ### Need Help?
 
-* See the [Ubicoin documentation](https://docs.ubicoin.org)
+* See the documentation at the [Ubicoin Wiki](https://ubicoin.info/)
 for help and more information.
-* See the [Ubicoin Developer Documentation](https://ubicoin-docs.github.io/) 
-for technical specifications and implementation details.
-* Ask for help on [Ubicoin Nation Discord](http://ubicoinchat.org)
-* Ask for help on the [Ubicoin Forum](https://ubicoin.org/forum)
+* Ask for help on [#ubicoin](http://webchat.freenode.net?channels=ubicoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=ubicoin).
+* Ask for help on the [UbicoinTalk](https://ubicointalk.io/) forums.
 
 Building
 ---------------------
 The following are developer notes on how to build Ubicoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
-- [OS X Build Notes](build-osx.md)
+- [Dependencies](dependencies.md)
+- [macOS Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
 - [Windows Build Notes](build-windows.md)
 - [OpenBSD Build Notes](build-openbsd.md)
+- [NetBSD Build Notes](build-netbsd.md)
 - [Gitian Building Guide](gitian-building.md)
 
 Development
 ---------------------
-The Ubicoin Core repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Ubicoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
-- Source Code Documentation ***TODO***
 - [Translation Process](translation_process.md)
 - [Translation Strings Policy](translation_strings_policy.md)
 - [Travis CI](travis-ci.md)
@@ -59,8 +62,8 @@ The Ubicoin Core repo's [root README](/README.md) contains relevant information 
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [Ubicoin Forum](https://ubicoin.org/forum), in the Development & Technical Discussion board.
-* Discuss on [Ubicoin Nation Discord](http://ubicoinchat.org)
+* Discuss on the [UbicoinTalk](https://ubicointalk.io/) forums.
+* Discuss general Ubicoin development on #ubicoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=ubicoin-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

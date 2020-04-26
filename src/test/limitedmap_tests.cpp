@@ -1,10 +1,10 @@
-// Copyright (c) 2012-2015 The Bitcoin Core developers
+// Copyright (c) 2012-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "limitedmap.h"
+#include <limitedmap.h>
 
-#include "test/test_ubicoin.h"
+#include <test/test_bitcoin.h>
 
 #include <boost/test/unit_test.hpp>
 
@@ -13,7 +13,7 @@ BOOST_FIXTURE_TEST_SUITE(limitedmap_tests, BasicTestingSetup)
 BOOST_AUTO_TEST_CASE(limitedmap_test)
 {
     // create a limitedmap capped at 10 items
-    unordered_limitedmap<int, int> map(10);
+    limitedmap<int, int> map(10);
 
     // check that the max size is 10
     BOOST_CHECK(map.max_size() == 10);
@@ -42,21 +42,20 @@ BOOST_AUTO_TEST_CASE(limitedmap_test)
     BOOST_CHECK(map.count(-1) == 0);
 
     // iterate over the map, both with an index and an iterator
-    unordered_limitedmap<int, int>::const_iterator it = map.begin();
+    limitedmap<int, int>::const_iterator it = map.begin();
     for (int i = 0; i < 10; i++) {
         // make sure the item is present
         BOOST_CHECK(map.count(i) == 1);
 
         // use the iterator to check for the expected key and value
-        //BOOST_CHECK(it->first == i);
-        //BOOST_CHECK(it->second == i + 1);
-        
+        BOOST_CHECK(it->first == i);
+        BOOST_CHECK(it->second == i + 1);
+
         // use find to check for the value
         BOOST_CHECK(map.find(i)->second == i + 1);
-        
+
         // update and recheck
-        auto jt = map.find(i);
-        map.update(jt, i + 2);
+        map.update(it, i + 2);
         BOOST_CHECK(map.find(i)->second == i + 2);
 
         it++;

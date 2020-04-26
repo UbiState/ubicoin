@@ -1,25 +1,24 @@
-// Copyright (c) 2011-2015 The Bitcoin Core developers
+// Copyright (c) 2011-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "chainparams.h"
-#include "coins.h"
-#include "consensus/consensus.h"
-#include "consensus/merkle.h"
-#include "consensus/tx_verify.h"
-#include "consensus/validation.h"
-#include "validation.h"
-#include "masternode/masternode-payments.h"
-#include "miner.h"
-#include "policy/policy.h"
-#include "pubkey.h"
-#include "script/standard.h"
-#include "txmempool.h"
-#include "uint256.h"
-#include "util.h"
-#include "utilstrencodings.h"
+#include <chainparams.h>
+#include <coins.h>
+#include <consensus/consensus.h>
+#include <consensus/merkle.h>
+#include <consensus/tx_verify.h>
+#include <consensus/validation.h>
+#include <validation.h>
+#include <miner.h>
+#include <policy/policy.h>
+#include <pubkey.h>
+#include <script/standard.h>
+#include <txmempool.h>
+#include <uint256.h>
+#include <util.h>
+#include <utilstrencodings.h>
 
-#include "test/test_ubicoin.h"
+#include <test/test_bitcoin.h>
 
 #include <memory>
 
@@ -27,12 +26,23 @@
 
 BOOST_FIXTURE_TEST_SUITE(miner_tests, TestingSetup)
 
+// BOOST_CHECK_EXCEPTION predicates to check the specific validation error
+class HasReason {
+public:
+    HasReason(const std::string& reason) : m_reason(reason) {}
+    bool operator() (const std::runtime_error& e) const {
+        return std::string(e.what()).find(m_reason) != std::string::npos;
+    };
+private:
+    const std::string m_reason;
+};
+
 static CFeeRate blockMinFeeRate = CFeeRate(DEFAULT_BLOCK_MIN_TX_FEE);
 
 static BlockAssembler AssemblerForTest(const CChainParams& params) {
     BlockAssembler::Options options;
 
-    options.nBlockMaxSize = DEFAULT_BLOCK_MAX_SIZE;
+    options.nBlockMaxWeight = MAX_BLOCK_WEIGHT;
     options.blockMinFeeRate = blockMinFeeRate;
     return BlockAssembler(params, options);
 }
@@ -42,39 +52,37 @@ struct {
     unsigned char extranonce;
     unsigned int nonce;
 } blockinfo[] = {
-    {0, 0x0017f257}, {0, 0x000d4581}, {0, 0x0048042c}, {0, 0x0025bff0},
-    {0, 0x2002d3f8}, {0, 0x6001161f}, {0, 0xe000c5e5}, {0, 0x2000cce2},
-    {0, 0x40004753}, {0, 0x80025297}, {0, 0x600009de}, {0, 0x6005780c},
-    {0, 0x40025ae9}, {0, 0xc000341c}, {0, 0xc0053062}, {0, 0x40002f90},
-    {0, 0xc00047ae}, {0, 0xa0015716}, {0, 0x2000d499}, {0, 0x80009b45},
-    {0, 0xc000a7c9}, {0, 0x8001f8ba}, {0, 0xc000d147}, {0, 0x60018ac3},
-    {0, 0xc000a9ac}, {0, 0xa003f6e6}, {0, 0x2007436e}, {0, 0xc0013f28},
-    {0, 0x00010892}, {0, 0xa0000027}, {0, 0x40008de9}, {0, 0x400019f3},
-    {0, 0x00025b86}, {0, 0x80002799}, {0, 0xc001eb0e}, {0, 0xe003e950},
-    {0, 0xe001ff87}, {0, 0x000158b0}, {0, 0x600189da}, {0, 0x0000028c},
-    {0, 0x600014ca}, {0, 0x60000e4d}, {0, 0xc0000820}, {0, 0xa005184e},
-    {0, 0x40012b22}, {0, 0xe0028f6b}, {0, 0xe0027bce}, {0, 0xa0007b51},
-    {0, 0x8002496d}, {0, 0xc001f211}, {0, 0x00032bf0}, {0, 0x4002d767},
-    {0, 0x6008410a}, {0, 0x800361c3}, {0, 0xe000f80d}, {0, 0xe009ac97},
-    {0, 0x80002103}, {0, 0x6001fab4}, {0, 0x4002843b}, {0, 0x6002b67c},
-    {0, 0xa000faf3}, {0, 0x6000949e}, {0, 0x80000f1f}, {0, 0x6000c946},
-    {0, 0xe00314b3}, {0, 0x20012bbf}, {0, 0x00009c7e}, {0, 0x2003e63a},
-    {0, 0x20025157}, {0, 0x80041ff5}, {0, 0x60012a6c}, {0, 0x4000119b},
-    {0, 0xc000a454}, {0, 0x20042c4b}, {0, 0x0003003c}, {0, 0x000558b2},
-    {0, 0x2000198c}, {0, 0x200b0b3e}, {0, 0x4001c1e4}, {0, 0x80000034},
-    {0, 0xe00039d1}, {0, 0xc001ded3}, {0, 0x80006740}, {0, 0xc0014546},
-    {0, 0x00036a1a}, {0, 0xa001ae9c}, {0, 0x6000a148}, {0, 0xe001fd73},
-    {0, 0xa001cebb}, {0, 0xa000d4b8}, {0, 0xe00154b3}, {0, 0x40004bec},
-    {0, 0xc003f230}, {0, 0xe0069a26}, {0, 0xa00072b4}, {0, 0xc002e1b2},
-    {0, 0x20009a02}, {0, 0xc0004a10}, {0, 0xe0045a11}, {0, 0x60034d09},
-    {0, 0x000073ff}, {0, 0x00003f1c}, {0, 0x4002c4fd}, {0, 0x2000bb60},
-    {0, 0x4000b6b6}, {0, 0x6000ea25}, {0, 0x400989d9}, {0, 0xc000877f},
-    {0, 0x6000d17c}, {0, 0xc0009228}, {0, 0x4002827f}, {0, 0x80056a85},
-    {0, 0x40045af7}, {0, 0x6000df7a}, {0, 0xe00131a1}, {0, 0x40021386},
-    {0, 0xa00891b5}, {0, 0x60007854}, {0, 0x60021730}
+    {4, 0xa4ad9f65}, {2, 0x15cf2b27}, {1, 0x037620ac}, {1, 0x700d9c54},
+    {2, 0xce79f74f}, {2, 0x52d9c194}, {1, 0x77bc3efc}, {2, 0xbb62c5e8},
+    {2, 0x83ff997a}, {1, 0x48b984ee}, {1, 0xef925da0}, {2, 0x680d2979},
+    {2, 0x08953af7}, {1, 0x087dd553}, {2, 0x210e2818}, {2, 0xdfffcdef},
+    {1, 0xeea1b209}, {2, 0xba4a8943}, {1, 0xa7333e77}, {1, 0x344f3e2a},
+    {3, 0xd651f08e}, {2, 0xeca3957f}, {2, 0xca35aa49}, {1, 0x6bb2065d},
+    {2, 0x0170ee44}, {1, 0x6e12f4aa}, {2, 0x43f4f4db}, {2, 0x279c1c44},
+    {2, 0xb5a50f10}, {2, 0xb3902841}, {2, 0xd198647e}, {2, 0x6bc40d88},
+    {1, 0x633a9a1c}, {2, 0x9a722ed8}, {2, 0x55580d10}, {1, 0xd65022a1},
+    {2, 0xa12ffcc8}, {1, 0x75a6a9c7}, {2, 0xfb7c80b7}, {1, 0xe8403e6c},
+    {1, 0xe34017a0}, {3, 0x659e177b}, {2, 0xba5c40bf}, {5, 0x022f11ef},
+    {1, 0xa9ab516a}, {5, 0xd0999ed4}, {1, 0x37277cb3}, {1, 0x830f735f},
+    {1, 0xc6e3d947}, {2, 0x824a0c1b}, {1, 0x99962416}, {1, 0x75336f63},
+    {1, 0xaacf0fea}, {1, 0xd6531aec}, {5, 0x7afcf541}, {5, 0x9d6fac0d},
+    {1, 0x4cf5c4df}, {1, 0xabe0f2a0}, {6, 0x4a3dac18}, {2, 0xf265febe},
+    {2, 0x1bc9f23f}, {1, 0xad49ab71}, {1, 0x9f2d8923}, {1, 0x15acb65d},
+    {2, 0xd1cecb52}, {2, 0xf856808b}, {1, 0x0fa96e29}, {1, 0xe063ecbc},
+    {1, 0x78d926c6}, {5, 0x3e38ad35}, {5, 0x73901915}, {1, 0x63424be0},
+    {1, 0x6d6b0a1d}, {2, 0x888ba681}, {2, 0xe96b0714}, {1, 0xb7fcaa55},
+    {2, 0x19c106eb}, {1, 0x5aa13484}, {2, 0x5bf4c2f3}, {2, 0x94d401dd},
+    {1, 0xa9bc23d9}, {1, 0x3a69c375}, {1, 0x56ed2006}, {5, 0x85ba6dbd},
+    {1, 0xfd9b2000}, {1, 0x2b2be19a}, {1, 0xba724468}, {1, 0x717eb6e5},
+    {1, 0x70de86d9}, {1, 0x74e23a42}, {1, 0x49e92832}, {2, 0x6926dbb9},
+    {0, 0x64452497}, {1, 0x54306d6f}, {2, 0x97ebf052}, {2, 0x55198b70},
+    {2, 0x03fe61f0}, {1, 0x98f9e67f}, {1, 0xc0842a09}, {1, 0xdfed39c5},
+    {1, 0x3144223e}, {1, 0xb3d12f84}, {1, 0x7366ceb7}, {5, 0x6240691b},
+    {2, 0xd3529b57}, {1, 0xf4cae3b1}, {1, 0x5b1df222}, {1, 0xa16a5c70},
+    {2, 0xbbccedc6}, {2, 0xfe38d0ef},
 };
 
-CBlockIndex CreateBlockIndex(int nHeight)
+static CBlockIndex CreateBlockIndex(int nHeight)
 {
     CBlockIndex index;
     index.nHeight = nHeight;
@@ -82,7 +90,7 @@ CBlockIndex CreateBlockIndex(int nHeight)
     return index;
 }
 
-bool TestSequenceLocks(const CTransaction &tx, int flags)
+static bool TestSequenceLocks(const CTransaction &tx, int flags)
 {
     LOCK(mempool.cs);
     return CheckSequenceLocks(tx, flags);
@@ -91,11 +99,8 @@ bool TestSequenceLocks(const CTransaction &tx, int flags)
 // Test suite for ancestor feerate transaction selection.
 // Implemented as an additional function, rather than a separate test case,
 // to allow reusing the blockchain created in CreateNewBlock_validity.
-void TestPackageSelection(const CChainParams& chainparams, CScript scriptPubKey, std::vector<CTransactionRef>& txFirst)
+static void TestPackageSelection(const CChainParams& chainparams, const CScript& scriptPubKey, const std::vector<CTransactionRef>& txFirst) EXCLUSIVE_LOCKS_REQUIRED(::mempool.cs)
 {
-    // Disable free transactions, otherwise TX selection is non-deterministic
-    gArgs.SoftSetArg("-blockprioritysize", "0");
-
     // Test the ancestor feerate transaction selection.
     TestMemPoolEntryHelper entry;
 
@@ -199,11 +204,12 @@ void TestPackageSelection(const CChainParams& chainparams, CScript scriptPubKey,
 // NOTE: These tests rely on CreateNewBlock doing its own self-validation!
 BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
 {
+    // Note that by default, these tests run with size accounting enabled.
     const auto chainParams = CreateChainParams(CBaseChainParams::MAIN);
     const CChainParams& chainparams = *chainParams;
     CScript scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
-    std::unique_ptr<CBlockTemplate> pblocktemplate, pemptyblocktemplate;
-    CMutableTransaction tx,tx2;
+    std::unique_ptr<CBlockTemplate> pblocktemplate;
+    CMutableTransaction tx;
     CScript script;
     uint256 hash;
     TestMemPoolEntryHelper entry;
@@ -213,25 +219,25 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     fCheckpointsEnabled = false;
 
     // Simple block creation, nothing special yet:
-    BOOST_CHECK(pemptyblocktemplate = AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey));
+    BOOST_CHECK(pblocktemplate = AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey));
 
     // We can't make transactions until we have inputs
     // Therefore, load 100 blocks :)
     int baseheight = 0;
     std::vector<CTransactionRef> txFirst;
-
-    auto createAndProcessEmptyBlock = [&]() {
-        int i = chainActive.Height();
-        CBlock *pblock = &pemptyblocktemplate->block; // pointer for convenience
+    for (unsigned int i = 0; i < sizeof(blockinfo)/sizeof(*blockinfo); ++i)
+    {
+        CBlock *pblock = &pblocktemplate->block; // pointer for convenience
         {
             LOCK(cs_main);
-            pblock->nVersion = 2;
+            pblock->nVersion = 1;
             pblock->nTime = chainActive.Tip()->GetMedianTimePast()+1;
             CMutableTransaction txCoinbase(*pblock->vtx[0]);
             txCoinbase.nVersion = 1;
-            txCoinbase.vin[0].scriptSig = CScript() << (chainActive.Height() + 1);
+            txCoinbase.vin[0].scriptSig = CScript();
             txCoinbase.vin[0].scriptSig.push_back(blockinfo[i].extranonce);
             txCoinbase.vin[0].scriptSig.push_back(chainActive.Height());
+            txCoinbase.vout.resize(1); // Ignore the (optional) segwit commitment added by CreateNewBlock (as the hardcoded nonces don't account for this)
             txCoinbase.vout[0].scriptPubKey = CScript();
             pblock->vtx[0] = MakeTransactionRef(std::move(txCoinbase));
             if (txFirst.size() == 0)
@@ -240,30 +246,19 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
                 txFirst.push_back(pblock->vtx[0]);
             pblock->hashMerkleRoot = BlockMerkleRoot(*pblock);
             pblock->nNonce = blockinfo[i].nonce;
-
-            // This will usually succeed in the first round as we take the nonce from blockinfo
-            // It's however usefull when adding new blocks with unknown nonces (you should add the found block to blockinfo)
-            while (!CheckProofOfWork(pblock->GetHash(), pblock->nBits, chainparams.GetConsensus())) {
-                pblock->nNonce++;
-            }
         }
         std::shared_ptr<const CBlock> shared_pblock = std::make_shared<const CBlock>(*pblock);
         BOOST_CHECK(ProcessNewBlock(chainparams, shared_pblock, true, nullptr));
         pblock->hashPrevBlock = pblock->GetHash();
-    };
-
-    for (unsigned int i = 0; i < sizeof(blockinfo)/sizeof(*blockinfo) - 1; ++i)
-    {
-        createAndProcessEmptyBlock();
     }
 
-    {
     LOCK(cs_main);
+    LOCK(::mempool.cs);
 
     // Just to make sure we can still make simple blocks
     BOOST_CHECK(pblocktemplate = AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey));
 
-    const CAmount BLOCKSUBSIDY = 500*COIN;
+    const CAmount BLOCKSUBSIDY = 50*COIN;
     const CAmount LOWFEE = CENT;
     const CAmount HIGHFEE = COIN;
     const CAmount HIGHERFEE = 4*COIN;
@@ -285,7 +280,8 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
         mempool.addUnchecked(hash, entry.Fee(LOWFEE).Time(GetTime()).SpendsCoinbase(spendsCoinbase).FromTx(tx));
         tx.vin[0].prevout.hash = hash;
     }
-    BOOST_CHECK_THROW(AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey), std::runtime_error);
+
+    BOOST_CHECK_EXCEPTION(AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey), std::runtime_error, HasReason("bad-blk-sigops"));
     mempool.clear();
 
     tx.vin[0].prevout.hash = txFirst[0]->GetHash();
@@ -296,7 +292,7 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
         hash = tx.GetHash();
         bool spendsCoinbase = i == 0; // only first tx spends coinbase
         // If we do set the # of sig ops in the CTxMemPoolEntry, template creation passes
-        mempool.addUnchecked(hash, entry.Fee(LOWFEE).Time(GetTime()).SpendsCoinbase(spendsCoinbase).SigOps(20).FromTx(tx));
+        mempool.addUnchecked(hash, entry.Fee(LOWFEE).Time(GetTime()).SpendsCoinbase(spendsCoinbase).SigOpsCost(80).FromTx(tx));
         tx.vin[0].prevout.hash = hash;
     }
     BOOST_CHECK(pblocktemplate = AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey));
@@ -325,7 +321,7 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     // orphan in mempool, template creation fails
     hash = tx.GetHash();
     mempool.addUnchecked(hash, entry.Fee(LOWFEE).Time(GetTime()).FromTx(tx));
-    BOOST_CHECK_THROW(AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey), std::runtime_error);
+    BOOST_CHECK_EXCEPTION(AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey), std::runtime_error, HasReason("bad-txns-inputs-missingorspent"));
     mempool.clear();
 
     // child with higher feerate than parent
@@ -353,10 +349,51 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     hash = tx.GetHash();
     // give it a fee so it'll get mined
     mempool.addUnchecked(hash, entry.Fee(LOWFEE).Time(GetTime()).SpendsCoinbase(false).FromTx(tx));
-    BOOST_CHECK_THROW(AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey), std::runtime_error);
+    // Should throw bad-cb-multiple
+    BOOST_CHECK_EXCEPTION(AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey), std::runtime_error, HasReason("bad-cb-multiple"));
     mempool.clear();
 
-    // invalid (pre-p2sh) txn in mempool, template creation fails
+    // double spend txn pair in mempool, template creation fails
+    tx.vin[0].prevout.hash = txFirst[0]->GetHash();
+    tx.vin[0].scriptSig = CScript() << OP_1;
+    tx.vout[0].nValue = BLOCKSUBSIDY-HIGHFEE;
+    tx.vout[0].scriptPubKey = CScript() << OP_1;
+    hash = tx.GetHash();
+    mempool.addUnchecked(hash, entry.Fee(HIGHFEE).Time(GetTime()).SpendsCoinbase(true).FromTx(tx));
+    tx.vout[0].scriptPubKey = CScript() << OP_2;
+    hash = tx.GetHash();
+    mempool.addUnchecked(hash, entry.Fee(HIGHFEE).Time(GetTime()).SpendsCoinbase(true).FromTx(tx));
+    BOOST_CHECK_EXCEPTION(AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey), std::runtime_error, HasReason("bad-txns-inputs-missingorspent"));
+    mempool.clear();
+
+    // subsidy changing
+    int nHeight = chainActive.Height();
+    // Create an actual 209999-long block chain (without valid blocks).
+    while (chainActive.Tip()->nHeight < 839999) {
+        CBlockIndex* prev = chainActive.Tip();
+        CBlockIndex* next = new CBlockIndex();
+        next->phashBlock = new uint256(InsecureRand256());
+        pcoinsTip->SetBestBlock(next->GetBlockHash());
+        next->pprev = prev;
+        next->nHeight = prev->nHeight + 1;
+        next->BuildSkip();
+        chainActive.SetTip(next);
+    }
+    BOOST_CHECK(pblocktemplate = AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey));
+    // Extend to a 210000-long block chain.
+    while (chainActive.Tip()->nHeight < 840000) {
+        CBlockIndex* prev = chainActive.Tip();
+        CBlockIndex* next = new CBlockIndex();
+        next->phashBlock = new uint256(InsecureRand256());
+        pcoinsTip->SetBestBlock(next->GetBlockHash());
+        next->pprev = prev;
+        next->nHeight = prev->nHeight + 1;
+        next->BuildSkip();
+        chainActive.SetTip(next);
+    }
+    BOOST_CHECK(pblocktemplate = AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey));
+
+    // invalid p2sh txn in mempool, template creation fails
     tx.vin[0].prevout.hash = txFirst[0]->GetHash();
     tx.vin[0].prevout.n = 0;
     tx.vin[0].scriptSig = CScript() << OP_1;
@@ -370,56 +407,18 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     tx.vout[0].nValue -= LOWFEE;
     hash = tx.GetHash();
     mempool.addUnchecked(hash, entry.Fee(LOWFEE).Time(GetTime()).SpendsCoinbase(false).FromTx(tx));
-    BOOST_CHECK_THROW(AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey), std::runtime_error);
+    // Should throw block-validation-failed
+    BOOST_CHECK_EXCEPTION(AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey), std::runtime_error, HasReason("block-validation-failed"));
     mempool.clear();
 
-    // double spend txn pair in mempool, template creation fails
-    tx.vin[0].prevout.hash = txFirst[0]->GetHash();
-    tx.vin[0].scriptSig = CScript() << OP_1;
-    tx.vout[0].nValue = BLOCKSUBSIDY-HIGHFEE;
-    tx.vout[0].scriptPubKey = CScript() << OP_1;
-    hash = tx.GetHash();
-    mempool.addUnchecked(hash, entry.Fee(HIGHFEE).Time(GetTime()).SpendsCoinbase(true).FromTx(tx));
-    tx.vout[0].scriptPubKey = CScript() << OP_2;
-    hash = tx.GetHash();
-    mempool.addUnchecked(hash, entry.Fee(HIGHFEE).Time(GetTime()).SpendsCoinbase(true).FromTx(tx));
-    BOOST_CHECK_THROW(AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey), std::runtime_error);
-    mempool.clear();
-
-    // subsidy changing
-    // int nHeight = chainActive.Height();
-    // // Create an actual 209999-long block chain (without valid blocks).
-    // while (chainActive.Tip()->nHeight < 209999) {
-    //     CBlockIndex* prev = chainActive.Tip();
-    //     CBlockIndex* next = new CBlockIndex();
-    //     next->phashBlock = new uint256(InsecureRand256());
-    //     pcoinsTip->SetBestBlock(next->GetBlockHash());
-    //     next->pprev = prev;
-    //     next->nHeight = prev->nHeight + 1;
-    //     next->BuildSkip();
-    //     chainActive.SetTip(next);
-    // }
-    //BOOST_CHECK(pblocktemplate = BlockAssembler(chainparams).CreateNewBlock(scriptPubKey));
-    // // Extend to a 210000-long block chain.
-    // while (chainActive.Tip()->nHeight < 210000) {
-    //     CBlockIndex* prev = chainActive.Tip();
-    //     CBlockIndex* next = new CBlockIndex();
-    //     next->phashBlock = new uint256(InsecureRand256());
-    //     pcoinsTip->SetBestBlock(next->GetBlockHash());
-    //     next->pprev = prev;
-    //     next->nHeight = prev->nHeight + 1;
-    //     next->BuildSkip();
-    //     chainActive.SetTip(next);
-    // }
-    //BOOST_CHECK(pblocktemplate = BlockAssembler(chainparams).CreateNewBlock(scriptPubKey));
-    // // Delete the dummy blocks again.
-    // while (chainActive.Tip()->nHeight > nHeight) {
-    //     CBlockIndex* del = chainActive.Tip();
-    //     chainActive.SetTip(del->pprev);
-    //     pcoinsTip->SetBestBlock(del->pprev->GetBlockHash());
-    //     delete del->phashBlock;
-    //     delete del;
-    // }
+    // Delete the dummy blocks again.
+    while (chainActive.Tip()->nHeight > nHeight) {
+        CBlockIndex* del = chainActive.Tip();
+        chainActive.SetTip(del->pprev);
+        pcoinsTip->SetBestBlock(del->pprev->GetBlockHash());
+        delete del->phashBlock;
+        delete del;
+    }
 
     // non-final txs in mempool
     SetMockTime(chainActive.Tip()->GetMedianTimePast()+1);
@@ -503,26 +502,17 @@ BOOST_AUTO_TEST_CASE(CreateNewBlock_validity)
     // it into the template because we still check IsFinalTx in CreateNewBlock,
     // but relative locked txs will if inconsistently added to mempool.
     // For now these will still generate a valid template until BIP68 soft fork
-    BOOST_CHECK_EQUAL(pblocktemplate->block.vtx.size(), 3);
+    BOOST_CHECK_EQUAL(pblocktemplate->block.vtx.size(), 3U);
     // However if we advance height by 1 and time by 512, all of them should be mined
     for (int i = 0; i < CBlockIndex::nMedianTimeSpan; i++)
         chainActive.Tip()->GetAncestor(chainActive.Tip()->nHeight - i)->nTime += 512; //Trick the MedianTimePast
-
-    } // unlock cs_main while calling createAndProcessEmptyBlock
-
-    // Mine an empty block
-    createAndProcessEmptyBlock();
-
-    LOCK(cs_main);
-
+    chainActive.Tip()->nHeight++;
     SetMockTime(chainActive.Tip()->GetMedianTimePast() + 1);
 
     BOOST_CHECK(pblocktemplate = AssemblerForTest(chainparams).CreateNewBlock(scriptPubKey));
-    BOOST_CHECK_EQUAL(pblocktemplate->block.vtx.size(), 5);
+    BOOST_CHECK_EQUAL(pblocktemplate->block.vtx.size(), 5U);
 
-    CValidationState state;
-    InvalidateBlock(state, chainparams, chainActive.Tip());
-
+    chainActive.Tip()->nHeight--;
     SetMockTime(0);
     mempool.clear();
 

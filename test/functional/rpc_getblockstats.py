@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2017-2017 The Bitcoin Core developers
+# Copyright (c) 2017-2018 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -27,7 +27,7 @@ class GetblockstatsTest(BitcoinTestFramework):
         'maxfee',
         'maxfeerate',
         'medianfee',
-        'medianfeerate',
+        'feerate_percentiles',
         'minfee',
         'minfeerate',
         'totalfee',
@@ -35,24 +35,24 @@ class GetblockstatsTest(BitcoinTestFramework):
     ]
 
     def add_options(self, parser):
-        parser.add_option('--gen-test-data', dest='gen_test_data',
-                          default=False, action='store_true',
-                          help='Generate test data')
-        parser.add_option('--test-data', dest='test_data',
-                          default='data/rpc_getblockstats.json',
-                          action='store', metavar='FILE',
-                          help='Test data file')
+        parser.add_argument('--gen-test-data', dest='gen_test_data',
+                            default=False, action='store_true',
+                            help='Generate test data')
+        parser.add_argument('--test-data', dest='test_data',
+                            default='data/rpc_getblockstats.json',
+                            action='store', metavar='FILE',
+                            help='Test data file')
 
-    # def set_test_params(self):
     def set_test_params(self):
         self.num_nodes = 2
-        self.extra_args = [['-txindex'], ['-txindex=0', '-paytxfee=0.003']]
+        self.extra_args = [['-txindex'], ['-paytxfee=0.003']]
         self.setup_clean_chain = True
 
     def get_stats(self):
         return [self.nodes[0].getblockstats(hash_or_height=self.start_height + i) for i in range(self.max_stat_pos+1)]
 
     def generate_test_data(self, filename):
+        mocktime = time.time()
         self.nodes[0].generate(101)
 
         self.nodes[0].sendtoaddress(address=self.nodes[1].getnewaddress(), amount=10, subtractfeefromamount=True)
@@ -78,22 +78,22 @@ class GetblockstatsTest(BitcoinTestFramework):
 
         to_dump = {
             'blocks': blocks,
-            'mocktime': int(self.mocktime),
+            'mocktime': int(mocktime),
             'stats': self.expected_stats,
         }
-        with open(filename, 'w') as f:
+        with open(filename, 'w', encoding="utf8") as f:
             json.dump(to_dump, f, sort_keys=True, indent=2)
 
     def load_test_data(self, filename):
-        with open(filename, 'r') as f:
+        with open(filename, 'r', encoding="utf8") as f:
             d = json.load(f)
             blocks = d['blocks']
-            self.mocktime = d['mocktime']
+            mocktime = d['mocktime']
             self.expected_stats = d['stats']
 
         # Set the timestamps from the file so that the nodes can get out of Initial Block Download
-        self.nodes[0].setmocktime(self.mocktime)
-        self.nodes[1].setmocktime(self.mocktime)
+        self.nodes[0].setmocktime(mocktime)
+        self.nodes[1].setmocktime(mocktime)
 
         for b in blocks:
             self.nodes[0].submitblock(b)

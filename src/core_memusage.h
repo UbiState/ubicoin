@@ -1,13 +1,13 @@
-// Copyright (c) 2015 The Bitcoin Core developers
+// Copyright (c) 2015-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_CORE_MEMUSAGE_H
 #define BITCOIN_CORE_MEMUSAGE_H
 
-#include "primitives/transaction.h"
-#include "primitives/block.h"
-#include "memusage.h"
+#include <primitives/transaction.h>
+#include <primitives/block.h>
+#include <memusage.h>
 
 static inline size_t RecursiveDynamicUsage(const CScript& script) {
     return memusage::DynamicUsage(script);
@@ -18,7 +18,11 @@ static inline size_t RecursiveDynamicUsage(const COutPoint& out) {
 }
 
 static inline size_t RecursiveDynamicUsage(const CTxIn& in) {
-    return RecursiveDynamicUsage(in.scriptSig) + RecursiveDynamicUsage(in.prevout);
+    size_t mem = RecursiveDynamicUsage(in.scriptSig) + RecursiveDynamicUsage(in.prevout) + memusage::DynamicUsage(in.scriptWitness.stack);
+    for (std::vector<std::vector<unsigned char> >::const_iterator it = in.scriptWitness.stack.begin(); it != in.scriptWitness.stack.end(); it++) {
+         mem += memusage::DynamicUsage(*it);
+    }
+    return mem;
 }
 
 static inline size_t RecursiveDynamicUsage(const CTxOut& out) {

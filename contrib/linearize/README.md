@@ -2,10 +2,6 @@
 Construct a linear, no-fork, best version of the Ubicoin blockchain. The scripts
 run using Python 3 but are compatible with Python 2.
 
-## Step 0: Install ubicoin_hash
-
-https://github.com/UbiState/ubicoin_hash
-
 ## Step 1: Download hash list
 
     $ ./linearize-hashes.py linearize.cfg > hashlist.txt
@@ -16,7 +12,7 @@ Required configuration file settings for linearize-hashes:
 
 Optional config file setting for linearize-hashes:
 * RPC: `host`  (Default: `127.0.0.1`)
-* RPC: `port`  (Default: `9998`)
+* RPC: `port`  (Default: `9332`)
 * Blockchain: `min_height`, `max_height`
 * `rev_hash_bytes`: If true, the written block hash list will be
 byte-reversed. (In other words, the hash returned by getblockhash will have its
@@ -42,15 +38,15 @@ will be printed.
 * `file_timestamp`: Set each file's last-accessed and last-modified times,
 respectively, to the current time and to the timestamp of the most recent block
 written to the script's blockchain.
-* `genesis`: The hash of the genesis block in the blockchain. (default is '00000ffd590b1485b3caadc19b22e6379c733355108f107a430458cdf3407ab6', mainnet)
+* `genesis`: The hash of the genesis block in the blockchain.
 * `input`: ubicoind blocks/ directory containing blkNNNNN.dat
 * `hashlist`: text file containing list of block hashes created by
 linearize-hashes.py.
 * `max_out_sz`: Maximum size for files created by the `output_file` option.
 (Default: `1000*1000*1000 bytes`)
-* `netmagic`: Network magic number. (default is 'bf0c6bbd', mainnet)
+* `netmagic`: Network magic number.
 * `out_of_order_cache_sz`: If out-of-order blocks are being read, the block can
-be written to a cache so that the blockchain doesn't have to be seeked again.
+be written to a cache so that the blockchain doesn't have to be sought again.
 This option specifies the cache size. (Default: `100*1000*1000 bytes`)
 * `rev_hash_bytes`: If true, the block hash list written by linearize-hashes.py
 will be byte-reversed when read by linearize-data.py. See the linearize-hashes

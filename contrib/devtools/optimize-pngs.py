@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2015 The Bitcoin Core developers
+# Copyright (c) 2014-2018 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 '''
@@ -26,12 +26,7 @@ def content_hash(filename):
 
 pngcrush = 'pngcrush'
 git = 'git'
-folders = [
-    "src/qt/res/movies",
-    "src/qt/res/icons",
-    "src/qt/res/images",
-    "share/pixmaps"
-]
+folders = ["src/qt/res/movies", "src/qt/res/icons", "share/pixmaps"]
 basePath = subprocess.check_output([git, 'rev-parse', '--show-toplevel'], universal_newlines=True).rstrip('\n')
 totalSaveBytes = 0
 noHashChange = True
@@ -46,19 +41,19 @@ for folder in folders:
             file_path = os.path.join(absFolder, file)
             fileMetaMap = {'file' : file, 'osize': os.path.getsize(file_path), 'sha256Old' : file_hash(file_path)}
             fileMetaMap['contentHashPre'] = content_hash(file_path)
-        
+
             try:
                 subprocess.call([pngcrush, "-brute", "-ow", "-rem", "gAMA", "-rem", "cHRM", "-rem", "iCCP", "-rem", "sRGB", "-rem", "alla", "-rem", "text", file_path],
                                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             except:
                 print("pngcrush is not installed, aborting...")
                 sys.exit(0)
-        
+
             #verify
             if "Not a PNG file" in subprocess.check_output([pngcrush, "-n", "-v", file_path], stderr=subprocess.STDOUT, universal_newlines=True):
                 print("PNG file "+file+" is corrupted after crushing, check out pngcursh version")
                 sys.exit(1)
-            
+
             fileMetaMap['sha256New'] = file_hash(file_path)
             fileMetaMap['contentHashPost'] = content_hash(file_path)
 
@@ -77,5 +72,5 @@ for fileDict in outputArray:
     totalSaveBytes += fileDict['osize'] - fileDict['psize']
     noHashChange = noHashChange and (oldHash == newHash)
     print(fileDict['file']+"\n  size diff from: "+str(fileDict['osize'])+" to: "+str(fileDict['psize'])+"\n  old sha256: "+oldHash+"\n  new sha256: "+newHash+"\n")
-    
+
 print("completed. Checksum stable: "+str(noHashChange)+". Total reduction: "+str(totalSaveBytes)+" bytes")

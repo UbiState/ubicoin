@@ -1,16 +1,16 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin Core developers
+// Copyright (c) 2009-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_CHAIN_H
 #define BITCOIN_CHAIN_H
 
-#include "arith_uint256.h"
-#include "primitives/block.h"
-#include "pow.h"
-#include "tinyformat.h"
-#include "uint256.h"
+#include <arith_uint256.h>
+#include <consensus/params.h>
+#include <primitives/block.h>
+#include <tinyformat.h>
+#include <uint256.h>
 
 #include <vector>
 
@@ -91,7 +91,7 @@ struct CDiskBlockPos
 
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action) {
-        READWRITE(VARINT(nFile));
+        READWRITE(VARINT(nFile, VarIntMode::NONNEGATIVE_SIGNED));
         READWRITE(VARINT(nPos));
     }
 
@@ -159,7 +159,7 @@ enum BlockStatus: uint32_t {
     BLOCK_FAILED_CHILD       =   64, //!< descends from failed block
     BLOCK_FAILED_MASK        =   BLOCK_FAILED_VALID | BLOCK_FAILED_CHILD,
 
-    BLOCK_CONFLICT_CHAINLOCK =   128, //!< conflicts with chainlock system
+    BLOCK_OPT_WITNESS       =   128, //!< block data in blk*.data was received with a witness-enforcing client
 };
 
 /** The block chain is a tree shaped structure starting with the
@@ -204,19 +204,19 @@ public:
     unsigned int nChainTx;
 
     //! Verification status of this block. See enum BlockStatus
-    unsigned int nStatus;
+    uint32_t nStatus;
 
     //! block header
-    int nVersion;
+    int32_t nVersion;
     uint256 hashMerkleRoot;
-    unsigned int nTime;
-    unsigned int nBits;
-    unsigned int nNonce;
+    uint32_t nTime;
+    uint32_t nBits;
+    uint32_t nNonce;
 
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
     int32_t nSequenceId;
 
-    //! (memory only) Maximum nTime in the chain upto and including this block.
+    //! (memory only) Maximum nTime in the chain up to and including this block.
     unsigned int nTimeMax;
 
     void SetNull()
@@ -247,7 +247,7 @@ public:
         SetNull();
     }
 
-    CBlockIndex(const CBlockHeader& block)
+    explicit CBlockIndex(const CBlockHeader& block)
     {
         SetNull();
 
@@ -294,6 +294,11 @@ public:
         return *phashBlock;
     }
 
+    uint256 GetBlockPoWHash() const
+    {
+        return GetBlockHeader().GetPoWHash();
+    }
+
     int64_t GetBlockTime() const
     {
         return (int64_t)nTime;
@@ -304,7 +309,7 @@ public:
         return (int64_t)nTimeMax;
     }
 
-    enum { nMedianTimeSpan=11 };
+    static constexpr int nMedianTimeSpan = 11;
 
     int64_t GetMedianTimePast() const
     {
@@ -370,16 +375,13 @@ const CBlockIndex* LastCommonAncestor(const CBlockIndex* pa, const CBlockIndex* 
 class CDiskBlockIndex : public CBlockIndex
 {
 public:
-    uint256 hash;
     uint256 hashPrev;
 
     CDiskBlockIndex() {
-        hash = uint256();
         hashPrev = uint256();
     }
 
     explicit CDiskBlockIndex(const CBlockIndex* pindex) : CBlockIndex(*pindex) {
-        hash = (hash == uint256() ? pindex->GetBlockHash() : hash);
         hashPrev = (pprev ? pprev->GetBlockHash() : uint256());
     }
 
@@ -389,20 +391,18 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action) {
         int _nVersion = s.GetVersion();
         if (!(s.GetType() & SER_GETHASH))
-            READWRITE(VARINT(_nVersion));
+            READWRITE(VARINT(_nVersion, VarIntMode::NONNEGATIVE_SIGNED));
 
-        READWRITE(VARINT(nHeight));
+        READWRITE(VARINT(nHeight, VarIntMode::NONNEGATIVE_SIGNED));
         READWRITE(VARINT(nStatus));
         READWRITE(VARINT(nTx));
         if (nStatus & (BLOCK_HAVE_DATA | BLOCK_HAVE_UNDO))
-            READWRITE(VARINT(nFile));
+            READWRITE(VARINT(nFile, VarIntMode::NONNEGATIVE_SIGNED));
         if (nStatus & BLOCK_HAVE_DATA)
             READWRITE(VARINT(nDataPos));
         if (nStatus & BLOCK_HAVE_UNDO)
             READWRITE(VARINT(nUndoPos));
 
-        // block hash
-        READWRITE(hash);
         // block header
         READWRITE(this->nVersion);
         READWRITE(hashPrev);
@@ -414,8 +414,6 @@ public:
 
     uint256 GetBlockHash() const
     {
-        if(hash != uint256()) return hash;
-        // should never really get here, keeping this as a fallback
         CBlockHeader block;
         block.nVersion        = nVersion;
         block.hashPrevBlock   = hashPrev;

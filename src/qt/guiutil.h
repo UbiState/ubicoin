@@ -1,15 +1,16 @@
-// Copyright (c) 2011-2015 The Bitcoin Core developers
+// Copyright (c) 2011-2018 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_GUIUTIL_H
 #define BITCOIN_QT_GUIUTIL_H
 
-#include "amount.h"
-#include "fs.h"
+#include <amount.h>
+#include <fs.h>
 
 #include <QEvent>
 #include <QHeaderView>
+#include <QItemDelegate>
 #include <QMessageBox>
 #include <QObject>
 #include <QProgressBar>
@@ -20,6 +21,11 @@
 class QValidatedLineEdit;
 class SendCoinsRecipient;
 
+namespace interfaces
+{
+    class Node;
+}
+
 QT_BEGIN_NAMESPACE
 class QAbstractItemView;
 class QDateTime;
@@ -29,51 +35,10 @@ class QUrl;
 class QWidget;
 QT_END_NAMESPACE
 
-/** Utility functions used by the Ubicoin Qt UI.
+/** Utility functions used by the Bitcoin Qt UI.
  */
 namespace GUIUtil
 {
-    /* Enumeration of possible "colors" */
-    enum class ThemedColor {
-        /* Transaction list -- TX status decoration - default color */
-        DEFAULT,
-        /* Transaction list -- unconfirmed transaction */
-        UNCONFIRMED,
-        /* Transaction list -- negative amount */
-        NEGATIVE,
-        /* Transaction list -- bare address (without label) */
-        BAREADDRESS,
-        /* Transaction list -- TX status decoration - open until date */
-        TX_STATUS_OPENUNTILDATE,
-        /* Transaction list -- TX status decoration - offline */
-        TX_STATUS_OFFLINE,
-        /* Transaction list -- TX status decoration - danger, tx needs attention */
-        TX_STATUS_DANGER,
-        /* Transaction list -- TX status decoration - LockedByInstantSend color */
-        TX_STATUS_LOCKED,
-    };
-
-    /* Enumeration of possible "styles" */
-    enum class ThemedStyle {
-        /* Invalid field background style */
-        TS_INVALID,
-        /* Failed operation text style */
-        TS_ERROR,
-        /* Failed operation text style */
-        TS_SUCCESS,
-        /* Comand text style */
-        TS_COMMAND,
-        /* General text styles */
-        TS_PRIMARY,
-        TS_SECONDARY,
-    };
-
-    /** Helper to get colors for various themes which can't be applied via css for some reason */
-    QColor getThemedQColor(ThemedColor color);
-
-    /** Helper to get css style strings which are injected into rich text through qt */
-    QString getThemedStyleQString(ThemedStyle style);
-
     // Create human-readable string from date
     QString dateTimeStr(const QDateTime &datetime);
     QString dateTimeStr(qint64 nTime);
@@ -81,17 +46,16 @@ namespace GUIUtil
     // Return a monospace font
     QFont fixedPitchFont();
 
-    // Set up widgets for address and amounts
+    // Set up widget for address
     void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent);
-    void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "ubicoin:" URI into recipient object, return true on successful parsing
+    // Parse "bitcoin:" URI into recipient object, return true on successful parsing
     bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out);
     bool parseBitcoinURI(QString uri, SendCoinsRecipient *out);
     QString formatBitcoinURI(const SendCoinsRecipient &info);
 
     // Returns true if given address+amount meets "dust" definition
-    bool isDust(const QString& address, const CAmount& amount);
+    bool isDust(interfaces::Node& node, const QString& address, const CAmount& amount);
 
     // HTML escaping for rich text controls
     QString HtmlEscape(const QString& str, bool fMultiLine=false);
@@ -153,15 +117,9 @@ namespace GUIUtil
 
     // Open debug.log
     void openDebugLogfile();
-	
-    // Open ubicoin.conf
-    void openConfigfile();	
 
-    // Browse backup folder
-    void showBackups();
-
-    // Replace invalid default fonts with known good ones
-    void SubstituteFonts(const QString& language);
+    // Open the config file
+    bool openBitcoinConf();
 
     /** Qt event filter that intercepts ToolTipChange events, and replaces the tooltip with a rich text
       representation if needed. This assures that Qt can word-wrap long tooltip messages.
@@ -185,7 +143,7 @@ namespace GUIUtil
      * Makes a QTableView last column feel as if it was being resized from its left border.
      * Also makes sure the column widths are never larger than the table's viewport.
      * In Qt, all columns are resizable from the right, but it's not intuitive resizing the last column from the right.
-     * Usually our second to last columns behave as if stretched, and when on strech mode, columns aren't resizable
+     * Usually our second to last columns behave as if stretched, and when on stretch mode, columns aren't resizable
      * interactively or programmatically.
      *
      * This helper object takes care of this issue.
@@ -223,12 +181,6 @@ namespace GUIUtil
     bool GetStartOnSystemStartup();
     bool SetStartOnSystemStartup(bool fAutoStart);
 
-    /** Modify Qt network specific settings on migration */
-    void migrateQtSettings();
-
-    /** Load global CSS theme */
-    QString loadStyleSheet();
-
     /* Convert QString to OS specific boost path through UTF-8 */
     fs::path qstringToBoostPath(const QString &path);
 
@@ -249,6 +201,10 @@ namespace GUIUtil
 
     QString formatNiceTimeOffset(qint64 secs);
 
+    QString formatBytes(uint64_t bytes);
+
+    qreal calculateIdealFontSize(int width, const QString& text, QFont font, qreal minPointSize = 4, qreal startPointSize = 14);
+
     class ClickableLabel : public QLabel
     {
         Q_OBJECT
@@ -261,11 +217,11 @@ namespace GUIUtil
     protected:
         void mouseReleaseEvent(QMouseEvent *event);
     };
-    
+
     class ClickableProgressBar : public QProgressBar
     {
         Q_OBJECT
-        
+
     Q_SIGNALS:
         /** Emitted when the progressbar is clicked. The relative mouse coordinates of the click are
          * passed to the signal.
@@ -275,20 +231,20 @@ namespace GUIUtil
         void mouseReleaseEvent(QMouseEvent *event);
     };
 
-#if defined(Q_OS_MAC) && QT_VERSION >= 0x050000
-    // workaround for Qt OSX Bug:
-    // https://bugreports.qt-project.org/browse/QTBUG-15631
-    // QProgressBar uses around 10% CPU even when app is in background
-    class ProgressBar : public ClickableProgressBar
-    {
-        bool event(QEvent *e) {
-            return (e->type() != QEvent::StyleAnimationUpdate) ? QProgressBar::event(e) : false;
-        }
-    };
-#else
     typedef ClickableProgressBar ProgressBar;
-#endif
 
+    class ItemDelegate : public QItemDelegate
+    {
+        Q_OBJECT
+    public:
+        ItemDelegate(QObject* parent) : QItemDelegate(parent) {}
+
+    Q_SIGNALS:
+        void keyEscapePressed();
+
+    private:
+        bool eventFilter(QObject *object, QEvent *event);
+    };
 } // namespace GUIUtil
 
 #endif // BITCOIN_QT_GUIUTIL_H

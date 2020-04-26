@@ -7,10 +7,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/UbiState/ubicoin-detached-sigs.git"
+- "url": "https://github.com/ubicoin-project/ubicoin-detached-sigs.git"
   "dir": "signature"
 files:
-- "ubicoincore-osx-unsigned.tar.gz"
+- "ubicoin-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -19,7 +19,7 @@ script: |
 
   # Create global faketime wrappers
   for prog in ${FAKETIME_PROGS}; do
-    echo '#!/bin/bash' > ${WRAP_DIR}/${prog}
+    echo '#!/usr/bin/env bash' > ${WRAP_DIR}/${prog}
     echo "REAL=\`which -a ${prog} | grep -v ${WRAP_DIR}/${prog} | head -1\`" >> ${WRAP_DIR}/${prog}
     echo 'export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/faketime/libfaketime.so.1' >> ${WRAP_DIR}/${prog}
     echo "export FAKETIME=\"${REFERENCE_DATETIME}\"" >> ${WRAP_DIR}/${prog}
@@ -27,8 +27,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=ubicoincore-osx-unsigned.tar.gz
-  SIGNED=ubicoincore-osx-signed.dmg
+  UNSIGNED=ubicoin-osx-unsigned.tar.gz
+  SIGNED=ubicoin-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"
