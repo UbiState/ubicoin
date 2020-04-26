@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
+#include <config/ubicoin-config.h>
 #endif
 
 #include <qt/splashscreen.h>
@@ -66,7 +66,7 @@ SplashScreen::SplashScreen(interfaces::Node& node, Qt::WindowFlags f, const Netw
     QRect rGradient(QPoint(0,0), splashSize);
     pixPaint.fillRect(rGradient, gradient);
 
-    // draw the bitcoin icon, expected size of PNG: 1024x1024
+    // draw the ubicoin icon, expected size of PNG: 1024x1024
     QRect rectIcon(QPoint(-70,-30), QSize(300,300));
 
     const QSize requiredSize(1024,1024);

@@ -18,7 +18,7 @@ class RPCZMQTest(BitcoinTestFramework):
 
     def skip_test_if_missing_module(self):
         self.skip_if_no_py3_zmq()
-        self.skip_if_no_bitcoind_zmq()
+        self.skip_if_no_ubicoind_zmq()
 
     def run_test(self):
         self._test_getzmqnotifications()

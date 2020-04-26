@@ -82,7 +82,7 @@ version v0.4.3 or any version from v0.5.2 onward.
   will affect you at the pool operator’s discretion, which must be no
   later than BIP65 achieving its 951/1001 status.
 
-[BIP65]: https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki
+[BIP65]: https://github.com/ubicoin/bips/blob/master/bip-0065.mediawiki
 
 
 Windows bug fix for corrupted UTXO database on unclean shutdowns
@@ -95,7 +95,7 @@ remain unsafe, this release no longer relies on memory-mapped files for
 the UTXO database, which significantly reduced the frequency of unclean
 shutdowns leading to required reindexes during testing.
 
-For more information, see: <https://github.com/bitcoin/bitcoin/pull/6917>
+For more information, see: <https://github.com/ubicoin/ubicoin/pull/6917>
 
 Other fixes for database corruption on Windows are expected in the
 next major release.

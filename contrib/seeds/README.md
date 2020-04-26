@@ -11,7 +11,7 @@ to addrman with).
 The seeds compiled into the release are created from poolers's DNS seed data, like this:
 
     curl -s https://www.ubicoinpool.org/seeds.txt > seeds_main.txt
-    python3 makeseeds.py < seeds_main.txt > nodes_main.txt
+    python3 makeseeds.py < seeds-main.txt > nodes-main.txt
     python3 generate-seeds.py . > ../../src/chainparamsseeds.h
 
 ## Dependencies
