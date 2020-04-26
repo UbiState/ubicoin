@@ -1,6 +1,10 @@
 Bitcoin Core version 0.17.1 is now available from:
 
+<<<<<<< HEAD
   <https://ubicoincore.org/bin/ubicoin-core-0.17.1/>
+=======
+  <https://bitcoincore.org/bin/ubicoin-core-0.17.1/>
+>>>>>>> 2f45d345c3d4703d7e873a7052bfb3c6fa356154
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.

@@ -35,7 +35,11 @@
  *
  * The software is a community-driven open source project, released under the MIT license.
  *
+<<<<<<< HEAD:src/ubicoind.cpp
  * See https://github.com/ubicoin/ubicoin and https://ubicoincore.org/ for further information about the project.
+=======
+ * See https://github.com/ubicoin/ubicoin and https://bitcoincore.org/ for further information about the project.
+>>>>>>> 2f45d345c3d4703d7e873a7052bfb3c6fa356154:src/bitcoind.cpp
  *
  * \section Navigation
  * Use the buttons <code>Namespaces</code>, <code>Classes</code> or <code>Files</code> at the top of the page to start navigating the code.

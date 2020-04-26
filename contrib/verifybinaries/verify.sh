@@ -4,7 +4,11 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 ###   This script attempts to download the signature file SHA256SUMS.asc from
+<<<<<<< HEAD
 ###   ubicoincore.org and ubicoin.org and compares them.
+=======
+###   bitcoincore.org and ubicoin.org and compares them.
+>>>>>>> 2f45d345c3d4703d7e873a7052bfb3c6fa356154
 ###   It first checks if the signature passes, and then downloads the files specified in
 ###   the file, and checks if the hashes of these files match those that are specified
 ###   in the signature file.
@@ -24,7 +28,11 @@ TMPFILE="hashes.tmp"
 
 SIGNATUREFILENAME="SHA256SUMS.asc"
 RCSUBDIR="test"
+<<<<<<< HEAD
 HOST1="https://ubicoincore.org"
+=======
+HOST1="https://bitcoincore.org"
+>>>>>>> 2f45d345c3d4703d7e873a7052bfb3c6fa356154
 HOST2="https://ubicoin.org"
 BASEDIR="/bin/"
 VERSIONPREFIX="ubicoin-core-"
@@ -96,7 +104,11 @@ fi
 
 WGETOUT=$(wget -N -O "$SIGNATUREFILENAME.2" "$HOST2$BASEDIR$SIGNATUREFILENAME" 2>&1)
 if [ $? -ne 0 ]; then
+<<<<<<< HEAD
    echo "ubicoin.org failed to provide signature file, but ubicoincore.org did?"
+=======
+   echo "ubicoin.org failed to provide signature file, but bitcoincore.org did?"
+>>>>>>> 2f45d345c3d4703d7e873a7052bfb3c6fa356154
    echo "wget output:"
    echo "$WGETOUT"|sed 's/^/\t/g'
    clean_up $SIGNATUREFILENAME
@@ -105,7 +117,11 @@ fi
 
 SIGFILEDIFFS="$(diff $SIGNATUREFILENAME $SIGNATUREFILENAME.2)"
 if [ "$SIGFILEDIFFS" != "" ]; then
+<<<<<<< HEAD
    echo "ubicoin.org and ubicoincore.org signature files were not equal?"
+=======
+   echo "ubicoin.org and bitcoincore.org signature files were not equal?"
+>>>>>>> 2f45d345c3d4703d7e873a7052bfb3c6fa356154
    clean_up $SIGNATUREFILENAME $SIGNATUREFILENAME.2
    exit 4
 fi

@@ -888,8 +888,13 @@ For more information about segwit, please see the [segwit FAQ][], the
 [segwit wallet developers guide][] or BIPs [141][BIP141], [143][BIP143],
 [144][BIP144], and [145][BIP145].
 
+<<<<<<< HEAD
 [Segwit FAQ]: https://ubicoincore.org/en/2016/01/26/segwit-benefits/
 [segwit wallet developers guide]: https://ubicoincore.org/en/segwit_wallet_dev/
+=======
+[Segwit FAQ]: https://bitcoincore.org/en/2016/01/26/segwit-benefits/
+[segwit wallet developers guide]: https://bitcoincore.org/en/segwit_wallet_dev/
+>>>>>>> 2f45d345c3d4703d7e873a7052bfb3c6fa356154
 [BIP141]: https://github.com/ubicoin/bips/blob/master/bip-0141.mediawiki
 [BIP143]: https://github.com/ubicoin/bips/blob/master/bip-0143.mediawiki
 [BIP144]: https://github.com/ubicoin/bips/blob/master/bip-0144.mediawiki
