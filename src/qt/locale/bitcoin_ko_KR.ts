@@ -3181,7 +3181,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>HTTP 서버를 시작할 수 없습니다. 자세한 사항은 디버그 로그를 확인 하세요.</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
+        <source>UbiState Core</source>
         <translation>라이트코인 코어</translation>
     </message>
     <message>
