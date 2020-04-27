@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.ubicoin.Litecoin-Qt";
+        return @"org.ubicoin.UbiWallet";
     } else {
         return [self __bundleIdentifier];
     }
