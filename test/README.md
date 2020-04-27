@@ -6,7 +6,7 @@ etc.
 There are currently two sets of tests in this directory:
 
 - [functional](/test/functional) which test the functionality of
-litecoind and litecoin-qt by interacting with them through the RPC and P2P
+litecoind and UbiWallet by interacting with them through the RPC and P2P
 interfaces.
 - [util](/test/util) which tests the litecoin utilities, currently only
 litecoin-tx.
