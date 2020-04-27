@@ -13,7 +13,7 @@ Construct a linear, no-fork, best version of the blockchain.
 
 ### [Qos](/contrib/qos) ###
 
-A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the Litecoin network. This means one can have an always-on litecoind instance running, and another local litecoind/UbiWallet instance which connects to this node and receives blocks from it.
+A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the Litecoin network. This means one can have an always-on UbiServer instance running, and another local UbiServer/UbiWallet instance which connects to this node and receives blocks from it.
 
 ### [Seeds](/contrib/seeds) ###
 Utility to generate the pnSeed[] array that is compiled into the client.
