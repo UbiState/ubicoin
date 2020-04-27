@@ -3100,7 +3100,7 @@
         <translation>Imposibil de pornit serverul HTTP. Pentru detalii vezi logul de depanare.</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
+        <source>UbiState Core</source>
         <translation>Nucleul Litecoin</translation>
     </message>
     <message>
