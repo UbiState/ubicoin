@@ -72,9 +72,9 @@ class BitcoinTestMetaClass(type):
 
 
 class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
-    """Base class for a litecoin test script.
+    """Base class for a ubicoin test script.
 
-    Individual litecoin test scripts should subclass this class and override the set_test_params() and run_test() methods.
+    Individual ubicoin test scripts should subclass this class and override the set_test_params() and run_test() methods.
 
     Individual tests can also override the following methods to customize the test setup:
 
