@@ -43,7 +43,7 @@ Build Litecoin Core
 
 1. Clone the Litecoin Core source code and cd into `litecoin`
 
-        git clone https://github.com/litecoin-project/litecoin
+        git clone https://github.com/UbiState/litecoin
         cd litecoin
 
 2.  Build Litecoin Core:
