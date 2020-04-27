@@ -19,7 +19,7 @@ class TestBitcoinCli(BitcoinTestFramework):
         """Main test logic"""
 
         cli_response = self.nodes[0].cli("-version").send_cli()
-        assert("Litecoin Core RPC client version" in cli_response)
+        assert("UbiState Core RPC client version" in cli_response)
 
         self.log.info("Compare responses from gewalletinfo RPC and `UbiConsole getwalletinfo`")
         cli_response = self.nodes[0].cli.getwalletinfo()
