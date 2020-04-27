@@ -958,7 +958,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Litecoin Core</source>
+        <source>UbiState Core</source>
         <translation>Litecoin branduolys</translation>
     </message>
     <message>
