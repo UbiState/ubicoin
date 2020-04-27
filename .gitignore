@@ -9,7 +9,7 @@ reset-files.bash
 src/ubicoin
 src/ubiserver
 src/ubiconsole
-src/ubicoin-tx
+src/ubitx
 src/test/test_ubicoin
 src/test/test_ubicoin_fuzzy
 src/qt/test/test_ubicoin-qt
