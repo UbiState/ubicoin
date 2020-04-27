@@ -138,7 +138,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         config = configparser.ConfigParser()
         config.read_file(open(self.options.configfile))
         self.options.bitcoind = os.getenv("LITECOIND", default=config["environment"]["BUILDDIR"] + '/src/litecoind' + config["environment"]["EXEEXT"])
-        self.options.bitcoincli = os.getenv("LITECOINCLI", default=config["environment"]["BUILDDIR"] + '/src/litecoin-cli' + config["environment"]["EXEEXT"])
+        self.options.bitcoincli = os.getenv("UBICONSOLE", default=config["environment"]["BUILDDIR"] + '/src/litecoin-cli' + config["environment"]["EXEEXT"])
 
         os.environ['PATH'] = os.pathsep.join([
             os.path.join(config['environment']['BUILDDIR'], 'src'),
