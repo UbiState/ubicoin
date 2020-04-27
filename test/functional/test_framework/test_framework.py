@@ -125,7 +125,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         parser.add_argument("--pdbonfailure", dest="pdbonfailure", default=False, action="store_true",
                             help="Attach a python debugger if test fails")
         parser.add_argument("--usecli", dest="usecli", default=False, action="store_true",
-                            help="use litecoin-cli instead of RPC for all commands")
+                            help="use UbiConsole instead of RPC for all commands")
         self.add_options(parser)
         self.options = parser.parse_args()
 
@@ -138,7 +138,7 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
         config = configparser.ConfigParser()
         config.read_file(open(self.options.configfile))
         self.options.bitcoind = os.getenv("UBISERVER", default=config["environment"]["BUILDDIR"] + '/src/litecoind' + config["environment"]["EXEEXT"])
-        self.options.bitcoincli = os.getenv("UBICONSOLE", default=config["environment"]["BUILDDIR"] + '/src/litecoin-cli' + config["environment"]["EXEEXT"])
+        self.options.bitcoincli = os.getenv("UBICONSOLE", default=config["environment"]["BUILDDIR"] + '/src/UbiConsole' + config["environment"]["EXEEXT"])
 
         os.environ['PATH'] = os.pathsep.join([
             os.path.join(config['environment']['BUILDDIR'], 'src'),
