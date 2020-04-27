@@ -14,9 +14,9 @@ To add more litecoind tests, add `BOOST_AUTO_TEST_CASE` functions to the existin
 .cpp files in the `test/` directory or add new .cpp files that
 implement new BOOST_AUTO_TEST_SUITE sections.
 
-To run the litecoin-qt tests manually, launch `src/qt/test/test_litecoin-qt`
+To run the UbiWallet tests manually, launch `src/qt/test/test_UbiWallet`
 
-To add more litecoin-qt tests, add them to the `src/qt/test/` directory and
+To add more UbiWallet tests, add them to the `src/qt/test/` directory and
 the `src/qt/test/test_main.cpp` file.
 
 ### Running individual tests
