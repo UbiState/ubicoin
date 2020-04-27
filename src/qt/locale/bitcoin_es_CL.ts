@@ -2850,7 +2850,7 @@
         <translation>No se ha podido iniciar el servidor HTTP. Ver debug log para detalles.</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
+        <source>UbiState Core</source>
         <translation>litecoin core</translation>
     </message>
     <message>
