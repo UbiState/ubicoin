@@ -3022,7 +3022,7 @@
         <translation>HTTP sunucusu başlatılamadı. Ayrıntılar için debug.log dosyasına bakınız.</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
+        <source>UbiState Core</source>
         <translation>Litecoin Çekirdeği</translation>
     </message>
     <message>
