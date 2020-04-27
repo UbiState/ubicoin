@@ -119,7 +119,7 @@ test/cache/*
 .autotools
 /doc/doxygen/
 
-libubicoinconsensus.pc
+libbitcoinconsensus.pc
 contrib/devtools/split-debug.sh
 src/qt/ubiwallet.bash
 qa/pull-tester/tests-config.sh
