@@ -23,7 +23,7 @@ packages:
 - "python"
 - "rename"
 remotes:
-- "url": "https://github.com/litecoin-project/litecoin.git"
+- "url": "https://github.com/UbiState/litecoin.git"
   "dir": "litecoin"
 files: []
 script: |
