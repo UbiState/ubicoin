@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Litecoin"
-            VALUE "FileDescription",    "UbiTX (CLI Litecoin transaction editor utility)"
+            VALUE "CompanyName",        "Ubicoin"
+            VALUE "FileDescription",    "UbiTX (CLI Ubicoin transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "UbiTX"
             VALUE "LegalCopyright",     COPYRIGHT_STR
