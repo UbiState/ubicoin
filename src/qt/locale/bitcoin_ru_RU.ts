@@ -371,7 +371,7 @@
     </message>
     <message>
         <source>Litecoin</source>
-        <translation>Litecoin Core</translation>
+        <translation>UbiState Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -750,7 +750,7 @@
     </message>
     <message>
         <source>Litecoin</source>
-        <translation>Litecoin Core</translation>
+        <translation>UbiState Core</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -2152,8 +2152,8 @@
         <translation>Невозможно запустить HTTP-сервер. Для получения более детальной информации необходимо обратиться к журналу отладки.</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>UbiState Core</source>
+        <translation>UbiState Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
