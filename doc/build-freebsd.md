@@ -24,7 +24,7 @@ See [dependencies.md](dependencies.md) for a complete overview.
 
 Download the source code:
 ```
-git clone https://github.com/litecoin-project/litecoin
+git clone https://github.com/UbiState/litecoin
 ```
 
 ## Building Litecoin Core
