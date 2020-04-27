@@ -2920,7 +2920,7 @@
         <translation>غير قادر على بدء خادم ال HTTP. راجع سجل تصحيح الأخطاء للحصول على التفاصيل.</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
+        <source>UbiState Core</source>
         <translation>جوهر Litecoin</translation>
     </message>
     <message>
