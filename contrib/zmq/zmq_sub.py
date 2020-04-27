@@ -6,7 +6,7 @@
 """
     ZMQ example using python3's asyncio
 
-    Litecoind should be started with the command line arguments:
+    UbiServer should be started with the command line arguments:
         UbiServer -testnet -daemon \
                 -zmqpubrawtx=tcp://127.0.0.1:28332 \
                 -zmqpubrawblock=tcp://127.0.0.1:28332 \
