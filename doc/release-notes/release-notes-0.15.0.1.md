@@ -4,11 +4,7 @@ Bitcoin Core version *0.15.0.1* is now available from:
 
 and
 
-<<<<<<< HEAD
-  <https://ubicoincore.org/bin/ubicoin-core-0.15.0.1/>
-=======
   <https://bitcoincore.org/bin/ubicoin-core-0.15.0.1/>
->>>>>>> 2f45d345c3d4703d7e873a7052bfb3c6fa356154
 
 This is a minor bug fix for 0.15.0.
 
@@ -18,7 +14,7 @@ Please report bugs using the issue tracker at GitHub:
 
 To receive security and update notifications, please subscribe to:
 
-  <https://ubicoincore.org/en/list/announcements/join/>
+  <https://bitcoincore.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============

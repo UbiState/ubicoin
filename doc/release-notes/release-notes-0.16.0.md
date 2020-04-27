@@ -1,10 +1,6 @@
 Bitcoin Core version 0.16.0 is now available from:
 
-<<<<<<< HEAD
-  <https://ubicoincore.org/bin/ubicoin-core-0.16.0/>
-=======
   <https://bitcoincore.org/bin/ubicoin-core-0.16.0/>
->>>>>>> 2f45d345c3d4703d7e873a7052bfb3c6fa356154
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
@@ -15,7 +11,7 @@ Please report bugs using the issue tracker at GitHub:
 
 To receive security and update notifications, please subscribe to:
 
-  <https://ubicoincore.org/en/list/announcements/join/>
+  <https://bitcoincore.org/en/list/announcements/join/>
 
 How to Upgrade
 ==============
