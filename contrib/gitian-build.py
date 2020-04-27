@@ -22,8 +22,8 @@ def setup():
     else:
         programs += ['lxc', 'debootstrap']
     subprocess.check_call(['sudo', 'apt-get', 'install', '-qq'] + programs)
-    if not os.path.isdir('gitian.sigs.ltc'):
-        subprocess.check_call(['git', 'clone', 'https://github.com/UbiState/gitian.sigs.ltc.git'])
+    if not os.path.isdir('gitian.sigs.ubi'):
+        subprocess.check_call(['git', 'clone', 'https://github.com/UbiState/gitian.sigs.ubi.git'])
     if not os.path.isdir('ubicoin-detached-sigs'):
         subprocess.check_call(['git', 'clone', 'https://github.com/UbiState/ubicoin-detached-sigs.git'])
     if not os.path.isdir('gitian-builder'):
@@ -58,20 +58,20 @@ def build():
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ubicoin='+args.commit, '--url', 'ubicoin='+args.url, '../ubicoin/contrib/gitian-descriptors/gitian-linux.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs.ltc/', '../ubicoin/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs.ubi/', '../ubicoin/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call('mv build/out/ubicoin-*.tar.gz build/out/src/ubicoin-*.tar.gz ../ubicoin-binaries/'+args.version, shell=True)
 
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ubicoin='+args.commit, '--url', 'ubicoin='+args.url, '../ubicoin/contrib/gitian-descriptors/gitian-win.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs.ltc/', '../ubicoin/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs.ubi/', '../ubicoin/contrib/gitian-descriptors/gitian-win.yml'])
         subprocess.check_call('mv build/out/ubicoin-*-win-unsigned.tar.gz inputs/ubicoin-win-unsigned.tar.gz', shell=True)
         subprocess.check_call('mv build/out/ubicoin-*.zip build/out/ubicoin-*.exe ../ubicoin-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
         subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'ubicoin='+args.commit, '--url', 'ubicoin='+args.url, '../ubicoin/contrib/gitian-descriptors/gitian-osx.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs.ltc/', '../ubicoin/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs.ubi/', '../ubicoin/contrib/gitian-descriptors/gitian-osx.yml'])
         subprocess.check_call('mv build/out/ubicoin-*-osx-unsigned.tar.gz inputs/ubicoin-osx-unsigned.tar.gz', shell=True)
         subprocess.check_call('mv build/out/ubicoin-*.tar.gz build/out/ubicoin-*.dmg ../ubicoin-binaries/'+args.version, shell=True)
 
@@ -79,7 +79,7 @@ def build():
 
     if args.commit_files:
         print('\nCommitting '+args.version+' Unsigned Sigs\n')
-        os.chdir('gitian.sigs.ltc')
+        os.chdir('gitian.sigs.ubi')
         subprocess.check_call(['git', 'add', args.version+'-linux/'+args.signer])
         subprocess.check_call(['git', 'add', args.version+'-win-unsigned/'+args.signer])
         subprocess.check_call(['git', 'add', args.version+'-osx-unsigned/'+args.signer])
@@ -93,21 +93,21 @@ def sign():
     if args.windows:
         print('\nSigning ' + args.version + ' Windows')
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../ubicoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs.ltc/', '../ubicoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-signed', '--destination', '../gitian.sigs.ubi/', '../ubicoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
         subprocess.check_call('mv build/out/ubicoin-*win64-setup.exe ../ubicoin-binaries/'+args.version, shell=True)
         subprocess.check_call('mv build/out/ubicoin-*win32-setup.exe ../ubicoin-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nSigning ' + args.version + ' MacOS')
         subprocess.check_call(['bin/gbuild', '-i', '--commit', 'signature='+args.commit, '../ubicoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
-        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs.ltc/', '../ubicoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+        subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-signed', '--destination', '../gitian.sigs.ubi/', '../ubicoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
         subprocess.check_call('mv build/out/ubicoin-osx-signed.dmg ../ubicoin-binaries/'+args.version+'/ubicoin-'+args.version+'-osx.dmg', shell=True)
 
     os.chdir(workdir)
 
     if args.commit_files:
         print('\nCommitting '+args.version+' Signed Sigs\n')
-        os.chdir('gitian.sigs.ltc')
+        os.chdir('gitian.sigs.ubi')
         subprocess.check_call(['git', 'add', args.version+'-win-signed/'+args.signer])
         subprocess.check_call(['git', 'add', args.version+'-osx-signed/'+args.signer])
         subprocess.check_call(['git', 'commit', '-a', '-m', 'Add '+args.version+' signed binary sigs for '+args.signer])
@@ -118,15 +118,15 @@ def verify():
     os.chdir('gitian-builder')
 
     print('\nVerifying v'+args.version+' Linux\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-linux', '../ubicoin/contrib/gitian-descriptors/gitian-linux.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ubi/', '-r', args.version+'-linux', '../ubicoin/contrib/gitian-descriptors/gitian-linux.yml'])
     print('\nVerifying v'+args.version+' Windows\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-win-unsigned', '../ubicoin/contrib/gitian-descriptors/gitian-win.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ubi/', '-r', args.version+'-win-unsigned', '../ubicoin/contrib/gitian-descriptors/gitian-win.yml'])
     print('\nVerifying v'+args.version+' MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-osx-unsigned', '../ubicoin/contrib/gitian-descriptors/gitian-osx.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ubi/', '-r', args.version+'-osx-unsigned', '../ubicoin/contrib/gitian-descriptors/gitian-osx.yml'])
     print('\nVerifying v'+args.version+' Signed Windows\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-win-signed', '../ubicoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ubi/', '-r', args.version+'-win-signed', '../ubicoin/contrib/gitian-descriptors/gitian-win-signer.yml'])
     print('\nVerifying v'+args.version+' Signed MacOS\n')
-    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ltc/', '-r', args.version+'-osx-signed', '../ubicoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
+    subprocess.check_call(['bin/gverify', '-v', '-d', '../gitian.sigs.ubi/', '-r', args.version+'-osx-signed', '../ubicoin/contrib/gitian-descriptors/gitian-osx-signer.yml'])
 
     os.chdir(workdir)
 
