@@ -2234,8 +2234,8 @@
         <translation>Impossible de démarrer le serveur HTTP. Voir le journal de débogage pour plus de détails.</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>UbiState Core</source>
+        <translation>UbiState Core</translation>
     </message>
     <message>
         <source>Importing...</source>
