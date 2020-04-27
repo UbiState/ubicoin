@@ -15,7 +15,7 @@ UBIWALLETQT=${BITCOINQT:-$BINDIR/qt/UbiWallet}
 [ ! -x $UBISERVER ] && echo "$UBISERVER not found or not executable." && exit 1
 
 # The autodetected version git tag can screw up manpage output a little bit
-LTCVER=($($UBICONSOLE --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }'))
+UBIVER=($($UBICONSOLE --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }'))
 
 # Create a footer file with copyright content.
 # This gets autodetected fine for bitcoind if --version-string is not set,
@@ -25,8 +25,8 @@ $UBISERVER --version | sed -n '1!p' >> footer.h2m
 
 for cmd in $UBISERVER $UBICONSOLE $UBITX $UBIWALLETQT; do
   cmdname="${cmd##*/}"
-  help2man -N --version-string=${LTCVER[0]} --include=footer.h2m -o ${MANDIR}/${cmdname}.1 ${cmd}
-  sed -i "s/\\\-${LTCVER[1]}//g" ${MANDIR}/${cmdname}.1
+  help2man -N --version-string=${UBIVER[0]} --include=footer.h2m -o ${MANDIR}/${cmdname}.1 ${cmd}
+  sed -i "s/\\\-${UBIVER[1]}//g" ${MANDIR}/${cmdname}.1
 done
 
 rm -f footer.h2m
