@@ -12,7 +12,7 @@ src/ubiconsole
 src/ubitx
 src/test/test_ubicoin
 src/test/test_ubicoin_fuzzy
-src/qt/test/test_ubicoin-qt
+src/qt/test/test_ubiwallet
 src/bench/bench_ubicoin
 
 # autoreconf
@@ -82,13 +82,13 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-ubicoin-qt
+ubiwallet
 UbiWallet.app
 !/depends/Makefile
 
 # Unit-tests
 Makefile.test
-ubicoin-qt_test
+ubiwallet_test
 
 # Resources cpp
 qrc_*.cpp
@@ -121,13 +121,13 @@ test/cache/*
 
 libubicoinconsensus.pc
 contrib/devtools/split-debug.sh
-src/qt/ubicoin-qt.bash
+src/qt/ubiwallet.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
 ubiconsole
 ubiserver
-ubicoin-qt
+ubiwallet
 make
 
 /docker/bin
