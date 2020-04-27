@@ -2851,7 +2851,7 @@
     </message>
     <message>
         <source>UbiState Core</source>
-        <translation>litecoin core</translation>
+        <translation>ubiState core</translation>
     </message>
     <message>
         <source>The %s developers</source>
