@@ -17,7 +17,7 @@ pkg_add autoconf # (select highest version, e.g. 2.69)
 pkg_add automake # (select highest version, e.g. 1.15)
 pkg_add python # (select highest version, e.g. 3.6)
 
-git clone https://github.com/litecoin-project/litecoin.git
+git clone https://github.com/UbiState/litecoin.git
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.
