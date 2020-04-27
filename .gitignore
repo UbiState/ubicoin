@@ -7,7 +7,7 @@ reset-files.bash
 
 *.exe
 src/ubicoin
-src/ubicoind
+src/ubiserver
 src/ubicoin-cli
 src/ubicoin-tx
 src/test/test_ubicoin
@@ -126,7 +126,7 @@ qa/pull-tester/tests-config.sh
 
 #development symlinks
 ubicoin-cli
-ubicoind
+ubiserver
 ubicoin-qt
 make
 
