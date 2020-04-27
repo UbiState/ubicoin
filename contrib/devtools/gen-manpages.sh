@@ -9,7 +9,7 @@ MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
 LITECOIND=${BITCOIND:-$BINDIR/litecoind}
 LITECOINCLI=${BITCOINCLI:-$BINDIR/litecoin-cli}
-LITECOINTX=${BITCOINTX:-$BINDIR/litecoin-tx}
+UBITX=${BITCOINTX:-$BINDIR/litecoin-tx}
 UBIWALLETQT=${BITCOINQT:-$BINDIR/qt/UbiWallet}
 
 [ ! -x $LITECOIND ] && echo "$LITECOIND not found or not executable." && exit 1
@@ -23,7 +23,7 @@ LTCVER=($($LITECOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }'))
 echo "[COPYRIGHT]" > footer.h2m
 $LITECOIND --version | sed -n '1!p' >> footer.h2m
 
-for cmd in $LITECOIND $LITECOINCLI $LITECOINTX $UBIWALLETQT; do
+for cmd in $LITECOIND $LITECOINCLI $UBITX $UBIWALLETQT; do
   cmdname="${cmd##*/}"
   help2man -N --version-string=${LTCVER[0]} --include=footer.h2m -o ${MANDIR}/${cmdname}.1 ${cmd}
   sed -i "s/\\\-${LTCVER[1]}//g" ${MANDIR}/${cmdname}.1
