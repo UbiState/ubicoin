@@ -4097,8 +4097,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="-184"/>
-        <source>Litecoin Core</source>
-        <translation type="unfinished">Litecoin Core</translation>
+        <source>UbiState Core</source>
+        <translation type="unfinished">UbiState Core</translation>
     </message>
     <message>
         <location line="+1"/>
