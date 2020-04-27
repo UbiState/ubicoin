@@ -25,7 +25,7 @@ python27
 
 Download the source code:
 ```
-git clone https://github.com/litecoin-project/litecoin
+git clone https://github.com/UbiState/litecoin
 ```
 
 See [dependencies.md](dependencies.md) for a complete overview.
