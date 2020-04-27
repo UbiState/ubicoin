@@ -1918,7 +1918,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Litecoin Core</source>
+        <source>UbiState Core</source>
         <translation>Litecoini tuumik</translation>
     </message>
     <message>
