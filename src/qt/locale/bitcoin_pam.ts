@@ -736,7 +736,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Litecoin Core</source>
+        <source>UbiState Core</source>
         <translation>Kapilubluban ning Litecoin</translation>
     </message>
     <message>
