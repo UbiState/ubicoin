@@ -894,7 +894,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Litecoin Core</source>
+        <source>UbiState Core</source>
         <translation>Litecoin ядро</translation>
     </message>
     <message>
