@@ -467,22 +467,22 @@ UbiServer_LDADD = \
 UbiServer_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # bitcoin-cli binary #
-ubicoin_console_SOURCES = bitcoin-cli.cpp
-ubicoin_console_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-ubicoin_console_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-ubicoin_console_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+ubicoin_cli_SOURCES = bitcoin-cli.cpp
+ubicoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+ubicoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+ubicoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-ubicoin_console_SOURCES += bitcoin-cli-res.rc
+ubicoin_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-ubicoin_console_LDADD = \
+ubicoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-ubicoin_console_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+ubicoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # bitcoin-tx binary #
