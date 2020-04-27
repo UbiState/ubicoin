@@ -8,8 +8,8 @@ BINDIR=${BINDIR:-$BUILDDIR/src}
 MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
 UBISERVER=${BITCOIND:-$BINDIR/litecoind}
-UBICONSOLE=${BITCOINCLI:-$BINDIR/litecoin-cli}
-UBITX=${BITCOINTX:-$BINDIR/litecoin-tx}
+UBICONSOLE=${BITCOINCLI:-$BINDIR/UbiConsole}
+UBITX=${BITCOINTX:-$BINDIR/UbiTX}
 UBIWALLETQT=${BITCOINQT:-$BINDIR/qt/UbiWallet}
 
 [ ! -x $UBISERVER ] && echo "$UBISERVER not found or not executable." && exit 1
