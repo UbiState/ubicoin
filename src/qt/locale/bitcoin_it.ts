@@ -3149,8 +3149,8 @@ Nota: poiché la commissione è calcolata su base per byte, una commissione di "
         <translation>Impossibile avviare il server HTTP. Dettagli nel log di debug.</translation>
     </message>
     <message>
-        <source>Litecoin Core</source>
-        <translation>Litecoin Core</translation>
+        <source>UbiState Core</source>
+        <translation>UbiState Core</translation>
     </message>
     <message>
         <source>The %s developers</source>
