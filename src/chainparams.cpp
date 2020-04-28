@@ -49,7 +49,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     const char* pszTimestamp = "Ubitcoin From Community For Community 28/April/2020";
-    const CScript genesisOutputScript = CScript() << ParseHex("04644a8e2f8e98d24a63069231c42a58bb914b179e997eb19234530db5badc9868d56d1a91836de36da7d62d1d00c914444c9afb0130bbbda030a0ef711b0d3aa1") << OP_CHECKSIG;
+    const CScript genesisOutputScript = CScript() << ParseHex("GGWP") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
