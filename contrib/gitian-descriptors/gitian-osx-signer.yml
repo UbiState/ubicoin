@@ -1,5 +1,5 @@
 ---
-name: "ubicoin-dmg-signer"
+name: "ubitcoin-dmg-signer"
 suites:
 - "bionic"
 architectures:
@@ -7,10 +7,10 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/UbiState/ubicoin-detached-sigs.git"
+- "url": "https://github.com/ubitcoin-project/ubitcoin-detached-sigs.git"
   "dir": "signature"
 files:
-- "ubicoin-osx-unsigned.tar.gz"
+- "ubitcoin-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -27,8 +27,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=ubicoin-osx-unsigned.tar.gz
-  SIGNED=ubicoin-osx-signed.dmg
+  UNSIGNED=ubitcoin-osx-unsigned.tar.gz
+  SIGNED=ubitcoin-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"

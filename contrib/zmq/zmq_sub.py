@@ -6,8 +6,8 @@
 """
     ZMQ example using python3's asyncio
 
-    Ubicoind should be started with the command line arguments:
-        ubicoind -testnet -daemon \
+    Ubitcoind should be started with the command line arguments:
+        ubitcoind -testnet -daemon \
                 -zmqpubrawtx=tcp://127.0.0.1:28332 \
                 -zmqpubrawblock=tcp://127.0.0.1:28332 \
                 -zmqpubhashtx=tcp://127.0.0.1:28332 \
