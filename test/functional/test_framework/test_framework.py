@@ -137,8 +137,8 @@ class BitcoinTestFramework(metaclass=BitcoinTestMetaClass):
 
         config = configparser.ConfigParser()
         config.read_file(open(self.options.configfile))
-        self.options.bitcoind = os.getenv("UBITCOIND", default=config["environment"]["BUILDDIR"] + '/src/ubicoind' + config["environment"]["EXEEXT"])
-        self.options.bitcoincli = os.getenv("UBITCOINCLI", default=config["environment"]["BUILDDIR"] + '/src/ubicoin-cli' + config["environment"]["EXEEXT"])
+        self.options.bitcoind = os.getenv("UBICOIND", default=config["environment"]["BUILDDIR"] + '/src/ubicoind' + config["environment"]["EXEEXT"])
+        self.options.bitcoincli = os.getenv("UBICOINCLI", default=config["environment"]["BUILDDIR"] + '/src/ubicoin-cli' + config["environment"]["EXEEXT"])
 
         os.environ['PATH'] = os.pathsep.join([
             os.path.join(config['environment']['BUILDDIR'], 'src'),

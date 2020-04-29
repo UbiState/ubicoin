@@ -1,4 +1,4 @@
-# TOR SUPPORT IN UBITCOIN
+# TOR SUPPORT IN UBICOIN
 
 It is possible to run Ubitcoin Core as a Tor hidden service, and connect to such services.
 

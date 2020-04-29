@@ -176,8 +176,8 @@
         <translation>Confirmar cifrado del monedero</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR UBITCOINS&lt;/b&gt;!</source>
-        <translation>Advertencia: Si cifra su monedero y pierde su contraseña&lt;b&gt;¡PERDERÁ TODOS SUS UBITCOINS!&lt;/b&gt;</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR UBICOINS&lt;/b&gt;!</source>
+        <translation>Advertencia: Si cifra su monedero y pierde su contraseña&lt;b&gt;¡PERDERÁ TODOS SUS UBICOINS!&lt;/b&gt;</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
