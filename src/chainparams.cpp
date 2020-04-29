@@ -264,7 +264,7 @@ public:
         consensus.nSubsidyHalvingInterval = 150;
         consensus.BIP16Height = 0; // always enforce P2SH BIP16 on regtest
         consensus.BIP34Height = 100000000; // BIP34 has not activated on regtest (far in the future so block v1 are not rejected in tests)
-        consensus.BIP34Hash = uint256s("95ce1cd193d451cb472b44a6906eb3fe4ca5fc9b5736ef7ec8c84742a6874ab5");
+        consensus.BIP34Hash = uint256S("95ce1cd193d451cb472b44a6906eb3fe4ca5fc9b5736ef7ec8c84742a6874ab5");
         consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in rpc activation tests)
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
