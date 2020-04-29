@@ -62,12 +62,12 @@
         <translation>Địa chỉ nhận</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Đây là các địa chỉ Ubitcoin để gửi bạn gửi tiền. Trước khi gửi bạn nên kiểm tra lại số tiền bạn muốn gửi và địa chỉ ubicoin của người nhận.</translation>
+        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Đây là các địa chỉ Ubicoin để gửi bạn gửi tiền. Trước khi gửi bạn nên kiểm tra lại số tiền bạn muốn gửi và địa chỉ ubicoin của người nhận.</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Đây là các địa chỉ Ubitcoin để bạn nhận tiền. Với mỗi giao dịch, bạn nên dùng một địa chỉ Ubitcoin mới để nhận tiền.</translation>
+        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Đây là các địa chỉ Ubicoin để bạn nhận tiền. Với mỗi giao dịch, bạn nên dùng một địa chỉ Ubicoin mới để nhận tiền.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -331,8 +331,8 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>Đánh chỉ số (indexing) lại các khối (blocks) trên ổ đĩa ...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubitcoin address</source>
-        <translation>Gửi coins đến tài khoản Ubitcoin</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>Gửi coins đến tài khoản Ubicoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -355,8 +355,8 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>&amp;Tin nhắn xác thực</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -383,12 +383,12 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>Mã hoá các khoá bí mật trong Ví của bạn.</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubitcoin addresses to prove you own them</source>
-        <translation>Dùng địa chỉ Ubitcoin của bạn ký các tin nhắn để xác minh những nội dung tin nhắn đó là của bạn.</translation>
+        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
+        <translation>Dùng địa chỉ Ubicoin của bạn ký các tin nhắn để xác minh những nội dung tin nhắn đó là của bạn.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubitcoin addresses</source>
-        <translation>Kiểm tra các tin nhắn để chắc chắn rằng chúng được ký bằng các địa chỉ Ubitcoin xác định.</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
+        <translation>Kiểm tra các tin nhắn để chắc chắn rằng chúng được ký bằng các địa chỉ Ubicoin xác định.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -408,7 +408,7 @@ Ví của bạn chưa được mã hóa.</translation>
     </message>
     <message>
         <source>Request payments (generates QR codes and ubicoin: URIs)</source>
-        <translation>Yêu cầu thanh toán(tạo mã QR và địa chỉ Ubitcoin: URLs)</translation>
+        <translation>Yêu cầu thanh toán(tạo mã QR và địa chỉ Ubicoin: URLs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -427,8 +427,8 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>7Tùy chọn dòng lệnh</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Ubitcoin network</source>
-        <translation><numerusform>%n liên kết hoạt động với mạng lưới Ubitcoin</numerusform></translation>
+        <source>%n active connection(s) to Ubicoin network</source>
+        <translation><numerusform>%n liên kết hoạt động với mạng lưới Ubicoin</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -471,8 +471,8 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>Đã cập nhật</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Ubitcoin command-line options</source>
-        <translation>Hiển thị tin nhắn trợ giúp %1 để có được danh sách với các tùy chọn dòng lệnh Ubitcoin.</translation>
+        <source>Show the %1 help message to get a list with possible Ubicoin command-line options</source>
+        <translation>Hiển thị tin nhắn trợ giúp %1 để có được danh sách với các tùy chọn dòng lệnh Ubicoin.</translation>
     </message>
     <message>
         <source>Connecting to peers...</source>
@@ -636,8 +636,8 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>Sử dụng vị trí dữ liệu mặc định</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -689,8 +689,8 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>Ví</translation>
     </message>
     <message>
-        <source>Connect to the Ubitcoin network through a SOCKS5 proxy.</source>
-        <translation>Kết nối đến máy chủ Ubitcoin thông qua SOCKS5 proxy.</translation>
+        <source>Connect to the Ubicoin network through a SOCKS5 proxy.</source>
+        <translation>Kết nối đến máy chủ Ubicoin thông qua SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1203,8 +1203,8 @@ Ví của bạn chưa được mã hóa.</translation>
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubitcoin Core</source>
-        <translation>Ubitcoin Core</translation>
+        <source>Ubicoin Core</source>
+        <translation>Ubicoin Core</translation>
     </message>
     <message>
         <source>Information</source>

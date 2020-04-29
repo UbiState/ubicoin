@@ -66,11 +66,11 @@
         <translation>آدرس‌های گیرنده</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>اینها آدرس‌های شما برای ارسال وجوه هستند. همیشه قبل از ارسال، مقدار و آدرس گیرنده را بررسی کنید.</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>اینها آدرس‌های بیتکوین شما برای دریافت وجوه هستند. توصیه می‌شود برای هر دریافت از یک آدرس جدید استفاده کنید.</translation>
     </message>
     <message>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR UBICOINS&lt;/b&gt;!</source>
-        <translation>اخطار: اگر کیف‌پول خود را رمزگذاری کرده و رمز خود را فراموش کنید، شما &lt;b&gt;تمام Ubitcoin‌های خود را از دست خواهید داد&lt;/b&gt;!</translation>
+        <translation>اخطار: اگر کیف‌پول خود را رمزگذاری کرده و رمز خود را فراموش کنید، شما &lt;b&gt;تمام Ubicoin‌های خود را از دست خواهید داد&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -346,7 +346,7 @@
         <translation>فهرست‌بندی نمایه بلاک‌ها…</translation>
     </message>
     <message>
-        <source>Send coins to a Ubitcoin address</source>
+        <source>Send coins to a Ubicoin address</source>
         <translation>ارسال کوین به آدرس ubicoin</translation>
     </message>
     <message>
@@ -366,7 +366,7 @@
         <translation>تایید پیام</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
+        <source>Ubicoin</source>
         <translation>ubicoin</translation>
     </message>
     <message>
@@ -394,12 +394,12 @@
         <translation>رمزنگاری کلیدهای شخصی متعلق به کیف‌پول</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubitcoin addresses to prove you own them</source>
-        <translation>پیام‌ها را با آدرس Ubitcoin خود امضا کنید تا مالکیت آن‌ها را اثبات کنید</translation>
+        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
+        <translation>پیام‌ها را با آدرس Ubicoin خود امضا کنید تا مالکیت آن‌ها را اثبات کنید</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubitcoin addresses</source>
-        <translation>پیام‌ها را تائید کنید تا از امضاشدن آن‌ها با آدرس Ubitcoin مطمئن شوید</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
+        <translation>پیام‌ها را تائید کنید تا از امضاشدن آن‌ها با آدرس Ubicoin مطمئن شوید</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -419,7 +419,7 @@
     </message>
     <message>
         <source>Request payments (generates QR codes and ubicoin: URIs)</source>
-        <translation>درخواست پرداخت (ساخت کد QR و Ubitcoin: URIs)</translation>
+        <translation>درخواست پرداخت (ساخت کد QR و Ubicoin: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -431,11 +431,11 @@
     </message>
     <message>
         <source>Open a ubicoin: URI or payment request</source>
-        <translation>بازکردن Ubitcoin: آدرس یا درخواست پرداخت</translation>
+        <translation>بازکردن Ubicoin: آدرس یا درخواست پرداخت</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Ubitcoin network</source>
-        <translation><numerusform>%n ارتباط فعال به شبکه Ubitcoin</numerusform><numerusform>%n ارتباط فعال به شبکه Ubitcoin</numerusform></translation>
+        <source>%n active connection(s) to Ubicoin network</source>
+        <translation><numerusform>%n ارتباط فعال به شبکه Ubicoin</numerusform><numerusform>%n ارتباط فعال به شبکه Ubicoin</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -628,7 +628,7 @@
         <translation>ویرایش آدرس ارسالی</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Ubitcoin address.</source>
+        <source>The entered address "%1" is not a valid Ubicoin address.</source>
         <translation>آدرس وارد شده "%1" آدرس معتبر ubicoin نیست.</translation>
     </message>
     </context>
@@ -657,7 +657,7 @@
         <translation>به %1 خوش آمدید.</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
+        <source>Ubicoin</source>
         <translation>ubicoin</translation>
     </message>
     <message>
@@ -761,7 +761,7 @@
         <translation>فرم</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubitcoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoin network after a connection is established, but this process has not completed yet.</source>
         <translation>اطلاعات نمایش داده شده ممکن است روزآمد نباشد. wallet شما به صورت خودکار بعد از برقراری اتصال با شبکه ubicoin به روز می شود اما این فرایند هنوز تکمیل نشده است.</translation>
     </message>
     <message>

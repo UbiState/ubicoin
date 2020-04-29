@@ -150,8 +150,8 @@
         <translation>Дискдаги блоклар қайта индексланмоқда...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubitcoin address</source>
-        <translation>Тангаларни Ubitcoin манзилига жўнатиш</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>Тангаларни Ubicoin манзилига жўнатиш</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -174,8 +174,8 @@
         <translation>Хабарни &amp;тасдиқлаш...</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -202,12 +202,12 @@
         <translation>Ҳамёнингизга тегишли махфий калитларни кодлаш</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubitcoin addresses to prove you own them</source>
-        <translation>Ubitcoin манзилидан унинг эгаси эканлигингизни исботлаш учун хабарлар ёзинг</translation>
+        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
+        <translation>Ubicoin манзилидан унинг эгаси эканлигингизни исботлаш учун хабарлар ёзинг</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubitcoin addresses</source>
-        <translation>Хабарларни махсус Ubitcoin манзилларингиз билан ёзилганлигига ишонч ҳосил қилиш учун уларни тасдиқланг</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
+        <translation>Хабарларни махсус Ubicoin манзилларингиз билан ёзилганлигига ишонч ҳосил қилиш учун уларни тасдиқланг</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -239,15 +239,15 @@
     </message>
     <message>
         <source>Open a ubicoin: URI or payment request</source>
-        <translation>Ubitcoin’ни очиш: URI ёки тўлов сўрови</translation>
+        <translation>Ubicoin’ни очиш: URI ёки тўлов сўрови</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
         <translation>&amp;Буйруқлар сатри мосламалари</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Ubitcoin network</source>
-        <translation><numerusform>%n та Ubitcoin тармоғига фаол уланиш мавжуд</numerusform></translation>
+        <source>%n active connection(s) to Ubicoin network</source>
+        <translation><numerusform>%n та Ubicoin тармоғига фаол уланиш мавжуд</numerusform></translation>
     </message>
     <message>
         <source>%1 behind</source>
@@ -433,8 +433,8 @@
         <translation>Бошқа маълумотлар директориясида фойдаланинг:</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -593,8 +593,8 @@
         <translation>Шакл</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Кўрсатилган маълумот эскирган бўлиши мумкин. Ҳамёнингиз алоқа ўрнатилгандан сўнг Ubitcoin тармоқ билан автоматик тарзда синхронланади, аммо жараён ҳалигача тугалланмади.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Кўрсатилган маълумот эскирган бўлиши мумкин. Ҳамёнингиз алоқа ўрнатилгандан сўнг Ubicoin тармоқ билан автоматик тарзда синхронланади, аммо жараён ҳалигача тугалланмади.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -674,8 +674,8 @@
         <translation>Миқдори</translation>
     </message>
     <message>
-        <source>Enter a Ubitcoin address (e.g. %1)</source>
-        <translation>Ubitcoin манзилини киритинг (масалан.  %1)</translation>
+        <source>Enter a Ubicoin address (e.g. %1)</source>
+        <translation>Ubicoin манзилини киритинг (масалан.  %1)</translation>
     </message>
     <message>
         <source>%1 m</source>
@@ -1172,8 +1172,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubitcoin Core</source>
-        <translation>Ubitcoin Core</translation>
+        <source>Ubicoin Core</source>
+        <translation>Ubicoin Core</translation>
     </message>
     <message>
         <source>Information</source>

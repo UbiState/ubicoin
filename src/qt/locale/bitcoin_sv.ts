@@ -66,12 +66,12 @@
         <translation>Mottagaradresser</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Detta är dina Ubitcoin-adresser för att skicka betalningar. Kontrollera alltid summan och den mottagande adressen innan du skickar ubicoin.</translation>
+        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Detta är dina Ubicoin-adresser för att skicka betalningar. Kontrollera alltid summan och den mottagande adressen innan du skickar ubicoin.</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Detta är dina Ubitcoin-adresser för att ta emot betalningar. Det rekommenderas att använda en ny mottagningsadress för varje transaktion.</translation>
+        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Detta är dina Ubicoin-adresser för att ta emot betalningar. Det rekommenderas att använda en ny mottagningsadress för varje transaktion.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -347,8 +347,8 @@ Var vänlig och försök igen.</translation>
         <translation>Återindexerar block på disken...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubitcoin address</source>
-        <translation>Skicka ubicoin till en Ubitcoin-adress</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>Skicka ubicoin till en Ubicoin-adress</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -371,8 +371,8 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Verifiera meddelande...</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -399,12 +399,12 @@ Var vänlig och försök igen.</translation>
         <translation>Kryptera de privata nycklar som tillhör din plånbok</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubitcoin addresses to prove you own them</source>
-        <translation>Signera meddelanden med dina Ubitcoin-adresser för att bevisa att du äger dem</translation>
+        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
+        <translation>Signera meddelanden med dina Ubicoin-adresser för att bevisa att du äger dem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubitcoin addresses</source>
-        <translation>Verifiera meddelanden för att vara säker på att de signerades med angivna Ubitcoin-adresser</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
+        <translation>Verifiera meddelanden för att vara säker på att de signerades med angivna Ubicoin-adresser</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -443,8 +443,8 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Kommandoradsalternativ</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Ubitcoin network</source>
-        <translation><numerusform>%n aktiva anslutningar till Ubitcoin-nätverket.</numerusform><numerusform>%n aktiva anslutningar till Ubitcoin-nätverket.</numerusform></translation>
+        <source>%n active connection(s) to Ubicoin network</source>
+        <translation><numerusform>%n aktiva anslutningar till Ubicoin-nätverket.</numerusform><numerusform>%n aktiva anslutningar till Ubicoin-nätverket.</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -487,8 +487,8 @@ Var vänlig och försök igen.</translation>
         <translation>Uppdaterad</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Ubitcoin command-line options</source>
-        <translation>Visa %1 hjälpmeddelande för att få en lista med möjliga Ubitcoin kommandoradsalternativ.</translation>
+        <source>Show the %1 help message to get a list with possible Ubicoin command-line options</source>
+        <translation>Visa %1 hjälpmeddelande för att få en lista med möjliga Ubicoin kommandoradsalternativ.</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -557,8 +557,8 @@ Var vänlig och försök igen.</translation>
         <translation>Denna plånbok är &lt;b&gt;krypterad&lt;/b&gt; och för närvarande &lt;b&gt;låst&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Ubitcoin can no longer continue safely and will quit.</source>
-        <translation>Ett kritiskt fel uppstod. Ubitcoin kan inte fortsätta att köra säkert och kommer att avslutas.</translation>
+        <source>A fatal error occurred. Ubicoin can no longer continue safely and will quit.</source>
+        <translation>Ett kritiskt fel uppstod. Ubicoin kan inte fortsätta att köra säkert och kommer att avslutas.</translation>
     </message>
 </context>
 <context>
@@ -747,8 +747,8 @@ Var vänlig och försök igen.</translation>
         <translation>Redigera avsändaradress</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Ubitcoin address.</source>
-        <translation>Den angivna adressen "%1" är inte en giltig Ubitcoin-adress.</translation>
+        <source>The entered address "%1" is not a valid Ubicoin address.</source>
+        <translation>Den angivna adressen "%1" är inte en giltig Ubicoin-adress.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -832,8 +832,8 @@ Var vänlig och försök igen.</translation>
         <translation>Använd en anpassad datakatalog:</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -844,8 +844,8 @@ Var vänlig och försök igen.</translation>
         <translation>Ungefär %1 GB data kommer att lagras i den här katalogen.</translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Ubitcoin block chain.</source>
-        <translation>%1 kommer att ladda ner och lagra en kopia av Ubitcoin-blockkedjan.</translation>
+        <source>%1 will download and store a copy of the Ubicoin block chain.</source>
+        <translation>%1 kommer att ladda ner och lagra en kopia av Ubicoin-blockkedjan.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -876,7 +876,7 @@ Var vänlig och försök igen.</translation>
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the ubicoin network, as detailed below.</source>
-        <translation>Nyligen gjorda transaktioner visas inte korrekt och därför kan din plånboks saldo visas felaktigt. Denna information kommer att visas korrekt så snart din plånbok har synkroniserat klart med Ubitcoin-nätverket enligt detaljer nedan.</translation>
+        <translation>Nyligen gjorda transaktioner visas inte korrekt och därför kan din plånboks saldo visas felaktigt. Denna information kommer att visas korrekt så snart din plånbok har synkroniserat klart med Ubicoin-nätverket enligt detaljer nedan.</translation>
     </message>
     <message>
         <source>Attempting to spend ubicoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
@@ -1049,8 +1049,8 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Spendera obekräftad växel</translation>
     </message>
     <message>
-        <source>Automatically open the Ubitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Öppna automatiskt Ubitcoin-klientens port på routern. Detta fungerar endast om din router stödjer UPnP och det är är aktiverat.</translation>
+        <source>Automatically open the Ubicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Öppna automatiskt Ubicoin-klientens port på routern. Detta fungerar endast om din router stödjer UPnP och det är är aktiverat.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1065,8 +1065,8 @@ Var vänlig och försök igen.</translation>
         <translation>Tillåt ankommande anslutningar</translation>
     </message>
     <message>
-        <source>Connect to the Ubitcoin network through a SOCKS5 proxy.</source>
-        <translation>Anslut till Ubitcoin-nätverket genom en SOCKS5-proxy.</translation>
+        <source>Connect to the Ubicoin network through a SOCKS5 proxy.</source>
+        <translation>Anslut till Ubicoin-nätverket genom en SOCKS5-proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1101,8 +1101,8 @@ Var vänlig och försök igen.</translation>
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Ubitcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Anslut till Ubitcoin-nätverket genom en separat SOCKS5-proxy för dolda tjänster i Tor.</translation>
+        <source>Connect to the Ubicoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Anslut till Ubicoin-nätverket genom en separat SOCKS5-proxy för dolda tjänster i Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1208,8 +1208,8 @@ Var vänlig och försök igen.</translation>
         <translation>Formulär</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Den visade informationen kan vara inaktuell. Plånboken synkroniseras automatiskt med Ubitcoin-nätverket efter att anslutningen är upprättad, men denna process har inte slutförts ännu.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Den visade informationen kan vara inaktuell. Plånboken synkroniseras automatiskt med Ubicoin-nätverket efter att anslutningen är upprättad, men denna process har inte slutförts ännu.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1299,8 +1299,8 @@ Var vänlig och försök igen.</translation>
         <translation>Ogiltig betalningsadress %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Ubitcoin address or malformed URI parameters.</source>
-        <translation>URI kan inte parsas! Detta kan orsakas av en ogiltig Ubitcoin-adress eller felaktiga URI-parametrar.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Ubicoin address or malformed URI parameters.</source>
+        <translation>URI kan inte parsas! Detta kan orsakas av en ogiltig Ubicoin-adress eller felaktiga URI-parametrar.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1401,8 +1401,8 @@ Var vänlig och försök igen.</translation>
         <translation>Mängd</translation>
     </message>
     <message>
-        <source>Enter a Ubitcoin address (e.g. %1)</source>
-        <translation>Ange en Ubitcoin-adress (t.ex. %1)</translation>
+        <source>Enter a Ubicoin address (e.g. %1)</source>
+        <translation>Ange en Ubicoin-adress (t.ex. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1821,8 +1821,8 @@ Var vänlig och försök igen.</translation>
         <translation>&amp;Meddelande:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ubitcoin network.</source>
-        <translation>Ett valfritt meddelande att bifoga betalningsbegäran, vilket visas när begäran öppnas. Obs: Meddelandet kommer inte att sändas med betalningen över Ubitcoin-nätverket.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ubicoin network.</source>
+        <translation>Ett valfritt meddelande att bifoga betalningsbegäran, vilket visas när begäran öppnas. Obs: Meddelandet kommer inte att sändas med betalningen över Ubicoin-nätverket.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2226,8 +2226,8 @@ Var vänlig och försök igen.</translation>
         <translation><numerusform>Uppskattas till att påbörja bekräftelse inom %n block.</numerusform><numerusform>Uppskattas till att påbörja bekräftelse inom %n block.</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Ubitcoin address</source>
-        <translation>Varning: Ogiltig Ubitcoin-adress</translation>
+        <source>Warning: Invalid Ubicoin address</source>
+        <translation>Varning: Ogiltig Ubicoin-adress</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2269,8 +2269,8 @@ Var vänlig och försök igen.</translation>
         <translation>Detta är en normal betalning.</translation>
     </message>
     <message>
-        <source>The Ubitcoin address to send the payment to</source>
-        <translation>Ubitcoin-adress att sända betalning till</translation>
+        <source>The Ubicoin address to send the payment to</source>
+        <translation>Ubicoin-adress att sända betalning till</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2317,8 +2317,8 @@ Var vänlig och försök igen.</translation>
         <translation>Ange en etikett för denna adress för att lägga till den i listan med använda adresser</translation>
     </message>
     <message>
-        <source>A message that was attached to the ubicoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ubitcoin network.</source>
-        <translation>Ett meddelande som bifogades ubicoin: -URIn och som lagras med transaktionen som referens. NB: Meddelandet kommer inte att sändas över Ubitcoin-nätverket.</translation>
+        <source>A message that was attached to the ubicoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ubicoin network.</source>
+        <translation>Ett meddelande som bifogades ubicoin: -URIn och som lagras med transaktionen som referens. NB: Meddelandet kommer inte att sändas över Ubicoin-nätverket.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2366,8 +2366,8 @@ Var vänlig och försök igen.</translation>
         <translation>Du kan signera meddelanden/avtal med dina adresser för att bevisa att du kan ta emot ubicoin som skickats till dem. Var försiktig så du inte signerar något oklart eller konstigt, eftersom phishing-angrepp kan försöka få dig att signera över din identitet till dem. Signera endast väldetaljerade meddelanden som du godkänner.</translation>
     </message>
     <message>
-        <source>The Ubitcoin address to sign the message with</source>
-        <translation>Ubitcoin-adress att signera meddelandet med</translation>
+        <source>The Ubicoin address to sign the message with</source>
+        <translation>Ubicoin-adress att signera meddelandet med</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2398,8 +2398,8 @@ Var vänlig och försök igen.</translation>
         <translation>Kopiera signaturen till systemets Urklipp</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ubitcoin address</source>
-        <translation>Signera meddelandet för att bevisa att du äger denna Ubitcoin-adress</translation>
+        <source>Sign the message to prove you own this Ubicoin address</source>
+        <translation>Signera meddelandet för att bevisa att du äger denna Ubicoin-adress</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2422,12 +2422,12 @@ Var vänlig och försök igen.</translation>
         <translation>Ange mottagarens adress, meddelande (kopiera radbrytningar, mellanslag, TAB-tecken, osv. exakt) och signatur nedan, för att verifiera meddelandet. Undvik att läsa in mera information i signaturen än vad som stod i själva det signerade meddelandet, för att undvika ett man-in-the-middle-angrepp. Notera att detta endast bevisar att den signerande parten tar emot med adressen, det bevisar inte vem som skickat transaktionen!</translation>
     </message>
     <message>
-        <source>The Ubitcoin address the message was signed with</source>
-        <translation>Ubitcoin-adress som meddelandet signerades med</translation>
+        <source>The Ubicoin address the message was signed with</source>
+        <translation>Ubicoin-adress som meddelandet signerades med</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Ubitcoin address</source>
-        <translation>Verifiera meddelandet för att vara säker på att det signerades med angiven Ubitcoin-adress</translation>
+        <source>Verify the message to ensure it was signed with the specified Ubicoin address</source>
+        <translation>Verifiera meddelandet för att vara säker på att det signerades med angiven Ubicoin-adress</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2962,7 +2962,7 @@ Var vänlig och försök igen.</translation>
     <name>WalletModel</name>
     <message>
         <source>Send Coins</source>
-        <translation>Skicka Ubitcoins</translation>
+        <translation>Skicka Ubicoins</translation>
     </message>
     <message>
         <source>Increasing transaction fee failed</source>
@@ -3063,8 +3063,8 @@ Var vänlig och försök igen.</translation>
         <translation>Kunde inte starta HTTP-server. Se avlusningsloggen för detaljer.</translation>
     </message>
     <message>
-        <source>Ubitcoin Core</source>
-        <translation>Ubitcoin Core</translation>
+        <source>Ubicoin Core</source>
+        <translation>Ubicoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

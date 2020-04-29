@@ -32,7 +32,7 @@
 #include <memory>
 
 #if defined(NDEBUG)
-# error "Ubitcoin cannot be compiled without assertions."
+# error "Ubicoin cannot be compiled without assertions."
 #endif
 
 /** Expiration time for orphan transactions in seconds */

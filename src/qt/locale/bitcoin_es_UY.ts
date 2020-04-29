@@ -122,16 +122,16 @@
         <translation>Recibiendo direcciones</translation>
     </message>
     <message>
-        <source>Send coins to a Ubitcoin address</source>
-        <translation>Enviar monedas a una dirección Ubitcoin</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>Enviar monedas a una dirección Ubicoin</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Cambie la clave utilizada para el cifrado del monedero</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -256,8 +256,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Error</source>

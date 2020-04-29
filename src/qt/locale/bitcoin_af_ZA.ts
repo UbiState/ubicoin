@@ -62,12 +62,12 @@
         <translation>Ontvang adresse</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Dit is jou Ubitcoin-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat u munte stuur.</translation>
+        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Dit is jou Ubicoin-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat u munte stuur.</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dit is jou Ubitcoin-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat jy munte stuur.</translation>
+        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dit is jou Ubicoin-adresse vir die stuur van betalings. Kontroleer altyd die bedrag en die ontvangsadres voordat jy munte stuur.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -330,8 +330,8 @@
         <translation>Klik om netwerk aktiwiteit weer aan te skakel.</translation>
     </message>
     <message>
-        <source>Send coins to a Ubitcoin address</source>
-        <translation>Stuur muntstukke na 'n Ubitcoin adres</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>Stuur muntstukke na 'n Ubicoin adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -350,8 +350,8 @@
         <translation>&amp;Verifieer boodskap...</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -378,12 +378,12 @@
         <translation>Versleutel die private sleutels wat aan u beursie behoort</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubitcoin addresses to prove you own them</source>
-        <translation>Teken boodskappe met u Ubitcoin adresse om te bewys dat u hul besit</translation>
+        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
+        <translation>Teken boodskappe met u Ubicoin adresse om te bewys dat u hul besit</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubitcoin addresses</source>
-        <translation>Bevestig boodskappe om te verseker dat hulle geteken was met gespesifiseerde Ubitcoin adresse</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
+        <translation>Bevestig boodskappe om te verseker dat hulle geteken was met gespesifiseerde Ubicoin adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -713,8 +713,8 @@
         <translation>Welkom by %1.</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>

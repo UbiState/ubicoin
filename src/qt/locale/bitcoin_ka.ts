@@ -66,11 +66,11 @@
         <translation>მიმღები მისამართი</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>ეს არის თქვენი ბიტკოინ-მისამართები, რომელთაგანაც შეგიძლიათ გადახდა. აუცილებლად შეამოწმეთ თანხა და მიმღები მისამართი გაგზავნამდე.</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>ეს არის თქვენი ბიტკოინ-მისამართები, რომლებზეც შეგიძლიათ მიიღოთ თანხები. რეკომენდებულია ყოველი ტრანსაქციისათვის ახალი მიმღები მისამართის გამოყენება.</translation>
     </message>
     <message>
@@ -322,8 +322,8 @@
         <translation>დისკზე ბლოკების რეინდექსაცია...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubitcoin address</source>
-        <translation>მონეტების გაგზავნა Ubitcoin-მისამართზე</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>მონეტების გაგზავნა Ubicoin-მისამართზე</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -346,8 +346,8 @@
         <translation>&amp;ვერიფიკაცია</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -374,12 +374,12 @@
         <translation>თქვენი საფულის პირადი გასაღებების დაშიფრვა</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubitcoin addresses to prove you own them</source>
-        <translation>მესიჯებზე ხელმოწერა თქვენი Ubitcoin-მისამართებით იმის დასტურად, რომ ის თქვენია</translation>
+        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
+        <translation>მესიჯებზე ხელმოწერა თქვენი Ubicoin-მისამართებით იმის დასტურად, რომ ის თქვენია</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubitcoin addresses</source>
-        <translation>შეამოწმეთ, რომ მესიჯები ხელმოწერილია მითითებული Ubitcoin-მისამართით</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
+        <translation>შეამოწმეთ, რომ მესიჯები ხელმოწერილია მითითებული Ubicoin-მისამართით</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -685,8 +685,8 @@
         <translation>მითითებული კატალოგის გამოყენება:</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -794,8 +794,8 @@
         <translation>დაუდასტურებელი ხურდის გამოყენების აკრძალვის შემდეგ მათი გამოყენება შეუძლებელი იქნება, სანამ ტრანსაქციას არ ექნება ერთი დასტური მაინც. ეს აისახება თქვენი ნაშთის დათვლაზეც.</translation>
     </message>
     <message>
-        <source>Automatically open the Ubitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>როუტერში Ubitcoin-კლიენტის პორტის ავტომატური გახსნა. მუშაობს, თუ თქვენს როუტერს ჩართული აქვს UPnP.</translation>
+        <source>Automatically open the Ubicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>როუტერში Ubicoin-კლიენტის პორტის ავტომატური გახსნა. მუშაობს, თუ თქვენს როუტერს ჩართული აქვს UPnP.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -905,8 +905,8 @@
         <translation>ფორმა</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>ნაჩვენები ინფორმაცია შეიძლება მოძველებული იყოს. თქვენი საფულე ავტომატურად სინქრონიზდება Ubitcoin-ის ქსელთან კავშირის დამყარების შემდეგ, ეს პროცესი ჯერ არ არის დასრულებული.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>ნაჩვენები ინფორმაცია შეიძლება მოძველებული იყოს. თქვენი საფულე ავტომატურად სინქრონიზდება Ubicoin-ის ქსელთან კავშირის დამყარების შემდეგ, ეს პროცესი ჯერ არ არის დასრულებული.</translation>
     </message>
     <message>
         <source>Available:</source>
@@ -1098,7 +1098,7 @@
         <translation>&amp;მესიჯი:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ubitcoin network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ubicoin network.</source>
         <translation>არააუცილებელი მესიჯი, რომელიც ერთვის გადახდის მოთხოვნას და ნაჩვენები იქნება მოთხოვნის გახსნისას. შენიშვნა: მესიჯი არ გაყვება გადახდას ბითქოინის ქსელში.</translation>
     </message>
     <message>
@@ -1350,7 +1350,7 @@
         <translation>შეიყვანეთ ამ მისამართის ნიშნული გამოყენებული მისამართების სიაში დასამატებლად</translation>
     </message>
     <message>
-        <source>A message that was attached to the ubicoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ubitcoin network.</source>
+        <source>A message that was attached to the ubicoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ubicoin network.</source>
         <translation>მესიჯი, რომელიც თან ერთვის მონეტებს:  URI, რომელიც შეინახება ტრანსაქციასთან ერთად თქვენთვის. შენიშვნა: მესიჯი არ გაყვება გადახდას ბითქოინის ქსელში.</translation>
     </message>
     <message>
@@ -1411,7 +1411,7 @@
         <translation>მიმდინარე ხელმოწერის კოპირება კლიპბორდში</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ubitcoin address</source>
+        <source>Sign the message to prove you own this Ubicoin address</source>
         <translation>მოაწერეთ ხელი იმის დასადასტურებლად, რომ ეს მისამართი თქვენია</translation>
     </message>
     <message>
@@ -1431,8 +1431,8 @@
         <translation>მესიჯის &amp;ვერიფიკაცია</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Ubitcoin address</source>
-        <translation>შეამოწმეთ, რომ მესიჯი ხელმოწერილია მითითებული Ubitcoin-მისამართით</translation>
+        <source>Verify the message to ensure it was signed with the specified Ubicoin address</source>
+        <translation>შეამოწმეთ, რომ მესიჯი ხელმოწერილია მითითებული Ubicoin-მისამართით</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1524,8 +1524,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubitcoin Core</source>
-        <translation>Ubitcoin Core</translation>
+        <source>Ubicoin Core</source>
+        <translation>Ubicoin Core</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>

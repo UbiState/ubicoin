@@ -130,8 +130,8 @@
         <translation>Kõvakettal olevate plokkide reindekseerimine...</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -265,8 +265,8 @@
         <translation>Tere tulemast</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -760,8 +760,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubitcoin Core</source>
-        <translation>Ubitcoin Core</translation>
+        <source>Ubicoin Core</source>
+        <translation>Ubicoin Core</translation>
     </message>
     <message>
         <source>Information</source>

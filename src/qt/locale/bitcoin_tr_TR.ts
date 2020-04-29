@@ -62,12 +62,12 @@
         <translation>Alınan Adresler</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Bunlar ödeme göndermek için gereken Ubitcoin adreslerinizdir. Para göndermeden önce her zaman miktarı ve alıcı adresi kontrol edin.</translation>
+        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Bunlar ödeme göndermek için gereken Ubicoin adreslerinizdir. Para göndermeden önce her zaman miktarı ve alıcı adresi kontrol edin.</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Bunlar ödeme almak için kullanılacak Ubitcoin adreslerinizdir. Her işlem için yeni bir ödeme alma adresi kullanılması tavsiye edilir.</translation>
+        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Bunlar ödeme almak için kullanılacak Ubicoin adreslerinizdir. Her işlem için yeni bir ödeme alma adresi kullanılması tavsiye edilir.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -286,8 +286,8 @@
         <translation>Bloklar disk üzerinde yeniden indeksleniyor...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubitcoin address</source>
-        <translation>Ubitcoin adresine madeni para gönderin</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>Ubicoin adresine madeni para gönderin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -302,8 +302,8 @@
         <translation>Onay mesajı...</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin
+        <source>Ubicoin</source>
+        <translation>Ubicoin
 </translation>
     </message>
     <message>
@@ -458,8 +458,8 @@
         <translation>Gönderim adresini düzenleyin</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Ubitcoin address.</source>
-        <translation>Girilen adres "%1" Ubitcoin adresiyle eşleşmiyor.</translation>
+        <source>The entered address "%1" is not a valid Ubicoin address.</source>
+        <translation>Girilen adres "%1" Ubicoin adresiyle eşleşmiyor.</translation>
     </message>
     <message>
         <source>New key generation failed.</source>
@@ -495,8 +495,8 @@
         <translation>Hoş geldiniz</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin
+        <source>Ubicoin</source>
+        <translation>Ubicoin
 </translation>
     </message>
     <message>
@@ -628,7 +628,7 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubitcoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoin network after a connection is established, but this process has not completed yet.</source>
         <translation>Gösterilen bilgi geçerli olmayabilir. Bağlantı tekrar sağlandıktan sonra cüzdanınız otomatik olarak senkronize olacaktır. Henüz senkronize olma işlemi tamamlanmadı.</translation>
     </message>
     <message>
@@ -709,8 +709,8 @@
 <context>
     <name>QObject</name>
     <message>
-        <source>Enter a Ubitcoin address (e.g. %1)</source>
-        <translation>Ubitcoin adresinizi girin (örneğin %1)</translation>
+        <source>Enter a Ubicoin address (e.g. %1)</source>
+        <translation>Ubicoin adresinizi girin (örneğin %1)</translation>
     </message>
     <message>
         <source>N/A</source>
@@ -1094,8 +1094,8 @@
         <translation>Coin gönderimini onaylayın</translation>
     </message>
     <message>
-        <source>Warning: Invalid Ubitcoin address</source>
-        <translation>Uyarı: Hatalı Ubitcoin adresi</translation>
+        <source>Warning: Invalid Ubicoin address</source>
+        <translation>Uyarı: Hatalı Ubicoin adresi</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1387,8 +1387,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubitcoin Core</source>
-        <translation>Ubitcoin Çekirdeği</translation>
+        <source>Ubicoin Core</source>
+        <translation>Ubicoin Çekirdeği</translation>
     </message>
     <message>
         <source>Copyright (C) %i-%i</source>

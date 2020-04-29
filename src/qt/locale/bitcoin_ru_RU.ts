@@ -66,12 +66,12 @@
         <translation>Адреса получения</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Это ваши Ubitcoin адреса для отправки платежа. Всегда проверяйте сумму и адрес получателя перед отправкой платежа.</translation>
+        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Это ваши Ubicoin адреса для отправки платежа. Всегда проверяйте сумму и адрес получателя перед отправкой платежа.</translation>
     </message>
     <message>
-        <source>These are your Ubitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Это ваши Ubitcoin адреса для получения платежей. Настоятельно рекомендуем использовать новые адреса для получения каждой транзакции.</translation>
+        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Это ваши Ubicoin адреса для получения платежей. Настоятельно рекомендуем использовать новые адреса для получения каждой транзакции.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -185,7 +185,7 @@
     </message>
     <message>
         <source>%1 will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your ubicoins from being stolen by malware infecting your computer.</source>
-        <translation>%1 закроется сейчас для завершения процесса шифрования. Запомните что шифрование вашего кошелька не сможет полностью защитить ваши Ubitcoinы от кражи при помощи вредоносного ПО, заразившего ваш компьютер.</translation>
+        <translation>%1 закроется сейчас для завершения процесса шифрования. Запомните что шифрование вашего кошелька не сможет полностью защитить ваши Ubicoinы от кражи при помощи вредоносного ПО, заразившего ваш компьютер.</translation>
     </message>
     <message>
         <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
@@ -346,8 +346,8 @@
         <translation>Реиндексация блоков на диске...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubitcoin address</source>
-        <translation>Послать средства на Ubitcoin адрес</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>Послать средства на Ubicoin адрес</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -370,8 +370,8 @@
         <translation>&amp;Проверить сообщение...</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin Core</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin Core</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -398,12 +398,12 @@
         <translation>Зашифровать приватные ключи, принадлежащие вашему кошельку</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubitcoin addresses to prove you own them</source>
-        <translation>Подписывайте сообщения Ubitcoin адресами чтобы подтвердить что это написали именно Вы</translation>
+        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
+        <translation>Подписывайте сообщения Ubicoin адресами чтобы подтвердить что это написали именно Вы</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubitcoin addresses</source>
-        <translation>Проверяйте сообщения чтобы убедиться что они подписаны конкретными Ubitcoin адресами</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
+        <translation>Проверяйте сообщения чтобы убедиться что они подписаны конкретными Ubicoin адресами</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -431,7 +431,7 @@
     </message>
     <message>
         <source>Open a ubicoin: URI or payment request</source>
-        <translation>Открыть Ubitcoin: URI или запрос платежа</translation>
+        <translation>Открыть Ubicoin: URI или запрос платежа</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -534,8 +534,8 @@
         <translation>Кошелек &lt;b&gt;зашифрован&lt;/b&gt; и сейчас &lt;b&gt;заблокирован&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Ubitcoin can no longer continue safely and will quit.</source>
-        <translation>Произошла критическая ошибка. Ubitcoin больше не может продолжать безопасную работу и будет закрыт.</translation>
+        <source>A fatal error occurred. Ubicoin can no longer continue safely and will quit.</source>
+        <translation>Произошла критическая ошибка. Ubicoin больше не может продолжать безопасную работу и будет закрыт.</translation>
     </message>
 </context>
 <context>
@@ -749,8 +749,8 @@
         <translation>Использовать пользовательскую директорию данных</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin Core</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin Core</translation>
     </message>
     <message>
         <source>At least %1 GB of data will be stored in this directory, and it will grow over time.</source>
@@ -918,8 +918,8 @@
         <translation>Разрешить входящие соединения</translation>
     </message>
     <message>
-        <source>Connect to the Ubitcoin network through a SOCKS5 proxy.</source>
-        <translation>Подключится к сети Ubitcoin через SOCKS5 прокси.</translation>
+        <source>Connect to the Ubicoin network through a SOCKS5 proxy.</source>
+        <translation>Подключится к сети Ubicoin через SOCKS5 прокси.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1126,7 +1126,7 @@
         <translation>Количество</translation>
     </message>
     <message>
-        <source>Enter a Ubitcoin address (e.g. %1)</source>
+        <source>Enter a Ubicoin address (e.g. %1)</source>
         <translation>Введите лайткоин-адрес (напр. %1)</translation>
     </message>
     <message>
@@ -2152,8 +2152,8 @@
         <translation>Невозможно запустить HTTP-сервер. Для получения более детальной информации необходимо обратиться к журналу отладки.</translation>
     </message>
     <message>
-        <source>Ubitcoin Core</source>
-        <translation>Ubitcoin Core</translation>
+        <source>Ubicoin Core</source>
+        <translation>Ubicoin Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

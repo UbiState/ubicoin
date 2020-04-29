@@ -1,4 +1,4 @@
-Ubitcoin Core version 0.16.2 is now available from:
+Ubicoin Core version 0.16.2 is now available from:
 
   <https://download.UbiState.org/ubicoin-0.16.2/>
 
@@ -18,7 +18,7 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over `/Applications/Ubitcoin-Qt` (on Mac)
+installer (on Windows) or just copy over `/Applications/Ubicoin-Qt` (on Mac)
 or `ubicoind`/`ubicoin-qt` (on Linux).
 
 The first time you run version 0.15.0 or newer, your chainstate database will be converted to a
@@ -40,10 +40,10 @@ wallets that were created with older versions are not affected by this.
 Compatibility
 ==============
 
-Ubitcoin Core is extensively tested on multiple operating systems using
+Ubicoin Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later. Windows XP is not supported.
 
-Ubitcoin Core should also work on most other Unix-like systems but is not
+Ubicoin Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable changes

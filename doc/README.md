@@ -1,15 +1,15 @@
-Ubitcoin Core
+Ubicoin Core
 =============
 
 Setup
 ---------------------
-Ubitcoin Core is the original Ubitcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Ubitcoin transactions (which is currently more than 7 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+Ubicoin Core is the original Ubicoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Ubicoin transactions (which is currently more than 7 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Ubitcoin Core, visit [UbiState.org](https://UbiState.org).
+To download Ubicoin Core, visit [UbiState.org](https://UbiState.org).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Ubitcoin Core on your native platform.
+The following are some helpful notes on how to run Ubicoin Core on your native platform.
 
 ### Unix
 
@@ -24,18 +24,18 @@ Unpack the files into a directory, and then run ubicoin-qt.exe.
 
 ### macOS
 
-Drag Ubitcoin Core to your applications folder, and then run Ubitcoin Core.
+Drag Ubicoin Core to your applications folder, and then run Ubicoin Core.
 
 ### Need Help?
 
-* See the documentation at the [Ubitcoin Wiki](https://ubicoin.info/)
+* See the documentation at the [Ubicoin Wiki](https://ubicoin.info/)
 for help and more information.
 * Ask for help on [#ubicoin](http://webchat.freenode.net?channels=ubicoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=ubicoin).
-* Ask for help on the [UbitcoinTalk](https://ubicointalk.io/) forums.
+* Ask for help on the [UbicoinTalk](https://ubicointalk.io/) forums.
 
 Building
 ---------------------
-The following are developer notes on how to build Ubitcoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Ubicoin Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
 - [Dependencies](dependencies.md)
 - [macOS Build Notes](build-osx.md)
@@ -47,7 +47,7 @@ The following are developer notes on how to build Ubitcoin Core on your native p
 
 Development
 ---------------------
-The Ubitcoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
+The Ubicoin repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
 - [Release Notes](release-notes.md)
@@ -62,8 +62,8 @@ The Ubitcoin repo's [root README](/README.md) contains relevant information on t
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [UbitcoinTalk](https://ubicointalk.io/) forums.
-* Discuss general Ubitcoin development on #ubicoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=ubicoin-dev).
+* Discuss on the [UbicoinTalk](https://ubicointalk.io/) forums.
+* Discuss general Ubicoin development on #ubicoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=ubicoin-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

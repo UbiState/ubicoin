@@ -118,8 +118,8 @@
         <translation>Recreans indicem frustorum in disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubitcoin address</source>
-        <translation>Mitte nummos ad inscriptionem Ubitcoin</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>Mitte nummos ad inscriptionem Ubicoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -142,8 +142,8 @@
         <translation>&amp;Verifica nuntium...</translation>
     </message>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -170,12 +170,12 @@
         <translation>Cifra claves privatas quae cassidili tui sunt</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubitcoin addresses to prove you own them</source>
-        <translation>Signa nuntios cum tuis inscriptionibus Ubitcoin ut demonstres te eas possidere</translation>
+        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
+        <translation>Signa nuntios cum tuis inscriptionibus Ubicoin ut demonstres te eas possidere</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubitcoin addresses</source>
-        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus Ubitcoin</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
+        <translation>Verifica nuntios ut certus sis eos signatos esse cum specificatis inscriptionibus Ubicoin</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -297,8 +297,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Ubitcoin</source>
-        <translation>Ubitcoin</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -346,8 +346,8 @@
         <translation>Cassidile</translation>
     </message>
     <message>
-        <source>Automatically open the Ubitcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Aperi per se portam clientis Ubitcoin in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
+        <source>Automatically open the Ubicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Aperi per se portam clientis Ubicoin in itineratore.  Hoc tantum effectivum est si itineratrum tuum supportat UPnP et id activum est.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -429,8 +429,8 @@
         <translation>Schema</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubitcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete Ubitcoin postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Monstrata informatio fortasse non recentissima est.  Tuum cassidile per se synchronizat cum rete Ubicoin postquam conexio constabilita est, sed hoc actio nondum perfecta est.</translation>
     </message>
     <message>
         <source>Immature:</source>
@@ -679,8 +679,8 @@
         <translation>Copia signationem in latibulum systematis</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ubitcoin address</source>
-        <translation>Signa nuntium ut demonstres hanc inscriptionem Ubitcoin a te possessa esse</translation>
+        <source>Sign the message to prove you own this Ubicoin address</source>
+        <translation>Signa nuntium ut demonstres hanc inscriptionem Ubicoin a te possessa esse</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -699,8 +699,8 @@
         <translation>&amp;Verifica Nuntium</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Ubitcoin address</source>
-        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione Ubitcoin</translation>
+        <source>Verify the message to ensure it was signed with the specified Ubicoin address</source>
+        <translation>Verifica nuntium ut cures signatum esse cum specifica inscriptione Ubicoin</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -752,8 +752,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubitcoin Core</source>
-        <translation>Ubitcoin Nucleus</translation>
+        <source>Ubicoin Core</source>
+        <translation>Ubicoin Nucleus</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
