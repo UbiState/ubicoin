@@ -12,9 +12,9 @@ For example:
 
     make HOST=x86_64-w64-mingw32 -j4
 
-A prefix will be generated that's suitable for plugging into Ubicoin's
+A prefix will be generated that's suitable for plugging into Ubicoing's
 configure. In the above example, a dir named x86_64-w64-mingw32 will be
-created. To use it for Ubicoin:
+created. To use it for Ubicoing:
 
     ./configure --prefix=`pwd`/depends/x86_64-w64-mingw32
 

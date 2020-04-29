@@ -16,8 +16,8 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Ubicoin"
-            VALUE "FileDescription",    "ubicoin-tx (CLI Ubicoin transaction editor utility)"
+            VALUE "CompanyName",        "Ubicoing"
+            VALUE "FileDescription",    "ubicoin-tx (CLI Ubicoing transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "ubicoin-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR

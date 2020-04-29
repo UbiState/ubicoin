@@ -6,7 +6,7 @@ ubicoin-qt \- manual page for ubicoin-qt v0.17.1.0
 .B ubicoin-qt
 [\fI\,command-line options\/\fR]
 .SH DESCRIPTION
-Ubicoin Core version v0.17.1.0 (64\-bit)
+Ubicoing Core version v0.17.1.0 (64\-bit)
 .SH OPTIONS
 .HP
 \-?
@@ -243,7 +243,7 @@ Relay non\-P2SH multisig (default: 1)
 .HP
 \fB\-port=\fR<port>
 .IP
-Listen for connections on <port> (default: 9333 or testnet: 19335)
+Listen for connections on <port> (default: 9777 or testnet: 19335)
 .HP
 \fB\-proxy=\fR<ip:port>
 .IP
@@ -319,7 +319,7 @@ Do not load the wallet and disable wallet RPC calls
 .HP
 \fB\-discardfee=\fR<amt>
 .IP
-The fee rate (in UBIT/kB) that indicates your tolerance for discarding
+The fee rate (in ÜBI/kB) that indicates your tolerance for discarding
 change by adding it to the fee (default: 0.0001). Note: An output
 is discarded if it is dust at this rate, but we will always
 discard up to the dust relay fee and a discard fee above that is
@@ -327,7 +327,7 @@ limited by the fee estimate for the longest target
 .HP
 \fB\-fallbackfee=\fR<amt>
 .IP
-A fee rate (in UBIT/kB) that will be used when fee estimation has
+A fee rate (in ÜBI/kB) that will be used when fee estimation has
 insufficient data (default: 0.002)
 .HP
 \fB\-keypool=\fR<n>
@@ -336,12 +336,12 @@ Set key pool size to <n> (default: 1000)
 .HP
 \fB\-mintxfee=\fR<amt>
 .IP
-Fees (in UBIT/kB) smaller than this are considered zero fee for
+Fees (in ÜBI/kB) smaller than this are considered zero fee for
 transaction creation (default: 0.0001)
 .HP
 \fB\-paytxfee=\fR<amt>
 .IP
-Fee (in UBIT/kB) to add to transactions you send (default: 0.00)
+Fee (in ÜBI/kB) to add to transactions you send (default: 0.00)
 .HP
 \fB\-rescan\fR
 .IP
@@ -447,7 +447,7 @@ Prepend debug output with timestamp (default: 1)
 .HP
 \fB\-maxtxfee=\fR<amt>
 .IP
-Maximum total fees (in UBIT) to use in a single wallet transaction or raw
+Maximum total fees (in ÜBI) to use in a single wallet transaction or raw
 transaction; setting this too low may abort large transactions
 (default: 0.10)
 .HP
@@ -492,7 +492,7 @@ Enable transaction replacement in the memory pool (default: 0)
 .HP
 \fB\-minrelaytxfee=\fR<amt>
 .IP
-Fees (in UBIT/kB) smaller than this are considered zero fee for relaying,
+Fees (in ÜBI/kB) smaller than this are considered zero fee for relaying,
 mining and transaction creation (default: 0.00001)
 .HP
 \fB\-whitelistforcerelay\fR
@@ -513,7 +513,7 @@ Set maximum BIP141 block weight (default: 3996000)
 .HP
 \fB\-blockmintxfee=\fR<amt>
 .IP
-Set lowest fee rate (in UBIT/kB) for transactions to be included in block
+Set lowest fee rate (in ÜBI/kB) for transactions to be included in block
 creation. (default: 0.00001)
 .PP
 RPC server options:
@@ -558,8 +558,8 @@ Password for JSON\-RPC connections
 .HP
 \fB\-rpcport=\fR<port>
 .IP
-Listen for JSON\-RPC connections on <port> (default: 9332 or testnet:
-19332)
+Listen for JSON\-RPC connections on <port> (default: 9772 or testnet:
+19772)
 .HP
 \fB\-rpcserialversion\fR
 .IP
@@ -604,11 +604,11 @@ Set SSL root certificates for payment request (default: \fB\-system\-\fR)
 .IP
 Show splash screen on startup (default: 1)
 .SH COPYRIGHT
-Copyright (C) 2011-2019 The Litecoin Core developers
+Copyright (C) 2011-2019 The Ubicoing Core developers
 Copyright (C) 2009-2019 The Bitcoin Core developers
 
-Please contribute if you find Ubicoin Core useful. Visit
-<https://UbiState.org> for further information about the software.
+Please contribute if you find Ubicoing Core useful. Visit
+<https://ubistate.org> for further information about the software.
 The source code is available from
 <https://github.com/UbiState/ubicoin>.
 

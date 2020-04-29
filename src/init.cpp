@@ -532,7 +532,7 @@ void SetupServerArgs()
 std::string LicenseInfo()
 {
     const std::string URL_SOURCE_CODE = "<https://github.com/UbiState/ubicoin>";
-    const std::string URL_WEBSITE = "<https://UbiState.org>";
+    const std::string URL_WEBSITE = "<https://ubistate.org>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2011, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +

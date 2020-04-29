@@ -1,6 +1,6 @@
-Ubicoin Core version 0.16.0 is now available from:
+Ubicoing Core version 0.16.0 is now available from:
 
-  <https://download.UbiState.org/ubicoin-0.16.0/>
+  <https://download.ubistate.org/ubicoin-0.16.0/>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
@@ -18,7 +18,7 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over `/Applications/Ubicoin-Qt` (on Mac)
+installer (on Windows) or just copy over `/Applications/Ubicoing-Qt` (on Mac)
 or `ubicoind`/`ubicoin-qt` (on Linux).
 
 The first time you run version 0.15.0 or newer, your chainstate database will be converted to a
@@ -40,10 +40,10 @@ wallets that were created with older versions are not affected by this.
 Compatibility
 ==============
 
-Ubicoin Core is extensively tested on multiple operating systems using
+Ubicoing Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later. Windows XP is not supported.
 
-Ubicoin Core should also work on most other Unix-like systems but is not
+Ubicoing Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable changes
@@ -54,7 +54,7 @@ Wallet changes
 
 ### Segwit Wallet
 
-Ubicoin Core 0.16.0 introduces full support for segwit in the wallet and user interfaces. A new `-addresstype` argument has been added, which supports `legacy`, `p2sh-segwit` (default), and `bech32` addresses. It controls what kind of addresses are produced by `getnewaddress`, `getaccountaddress`, and `createmultisigaddress`. A `-changetype` argument has also been added, with the same options, and by default equal to `-addresstype`, to control which kind of change is used.
+Ubicoing Core 0.16.0 introduces full support for segwit in the wallet and user interfaces. A new `-addresstype` argument has been added, which supports `legacy`, `p2sh-segwit` (default), and `bech32` addresses. It controls what kind of addresses are produced by `getnewaddress`, `getaccountaddress`, and `createmultisigaddress`. A `-changetype` argument has also been added, with the same options, and by default equal to `-addresstype`, to control which kind of change is used.
 
 A new `address_type` parameter has been added to the `getnewaddress` and `addmultisigaddress` RPCs to specify which type of address to generate.
 A `change_type` argument has been added to the `fundrawtransaction` RPC to override the `-changetype` argument for specific transactions.
@@ -84,7 +84,7 @@ to new wallets; wallets made with previous versions will not be upgraded to be H
 
 ### Wallets directory configuration (`-walletdir`)
 
-Ubicoin Core now has more flexibility in where the wallets directory can be
+Ubicoing Core now has more flexibility in where the wallets directory can be
 located. Previously wallet database files were stored at the top level of the
 ubicoin data directory. The behavior is now:
 
@@ -104,7 +104,7 @@ becomes unavailable during operation, funds may be lost.
 
 Build: Minimum GCC bumped to 4.8.x
 ------------------------------------
-The minimum version of the GCC compiler required to compile Ubicoin Core is now 4.8. No effort will be
+The minimum version of the GCC compiler required to compile Ubicoing Core is now 4.8. No effort will be
 made to support older versions of GCC. See discussion in issue #11732 for more information.
 The minimum version for the Clang compiler is still 3.3. Other minimum dependency versions can be found in `doc/dependencies.md` in the repository.
 
@@ -188,7 +188,7 @@ Other changed command-line options
 
 Testing changes
 ----------------
-- The default regtest JSON-RPC port has been changed to 19443 to avoid conflict with testnet's default of 19332.
+- The default regtest JSON-RPC port has been changed to 19443 to avoid conflict with testnet's default of 19772.
 - Segwit is now always active in regtest mode by default. Thus, if you upgrade a regtest node you will need to either -reindex or use the old rules by adding `vbparams=segwit:0:999999999999` to your regtest ubicoin.conf. Failure to do this will result in a CheckBlockIndex() assertion failure that will look like: Assertion `(pindexFirstNeverProcessed != nullptr) == (pindex->nChainTx == 0)' failed.
 
 0.16.0 change log
@@ -600,7 +600,7 @@ Testing changes
 - #11952 `9ab9963` univalue: Bump subtree (MarcoFalke)
 - #12367 `09fc859` Fix two fast-shutdown bugs (TheBlueMatt)
 - #12422 `4d54e7a` util: Make LockDirectory thread-safe, consistent, and fix OpenBSD 6.2 build (laanwj)
-- #482 `5c8e26d` Ubicoin: Basic changes for v0.16 release (thrasher-)
+- #482 `5c8e26d` Ubicoing: Basic changes for v0.16 release (thrasher-)
 
 Credits
 =======

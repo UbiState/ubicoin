@@ -159,10 +159,10 @@ script: |
     find . -name "lib*.la" -delete
     find . -name "lib*.a" -delete
     
-    # Ubicoin: Delete libbitcoin from binary distribution for now, see #192
+    # Ubicoing: Delete libbitcoin from binary distribution for now, see #192
     rm -rf ${DISTNAME}/lib/
     rm -rf ${DISTNAME}/include/
-    # Ubicoin: ends
+    # Ubicoing: ends
     
     rm -rf ${DISTNAME}/lib/pkgconfig
     find ${DISTNAME} | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ${OUTDIR}/${DISTNAME}-${i}.tar.gz

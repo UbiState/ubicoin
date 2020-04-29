@@ -27,7 +27,7 @@ Download the source code:
 git clone https://github.com/UbiState/ubicoin
 ```
 
-## Building Ubicoin Core
+## Building Ubicoing Core
 
 **Important**: Use `gmake` (the non-GNU `make` will exit with an error).
 

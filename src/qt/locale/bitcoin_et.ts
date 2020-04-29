@@ -66,12 +66,12 @@
         <translation>Vastuvõtvad aadressid</translation>
     </message>
     <message>
-        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Need on sinu Ubicoin aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
+        <source>These are your Ubicoing addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Need on sinu Ubicoing aadressid maksete saatmiseks. Ennem müntide saatmist kontrolli alati summat ja makse saaja aadressi.</translation>
     </message>
     <message>
-        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Need on sinu Ubicoin aadressid sisenevate maksete vastu võtmiseks. Soovitav on iga tehingu tarbeks kasutada uut aadressi.</translation>
+        <source>These are your Ubicoing addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Need on sinu Ubicoing aadressid sisenevate maksete vastu võtmiseks. Soovitav on iga tehingu tarbeks kasutada uut aadressi.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -294,8 +294,8 @@
         <translation>Kettal olevate blokkide re-indekseerimine...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubicoin address</source>
-        <translation>Saada münte Ubicoini aadressile</translation>
+        <source>Send coins to a Ubicoing address</source>
+        <translation>Saada münte Ubicoingi aadressile</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -318,8 +318,8 @@
         <translation>&amp;Kontrolli sõnumit...</translation>
     </message>
     <message>
-        <source>Ubicoin</source>
-        <translation>Ubicoin</translation>
+        <source>Ubicoing</source>
+        <translation>Ubicoing</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -346,12 +346,12 @@
         <translation>Krüpteeri oma rahakoti privaatvõtmed</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
-        <translation>Omandi tõestamiseks allkirjasta sõnumid oma Ubicoini aadressiga</translation>
+        <source>Sign messages with your Ubicoing addresses to prove you own them</source>
+        <translation>Omandi tõestamiseks allkirjasta sõnumid oma Ubicoingi aadressiga</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
-        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud Ubicoini aadressiga</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoing addresses</source>
+        <translation>Kinnita sõnumid kindlustamaks et need allkirjastati määratud Ubicoingi aadressiga</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -382,8 +382,8 @@
         <translation>Käsurea valikud</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Ubicoin network</source>
-        <translation><numerusform>%n aktiivne ühendus Ubicoini võrku</numerusform><numerusform>%n aktiivset ühendust Ubicoini võrku</numerusform></translation>
+        <source>%n active connection(s) to Ubicoing network</source>
+        <translation><numerusform>%n aktiivne ühendus Ubicoingi võrku</numerusform><numerusform>%n aktiivset ühendust Ubicoingi võrku</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -626,8 +626,8 @@
         <translation>Muuda saatvat aadressi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Ubicoin address.</source>
-        <translation>Sisestatud aadress "%1" ei ole korrektne Ubicoin aadress.</translation>
+        <source>The entered address "%1" is not a valid Ubicoing address.</source>
+        <translation>Sisestatud aadress "%1" ei ole korrektne Ubicoing aadress.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -663,8 +663,8 @@
         <translation>Teretulemast</translation>
     </message>
     <message>
-        <source>Ubicoin</source>
-        <translation>Ubicoin</translation>
+        <source>Ubicoing</source>
+        <translation>Ubicoing</translation>
     </message>
     <message>
         <source>Error</source>
@@ -740,8 +740,8 @@
         <translation>Ekspert</translation>
     </message>
     <message>
-        <source>Automatically open the Ubicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Ubicoini kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
+        <source>Automatically open the Ubicoing client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Ubicoingi kliendi pordi automaatne avamine ruuteris. Toimib, kui sinu ruuter aktsepteerib UPnP ühendust.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -839,7 +839,7 @@
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoing network after a connection is established, but this process has not completed yet.</source>
         <translation>Kuvatav info ei pruugi olla ajakohane. Ühenduse loomisel süngitakse sinu rahakott automaatselt Liteconi võrgustikuga, kuid see toiming on hetkel lõpetamata.</translation>
     </message>
     <message>
@@ -1345,8 +1345,8 @@
         <translation>Maksepäring aegunud.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Ubicoin address</source>
-        <translation>Hoiatus: Ebakorrektne Ubicoin aadress</translation>
+        <source>Warning: Invalid Ubicoing address</source>
+        <translation>Hoiatus: Ebakorrektne Ubicoing aadress</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -1429,8 +1429,8 @@
         <translation>&amp;Allkirjastamise teade</translation>
     </message>
     <message>
-        <source>The Ubicoin address to sign the message with</source>
-        <translation>Ubicoin aadress millega sõnum allkirjastada</translation>
+        <source>The Ubicoing address to sign the message with</source>
+        <translation>Ubicoing aadress millega sõnum allkirjastada</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -1461,8 +1461,8 @@
         <translation>Kopeeri praegune signatuur vahemällu</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ubicoin address</source>
-        <translation>Allkirjasta sõnum Ubicoini aadressi sulle kuulumise tõestamiseks</translation>
+        <source>Sign the message to prove you own this Ubicoing address</source>
+        <translation>Allkirjasta sõnum Ubicoingi aadressi sulle kuulumise tõestamiseks</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -1481,12 +1481,12 @@
         <translation>&amp;Kinnita Sõnum</translation>
     </message>
     <message>
-        <source>The Ubicoin address the message was signed with</source>
-        <translation>Ubicoin aadress millega sõnum on allkirjastatud</translation>
+        <source>The Ubicoing address the message was signed with</source>
+        <translation>Ubicoing aadress millega sõnum on allkirjastatud</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Ubicoin address</source>
-        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud Ubicoini aadressiga.</translation>
+        <source>Verify the message to ensure it was signed with the specified Ubicoing address</source>
+        <translation>Kinnita sõnum tõestamaks selle allkirjastatust määratud Ubicoingi aadressiga.</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -1918,8 +1918,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubicoin Core</source>
-        <translation>Ubicoini tuumik</translation>
+        <source>Ubicoing Core</source>
+        <translation>Ubicoingi tuumik</translation>
     </message>
     <message>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>

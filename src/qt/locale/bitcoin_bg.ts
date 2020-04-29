@@ -66,12 +66,12 @@
         <translation>Получаване на адреси</translation>
     </message>
     <message>
-        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Ubicoing addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>Това са адресите на получателите на плащания. Винаги проверявайте размера на сумата и адреса на получателя, преди да изпратите монети.</translation>
     </message>
     <message>
-        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Това са Вашите Ubicoin адреси,благодарение на които ще получавате плащания.Препоръчително е да използвате нови адреси за получаване на всяка транзакция.</translation>
+        <source>These are your Ubicoing addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Това са Вашите Ubicoing адреси,благодарение на които ще получавате плащания.Препоръчително е да използвате нови адреси за получаване на всяка транзакция.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -334,7 +334,7 @@
         <translation>Повторно индексиране на блоковете на диска...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubicoin address</source>
+        <source>Send coins to a Ubicoing address</source>
         <translation>Изпращане към Биткоин адрес</translation>
     </message>
     <message>
@@ -358,7 +358,7 @@
         <translation>&amp;Проверка на съобщение...</translation>
     </message>
     <message>
-        <source>Ubicoin</source>
+        <source>Ubicoing</source>
         <translation>Биткоин</translation>
     </message>
     <message>
@@ -386,12 +386,12 @@
         <translation>Шифроване на личните ключове,които принадлежат на портфейла Ви.</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
-        <translation>Пишете съобщения със своя Ubicoin адрес за да докажете,че е ваш.</translation>
+        <source>Sign messages with your Ubicoing addresses to prove you own them</source>
+        <translation>Пишете съобщения със своя Ubicoing адрес за да докажете,че е ваш.</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
-        <translation>Потвърждаване на съобщения  за да се знае,че са написани с дадените Ubicoin адреси.</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoing addresses</source>
+        <translation>Потвърждаване на съобщения  за да се знае,че са написани с дадените Ubicoing адреси.</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -411,7 +411,7 @@
     </message>
     <message>
         <source>Request payments (generates QR codes and ubicoin: URIs)</source>
-        <translation>Изискване на плащания(генерира QR кодове и Ubicoin: URIs)</translation>
+        <translation>Изискване на плащания(генерира QR кодове и Ubicoing: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -423,7 +423,7 @@
     </message>
     <message>
         <source>Open a ubicoin: URI or payment request</source>
-        <translation>Отворете Ubicoin: URI  или заявка за плащане</translation>
+        <translation>Отворете Ubicoing: URI  или заявка за плащане</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -466,8 +466,8 @@
         <translation>Синхронизиран</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Ubicoin command-line options</source>
-        <translation>Покажи %1 помощно съобщение за да получиш лист с възможни Ubicoin команди</translation>
+        <source>Show the %1 help message to get a list with possible Ubicoing command-line options</source>
+        <translation>Покажи %1 помощно съобщение за да получиш лист с възможни Ubicoing команди</translation>
     </message>
     <message>
         <source>%1 client</source>
@@ -528,8 +528,8 @@
         <translation>Портфейлът е &lt;b&gt;криптиран&lt;/b&gt; и &lt;b&gt;заключен&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Ubicoin can no longer continue safely and will quit.</source>
-        <translation>Възникна фатална грешка. Ubicoin не може да продължи безопасно и ще се изключи.</translation>
+        <source>A fatal error occurred. Ubicoing can no longer continue safely and will quit.</source>
+        <translation>Възникна фатална грешка. Ubicoing не може да продължи безопасно и ще се изключи.</translation>
     </message>
 </context>
 <context>
@@ -710,7 +710,7 @@
         <translation>Редактиране на адрес за изпращане</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Ubicoin address.</source>
+        <source>The entered address "%1" is not a valid Ubicoing address.</source>
         <translation>"%1" не е валиден Биткоин адрес.</translation>
     </message>
     <message>
@@ -787,7 +787,7 @@
         <translation>Използване на директория ръчно</translation>
     </message>
     <message>
-        <source>Ubicoin</source>
+        <source>Ubicoing</source>
         <translation>Биткоин</translation>
     </message>
     <message>
@@ -892,16 +892,16 @@
         <translation>&amp;Похарчете непотвърденото ресто</translation>
     </message>
     <message>
-        <source>Automatically open the Ubicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Автоматично отваряне на входящия Ubicoin порт. Работи само с рутери поддържащи UPnP.</translation>
+        <source>Automatically open the Ubicoing client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Автоматично отваряне на входящия Ubicoing порт. Работи само с рутери поддържащи UPnP.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Отваряне на входящия порт чрез &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Ubicoin network through a SOCKS5 proxy.</source>
-        <translation>Свързване с Ubicoin мрежата чрез SOCKS5  прокси.</translation>
+        <source>Connect to the Ubicoing network through a SOCKS5 proxy.</source>
+        <translation>Свързване с Ubicoing мрежата чрез SOCKS5  прокси.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -999,7 +999,7 @@
         <translation>Формуляр</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoing network after a connection is established, but this process has not completed yet.</source>
         <translation>Текущата информация на екрана може да не е актуална. Вашият портфейл ще се синхронизира автоматично с мрежата на Биткоин, щом поне една връзката с нея се установи; този процес все още не е приключил.</translation>
     </message>
     <message>
@@ -1055,7 +1055,7 @@
     </message>
     <message>
         <source>Cannot start ubicoin: click-to-pay handler</source>
-        <translation>Ubicoin не можe да се стартира: click-to-pay handler</translation>
+        <translation>Ubicoing не можe да се стартира: click-to-pay handler</translation>
     </message>
     <message>
         <source>URI handling</source>
@@ -1136,8 +1136,8 @@
         <translation>Сума</translation>
     </message>
     <message>
-        <source>Enter a Ubicoin address (e.g. %1)</source>
-        <translation>Въведете Ubicoin адрес (например: %1)</translation>
+        <source>Enter a Ubicoing address (e.g. %1)</source>
+        <translation>Въведете Ubicoing адрес (например: %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1677,8 +1677,8 @@
         <translation>Заявката за плащане е изтекла.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Ubicoin address</source>
-        <translation>Внимание: Невалиден Ubicoin адрес</translation>
+        <source>Warning: Invalid Ubicoing address</source>
+        <translation>Внимание: Невалиден Ubicoing адрес</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -1797,7 +1797,7 @@
         <translation>Копиране на текущия подпис</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Ubicoin address</source>
+        <source>Sign the message to prove you own this Ubicoing address</source>
         <translation>Подпишете съобщение като доказателство, че притежавате определен адрес</translation>
     </message>
     <message>
@@ -1813,7 +1813,7 @@
         <translation>&amp;Провери</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Ubicoin address</source>
+        <source>Verify the message to ensure it was signed with the specified Ubicoing address</source>
         <translation>Проверете съобщение, за да сте сигурни че е подписано с определен Биткоин адрес</translation>
     </message>
     <message>
@@ -2298,8 +2298,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubicoin Core</source>
-        <translation>Ubicoin ядро</translation>
+        <source>Ubicoing Core</source>
+        <translation>Ubicoing ядро</translation>
     </message>
     <message>
         <source>Do you want to rebuild the block database now?</source>

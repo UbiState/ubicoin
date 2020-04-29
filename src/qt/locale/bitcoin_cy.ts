@@ -62,12 +62,12 @@
         <translation>Derbyn cyfeiriadau</translation>
     </message>
     <message>
-        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Rhain ydi eich cyfeiriadau Ubicoin ar gyfer gyrru taliadau. Gwnewch yn sicr o'r swm a'r cyfeiriad derbyn cyn gyrru arian.</translation>
+        <source>These are your Ubicoing addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Rhain ydi eich cyfeiriadau Ubicoing ar gyfer gyrru taliadau. Gwnewch yn sicr o'r swm a'r cyfeiriad derbyn cyn gyrru arian.</translation>
     </message>
     <message>
-        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Dyma eich cyfeiriadau Ubicoin ar gyfer derbyn taliadau. Argymhellwn ddefnyddio cyfeiriad derbyn newydd ar gyfer bob trafodyn.</translation>
+        <source>These are your Ubicoing addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Dyma eich cyfeiriadau Ubicoing ar gyfer derbyn taliadau. Argymhellwn ddefnyddio cyfeiriad derbyn newydd ar gyfer bob trafodyn.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -334,8 +334,8 @@
         <translation>Ailfynegi y blociau ar ddisg...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubicoin address</source>
-        <translation>Anfon arian i gyfeiriad Ubicoin</translation>
+        <source>Send coins to a Ubicoing address</source>
+        <translation>Anfon arian i gyfeiriad Ubicoing</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -354,8 +354,8 @@
         <translation>&amp;Gwirio neges...</translation>
     </message>
     <message>
-        <source>Ubicoin</source>
-        <translation>Ubicoin</translation>
+        <source>Ubicoing</source>
+        <translation>Ubicoing</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -382,12 +382,12 @@
         <translation>Amgryptio'r allweddi preifat sy'n perthyn i'ch waled</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
-        <translation>Arwyddo negeseuon gyda eich cyfeiriadau Ubicoin i brofi mae chi sy'n berchen arnynt</translation>
+        <source>Sign messages with your Ubicoing addresses to prove you own them</source>
+        <translation>Arwyddo negeseuon gyda eich cyfeiriadau Ubicoing i brofi mae chi sy'n berchen arnynt</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
-        <translation>Gwirio negeseuon i sicrhau eu bod wedi eu harwyddo gyda cyfeiriadau Ubicoin penodol</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoing addresses</source>
+        <translation>Gwirio negeseuon i sicrhau eu bod wedi eu harwyddo gyda cyfeiriadau Ubicoing penodol</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -419,7 +419,7 @@
     </message>
     <message>
         <source>Open a ubicoin: URI or payment request</source>
-        <translation>Agor Ubicoin: URI neu ofyn taliad</translation>
+        <translation>Agor Ubicoing: URI neu ofyn taliad</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -524,8 +524,8 @@
         <translation>Mae'r waled &lt;b&gt;wedi'i amgryptio&lt;/b&gt; ac &lt;b&gt;ar glo&lt;/b&gt; ar hyn o bryd</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Ubicoin can no longer continue safely and will quit.</source>
-        <translation>Mae gwall angheuol wedi digwydd. Ni all Ubicoin barhau'n ddiogel ac mae'n cau lawr.</translation>
+        <source>A fatal error occurred. Ubicoing can no longer continue safely and will quit.</source>
+        <translation>Mae gwall angheuol wedi digwydd. Ni all Ubicoing barhau'n ddiogel ac mae'n cau lawr.</translation>
     </message>
 </context>
 <context>
@@ -631,8 +631,8 @@
         <translation>Croeso</translation>
     </message>
     <message>
-        <source>Ubicoin</source>
-        <translation>Ubicoin</translation>
+        <source>Ubicoing</source>
+        <translation>Ubicoing</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1038,8 +1038,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubicoin Core</source>
-        <translation>Craidd Ubicoin</translation>
+        <source>Ubicoing Core</source>
+        <translation>Craidd Ubicoing</translation>
     </message>
     <message>
         <source>Information</source>

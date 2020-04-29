@@ -62,12 +62,12 @@
         <translation>Adresa na koju se prima</translation>
     </message>
     <message>
-        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Ovo su Vaše Ubicoin adrese na koju se vrše uplate. Uvek proverite iznos i prijemnu adresu pre slanja novčića.</translation>
+        <source>These are your Ubicoing addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Ovo su Vaše Ubicoing adrese na koju se vrše uplate. Uvek proverite iznos i prijemnu adresu pre slanja novčića.</translation>
     </message>
     <message>
-        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Ovo su Vaše Ubicoin adrese za primanje uplata. Preporučuje se upotreba nove adrese za svaku transakciju.</translation>
+        <source>These are your Ubicoing addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Ovo su Vaše Ubicoing adrese za primanje uplata. Preporučuje se upotreba nove adrese za svaku transakciju.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -338,8 +338,8 @@
         <translation>Ponovo obeležavam blokove na disku...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubicoin address</source>
-        <translation>Pošalji novčiće na Ubicoin adresu</translation>
+        <source>Send coins to a Ubicoing address</source>
+        <translation>Pošalji novčiće na Ubicoing adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -362,8 +362,8 @@
         <translation>&amp;Proveri poruku...</translation>
     </message>
     <message>
-        <source>Ubicoin</source>
-        <translation>Ubicoin</translation>
+        <source>Ubicoing</source>
+        <translation>Ubicoing</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -390,12 +390,12 @@
         <translation>Enkriptuj privatne ključeve novčanika</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
-        <translation>Potpišite poruke sa svojim Ubicoin adresama da biste dokazali njihovo vlasništvo</translation>
+        <source>Sign messages with your Ubicoing addresses to prove you own them</source>
+        <translation>Potpišite poruke sa svojim Ubicoing adresama da biste dokazali njihovo vlasništvo</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
-        <translation>Proverite poruke da biste utvrdili sa kojim Ubicoin adresama su potpisane</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoing addresses</source>
+        <translation>Proverite poruke da biste utvrdili sa kojim Ubicoing adresama su potpisane</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -519,8 +519,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Ubicoin</source>
-        <translation>Ubicoin</translation>
+        <source>Ubicoing</source>
+        <translation>Ubicoing</translation>
     </message>
     <message>
         <source>Error</source>
@@ -694,8 +694,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubicoin Core</source>
-        <translation>Ubicoin Core</translation>
+        <source>Ubicoing Core</source>
+        <translation>Ubicoing Core</translation>
     </message>
     <message>
         <source>Information</source>

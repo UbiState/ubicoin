@@ -1,6 +1,6 @@
-Ubicoin Core version 0.17.1 is now available from:
+Ubicoing Core version 0.17.1 is now available from:
 
-  <https://download.UbiState.org/ubicoin-0.17.1/>
+  <https://download.ubistate.org/ubicoin-0.17.1/>
 
 This is a new major version release, including new features, various bugfixes
 and performance improvements, as well as updated translations.
@@ -18,7 +18,7 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
-installer (on Windows) or just copy over `/Applications/Ubicoin-Qt` (on Mac)
+installer (on Windows) or just copy over `/Applications/Ubicoing-Qt` (on Mac)
 or `ubicoind`/`ubicoin-qt` (on Linux).
 
 If your node has a txindex, the txindex db will be migrated the first time you run 0.17.0 or newer, which may take up to a few hours. Your node will not be functional until this migration completes.
@@ -46,10 +46,10 @@ processing the entire blockchain.
 Compatibility
 ==============
 
-Ubicoin Core is extensively tested on multiple operating systems using
+Ubicoing Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.10+, and Windows 7 and newer (Windows XP is not supported).
 
-Ubicoin Core should also work on most other Unix-like systems but is not
+Ubicoing Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 From 0.17.0 onwards macOS <10.10 is no longer supported. 0.17.0 is built using Qt 5.9.x, which doesn't
@@ -145,7 +145,7 @@ When an address is paid multiple times the coins from those separate payments ca
 Fee policy changes
 ------------------
 
-The default minimum transaction fee `-mintxfee` has been lowered to 0.0001 UBIT/kB after relaxing the minimum relay and dust relay fee rates in prior releases. 
+The default minimum transaction fee `-mintxfee` has been lowered to 0.0001 ÜBI/kB after relaxing the minimum relay and dust relay fee rates in prior releases. 
 
 Configuration sections for testnet and regtest
 ----------------------------------------------
@@ -207,21 +207,21 @@ Here are the changes to RPC methods:
 | `listtransactions`     | The `account` named parameter has been renamed to `dummy`. If provided, the `dummy` parameter must be set to the string `*`, unless running with the `-deprecatedrpc=accounts` argument (in which case functionality is unchanged). |
 | `getbalance`           | `account`, `minconf` and `include_watchonly` parameters are deprecated, and can only be used if running with '-deprecatedrpc=accounts' |
 
-BIP 174 Partially Signed Ubicoin Transactions support
+BIP 174 Partially Signed Ubicoing Transactions support
 -----------------------------------------------------
 
-[BIP 174 PSBT](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki) is an interchange format for Ubicoin transactions that are not fully signed
+[BIP 174 PSBT](https://github.com/bitcoin/bips/blob/master/bip-0174.mediawiki) is an interchange format for Ubicoing transactions that are not fully signed
 yet, together with relevant metadata to help entities work towards signing it.
 It is intended to simplify workflows where multiple parties need to cooperate to
 produce a transaction. Examples include hardware wallets, multisig setups, and
 [CoinJoin](https://bitcointalk.org/?topic=279249) transactions.
 
-For backend RPC convenience, the Ubicoin devs have supported to keep the acronym `PSBT`
+For backend RPC convenience, the Ubicoing devs have supported to keep the acronym `PSBT`
 instead of `PSLT` to make crosschain application support easier.
 
 ### Overall workflow
 
-Overall, the construction of a fully signed Ubicoin transaction goes through the
+Overall, the construction of a fully signed Ubicoing transaction goes through the
 following steps:
 
 - A **Creator** proposes a particular transaction to be created. He constructs
@@ -236,7 +236,7 @@ following steps:
   partial signature for the inputs for which they have relevant key(s).
 - A **Finalizer** is run for each input to convert the partial signatures and
   possibly script information into a final `scriptSig` and/or `scriptWitness`.
-- An **Extractor** produces a valid Ubicoin transaction (in network format)
+- An **Extractor** produces a valid Ubicoing transaction (in network format)
   from a PSBT for which all inputs are finalized.
 
 Generally, each of the above (excluding Creator and Extractor) will simply
@@ -282,7 +282,7 @@ hardware implementations will typically implement multiple roles simultaneously.
 Upgrading non-HD wallets to HD wallets
 --------------------------------------
 
-Since Ubicoin Core 0.13.0, creating new BIP 32 Hierarchical Deterministic wallets has been supported by Ubicoin Core but old non-HD wallets could not be upgraded to HD. Now non-HD wallets can be upgraded to HD using the `-upgradewallet` command line option. This upgrade will result in the all keys in the keypool being marked as used and a new keypool generated. **A new backup must be made when this upgrade is performed.**
+Since Ubicoing Core 0.13.0, creating new BIP 32 Hierarchical Deterministic wallets has been supported by Ubicoing Core but old non-HD wallets could not be upgraded to HD. Now non-HD wallets can be upgraded to HD using the `-upgradewallet` command line option. This upgrade will result in the all keys in the keypool being marked as used and a new keypool generated. **A new backup must be made when this upgrade is performed.**
 
 Additionally, `-upgradewallet` can be used to upgraded from a non-split HD chain (all keys generated with `m/0'/0'/i'`) to a split HD chain (receiving keys generated with `'m/0'/0'/i'` and change keys generated with `m'/0'/1'/i'`). When this upgrade occurs, all keys already in the keypool will remain in the keypool to be used until all keys from before the upgrade are exhausted. This is to avoid issues with backups and downgrades when some keys may come from the change key keypool. Users can begin using the new split HD chain keypools by using the `newkeypool` RPC to mark all keys in the keypool as used and begin using a new keypool generated from the split HD chain.
 
@@ -312,7 +312,7 @@ Low-level RPC changes
   `getrawtransaction` RPC commands.
 - New `fees` field introduced in `getrawmempool`, `getmempoolancestors`, `getmempooldescendants` and
    `getmempoolentry` when verbosity is set to `true` with sub-fields `ancestor`, `base`, `modified`
-   and `descendant` denominated in UBIT. This new field deprecates previous fee fields, such as
+   and `descendant` denominated in ÜBI. This new field deprecates previous fee fields, such as
    `fee`, `modifiedfee`, `ancestorfee` and `descendantfee`.
 - The new RPC `getzmqnotifications` returns information about active ZMQ
   notifications.
