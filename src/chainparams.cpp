@@ -77,7 +77,7 @@ public:
         consensus.nSubsidyHalvingInterval = 210000;
         consensus.BIP16Height = 0; // 5fce82fa4bbdd2467fc680c57046377e9ce61a4addaa0b437234974630c65e18 - April 28, 2020
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256("fa09d204a83a768ed5a7c8d441fa62f2043abf420cff1226c7b4329aeb9d51cf");
+        consensus.BIP34Hash = uint256S("5fce82fa4bbdd2467fc680c57046377e9ce61a4addaa0b437234974630c65e18");
         consensus.BIP65Height = 0; // 5fce82fa4bbdd2467fc680c57046377e9ce61a4addaa0b437234974630c65e18
         consensus.BIP66Height = 0; // 5fce82fa4bbdd2467fc680c57046377e9ce61a4addaa0b437234974630c65e18
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
@@ -177,9 +177,9 @@ public:
         consensus.nSubsidyHalvingInterval = 210000;
         consensus.BIP16Height = 0; // always enforce P2SH BIP16 on testnet
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256("8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573");
-        consensus.BIP65Height = 0; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
-        consensus.BIP66Height = 0; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
+        consensus.BIP34Hash = uint256S("95ce1cd193d451cb472b44a6906eb3fe4ca5fc9b5736ef7ec8c84742a6874ab5");
+        consensus.BIP65Height = 0; // 95ce1cd193d451cb472b44a6906eb3fe4ca5fc9b5736ef7ec8c84742a6874ab5
+        consensus.BIP66Height = 0; // 95ce1cd193d451cb472b44a6906eb3fe4ca5fc9b5736ef7ec8c84742a6874ab5
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
@@ -268,7 +268,7 @@ public:
         consensus.nSubsidyHalvingInterval = 150;
         consensus.BIP16Height = 0; // always enforce P2SH BIP16 on regtest
         consensus.BIP34Height = 100000000; // BIP34 has not activated on regtest (far in the future so block v1 are not rejected in tests)
-        consensus.BIP34Hash = uint256();
+        consensus.BIP34Hash = uint256s("");
         consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in rpc activation tests)
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
