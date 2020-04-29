@@ -118,8 +118,6 @@ public:
         pchMessageStart[3] = 0x42;
         nDefaultPort = 9777;
         nPruneAfterHeight = 100000;
-        m_assumed_blockchain_size = 320;
-        m_assumed_chain_state_size = 4;
         genesis = CreateGenesisBlock(1588094265, 1101032, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x0627afdb35b43a3724906dc39a0e47bb95fd10eef470514257f5400e92045f9c"));
@@ -146,8 +144,6 @@ public:
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
-        m_is_test_chain = false;
-        m_is_mockable_chain = false;
 
         checkpointData = {
             {
@@ -268,7 +264,7 @@ public:
         consensus.nSubsidyHalvingInterval = 150;
         consensus.BIP16Height = 0; // always enforce P2SH BIP16 on regtest
         consensus.BIP34Height = 100000000; // BIP34 has not activated on regtest (far in the future so block v1 are not rejected in tests)
-        consensus.BIP34Hash = uint256s("");
+        consensus.BIP34Hash = uint256s("95ce1cd193d451cb472b44a6906eb3fe4ca5fc9b5736ef7ec8c84742a6874ab5");
         consensus.BIP65Height = 1351; // BIP65 activated on regtest (Used in rpc activation tests)
         consensus.BIP66Height = 1251; // BIP66 activated on regtest (Used in rpc activation tests)
         consensus.powLimit = uint256S("7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
