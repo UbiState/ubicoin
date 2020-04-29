@@ -174,15 +174,15 @@ class CTestNetParams : public CChainParams {
 public:
     CTestNetParams() {
         strNetworkID = "test";
-        consensus.nSubsidyHalvingInterval = 420000;
+        consensus.nSubsidyHalvingInterval = 210000;
         consensus.BIP16Height = 0; // always enforce P2SH BIP16 on testnet
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256();
         consensus.BIP65Height = 0; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
         consensus.BIP66Height = 0; // 8075c771ed8b495ffd943980a95f702ab34fce3c8c54e379548bda33cc8c0573
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff");
-        consensus.nPowTargetTimespan = 3.5 * 24 * 60 * 60; // 3.5 days
-        consensus.nPowTargetSpacing = 5 * 60;
+        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
+        consensus.nPowTargetSpacing = 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = true;
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
@@ -214,10 +214,10 @@ public:
         nDefaultPort = 19777;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1588084268, 880185, 0x1e0ffff0, 1, 25 * COIN);
+        genesis = CreateGenesisBlock(1588135669, 2006417, 0x1e0ffff0, 1, 25 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xc060b370ba33ebf48368c8e1d1aabc58656eeb75c9662c67975c121b8983a372"));
-        assert(genesis.hashMerkleRoot == uint256S("0x77419dc53a4b55b66f3caea691e617c352d6c70eb73e876029570b34d20ae4f0"));
+        assert(consensus.hashGenesisBlock == uint256S("0x95ce1cd193d451cb472b44a6906eb3fe4ca5fc9b5736ef7ec8c84742a6874ab5"));
+        assert(genesis.hashMerkleRoot == uint256S("0x0627afdb35b43a3724906dc39a0e47bb95fd10eef470514257f5400e92045f9c"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -242,12 +242,13 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
+                {0, uint256S("95ce1cd193d451cb472b44a6906eb3fe4ca5fc9b5736ef7ec8c84742a6874ab5")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 4096 438b7e1c86f58b4e62e8cf2d0f9f256e3dddaebc5d1cc568e633a38e0db6c025
-            /* nTime    */ 0,//1538637952,
+            /* nTime    */ 1588135669,//1538637952,
             /* nTxCount */ 0,//1845705,
             /* dTxRate  */ 0,//1.907
         };
