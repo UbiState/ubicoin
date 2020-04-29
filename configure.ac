@@ -2,13 +2,13 @@ dnl require autoconf 2.60 (AS_ECHO/AS_ECHO_N)
 AC_PREREQ([2.60])
 define(_CLIENT_VERSION_MAJOR, 0)
 define(_CLIENT_VERSION_MINOR, 17)
-define(_CLIENT_VERSION_REVISION, 0)
+define(_CLIENT_VERSION_REVISION, 1)
 define(_CLIENT_VERSION_BUILD, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
-define(_COPYRIGHT_YEAR, 2020)
+define(_COPYRIGHT_YEAR, 2019)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Ubicoin Core]])
-AC_INIT([Ubicoin Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/UbiState/ubicoin/issues],[ubicoin],[https://UbiState.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Ubicoing Core]])
+AC_INIT([Ubicoing Core],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION],[https://github.com/UbiState/ubicoin/issues],[ubicoin],[https://ubistate.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
 AC_CONFIG_HEADERS([src/config/bitcoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -123,7 +123,7 @@ AC_ARG_ENABLE([upnp-default],
 AC_ARG_ENABLE(tests,
     AS_HELP_STRING([--disable-tests],[do not compile tests (default is to compile)]),
     [use_tests=$enableval],
-    [use_tests=no])
+    [use_tests=yes])
 
 AC_ARG_ENABLE(gui-tests,
     AS_HELP_STRING([--disable-gui-tests],[do not compile GUI tests (default is to compile if GUI and tests enabled)]),
@@ -1501,5 +1501,4 @@ echo "  CXX           = $CXX"
 echo "  CXXFLAGS      = $DEBUG_CXXFLAGS $HARDENED_CXXFLAGS $WARN_CXXFLAGS $NOWARN_CXXFLAGS $ERROR_CXXFLAGS $GPROF_CXXFLAGS $CXXFLAGS"
 echo "  LDFLAGS       = $PTHREAD_CFLAGS $HARDENED_LDFLAGS $GPROF_LDFLAGS $LDFLAGS"
 echo "  ARFLAGS       = $ARFLAGS"
-echo "ÜBICOIN CORE"
 echo
