@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>These are your Ubitcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Đây là các địa chỉ Ubitcoin để gửi bạn gửi tiền. Trước khi gửi bạn nên kiểm tra lại số tiền bạn muốn gửi và địa chỉ ubitcoin của người nhận.</translation>
+        <translation>Đây là các địa chỉ Ubitcoin để gửi bạn gửi tiền. Trước khi gửi bạn nên kiểm tra lại số tiền bạn muốn gửi và địa chỉ ubicoin của người nhận.</translation>
     </message>
     <message>
         <source>These are your Ubitcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
@@ -407,7 +407,7 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>Thanh công cụ (toolbar)</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and ubitcoin: URIs)</source>
+        <source>Request payments (generates QR codes and ubicoin: URIs)</source>
         <translation>Yêu cầu thanh toán(tạo mã QR và địa chỉ Ubitcoin: URLs)</translation>
     </message>
     <message>
@@ -419,8 +419,8 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>Hiện thỉ danh sách các địa chỉ và nhãn đã dùng để nhận.</translation>
     </message>
     <message>
-        <source>Open a ubitcoin: URI or payment request</source>
-        <translation>Mở ubitcoin:URL hoặc yêu cầu thanh toán</translation>
+        <source>Open a ubicoin: URI or payment request</source>
+        <translation>Mở ubicoin:URL hoặc yêu cầu thanh toán</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

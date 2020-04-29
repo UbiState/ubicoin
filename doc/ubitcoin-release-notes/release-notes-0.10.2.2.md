@@ -1,13 +1,13 @@
 Ubitcoin Core version 0.10.2.2 is now available from:
 
-  <https://download.ubitcoin.org/ubitcoin-0.10.2.2/>
+  <https://download.UbiState.org/ubicoin-0.10.2.2/>
 
 This is a new major version release, bringing bug fixes and translation 
 updates. It is recommended to upgrade to this version.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/ubitcoin-project/ubitcoin/issues>
+  <https://github.com/UbiState/ubicoin/issues>
 
 Upgrading and downgrading
 =========================
@@ -18,7 +18,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over /Applications/Ubitcoin-Qt (on Mac) or
-ubitcoind/ubitcoin-qt (on Linux).
+ubicoind/ubicoin-qt (on Linux).
 
 Downgrade warning
 ------------------
@@ -77,7 +77,7 @@ Notable changes since Ubitcoin v0.8
 ===================================
 
 - The Block data and indexes of v0.10 are incompatible with v0.8 clients.  You can upgrade from v0.8 but you downgrading is not possible.  For this reason you may want to make a backup copy of your Data Directory.
-- ubitcoind no longer sends RPC commands.  You must use the separate ubitcoin-cli command line utility.
+- ubicoind no longer sends RPC commands.  You must use the separate ubicoin-cli command line utility.
 - Watch-Only addresses are now possible.
 
 Credits

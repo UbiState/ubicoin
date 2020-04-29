@@ -410,8 +410,8 @@
         <translation>Orebalk</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and ubitcoin: URIs)</source>
-        <translation>Versoek betalings (genereer QR-kodes en ubitcoin: URI's)</translation>
+        <source>Request payments (generates QR codes and ubicoin: URIs)</source>
+        <translation>Versoek betalings (genereer QR-kodes en ubicoin: URI's)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -422,8 +422,8 @@
         <translation>Vertoon die lys van gebruikte ontvangers-adresse en etikette</translation>
     </message>
     <message>
-        <source>Open a ubitcoin: URI or payment request</source>
-        <translation>Skep 'n ubitcoin: URI of betalingsversoek</translation>
+        <source>Open a ubicoin: URI or payment request</source>
+        <translation>Skep 'n ubicoin: URI of betalingsversoek</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

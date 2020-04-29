@@ -1,20 +1,20 @@
 Ubitcoin Core version 0.13.3 is now available from:
 
-  <https://download.ubitcoin.org/ubitcoin-0.13.3/>
+  <https://download.UbiState.org/ubicoin-0.13.3/>
 
 This is a new minor version release, including new features, various bugfixes and performance improvements.
 It is recommended to upgrade to this version.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/ubitcoin-project/ubitcoin/issues>
+  <https://github.com/UbiState/ubicoin/issues>
 
 Compatibility
 ==============
 
 Microsoft ended support for Windows XP on [April 8th, 2014](https://www.microsoft.com/en-us/WindowsForBusiness/end-of-xp-support),
 an OS initially released in 2001. This means that not even critical security
-updates will be released anymore. Without security updates, using a ubitcoin
+updates will be released anymore. Without security updates, using a ubicoin
 wallet on a XP machine is irresponsible at least.
 
 In addition to that, with 0.12.x there have been varied reports of Bitcoin Core
@@ -61,10 +61,10 @@ Testnet3 has been deprecated and replaced with Testnet4. The server port has bee
 the same (19332).
 
 Testnet faucets can be located at:
-- http://testnet.ubitcointools.com
+- http://testnet.ubicointools.com
 - http://testnet.thrasher.io
 
-Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/ubitcoin-project/ubitcoin/blob/0.13/src/chainparams.cpp#L214).
+Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/UbiState/ubicoin/blob/0.13/src/chainparams.cpp#L214).
 
 Credits
 =======

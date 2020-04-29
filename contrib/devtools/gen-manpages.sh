@@ -7,10 +7,10 @@ BUILDDIR=${BUILDDIR:-$TOPDIR}
 BINDIR=${BINDIR:-$BUILDDIR/src}
 MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
-UBITCOIND=${BITCOIND:-$BINDIR/ubitcoind}
-UBITCOINCLI=${BITCOINCLI:-$BINDIR/ubitcoin-cli}
-UBITCOINTX=${BITCOINTX:-$BINDIR/ubitcoin-tx}
-UBITCOINQT=${BITCOINQT:-$BINDIR/qt/ubitcoin-qt}
+UBITCOIND=${BITCOIND:-$BINDIR/ubicoind}
+UBITCOINCLI=${BITCOINCLI:-$BINDIR/ubicoin-cli}
+UBITCOINTX=${BITCOINTX:-$BINDIR/ubicoin-tx}
+UBITCOINQT=${BITCOINQT:-$BINDIR/qt/ubicoin-qt}
 
 [ ! -x $UBITCOIND ] && echo "$UBITCOIND not found or not executable." && exit 1
 

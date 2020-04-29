@@ -41,10 +41,10 @@ from the root of the repository.
 Build Ubitcoin Core
 ------------------------
 
-1. Clone the Ubitcoin Core source code and cd into `ubitcoin`
+1. Clone the Ubitcoin Core source code and cd into `ubicoin`
 
-        git clone https://github.com/ubitcoin-project/ubitcoin
-        cd ubitcoin
+        git clone https://github.com/UbiState/ubicoin
+        cd ubicoin
 
 2.  Build Ubitcoin Core:
 
@@ -70,22 +70,22 @@ Build Ubitcoin Core
 
     or
 
-        cd ~/ubitcoin/src
-        cp ubitcoind /usr/local/bin/
-        cp ubitcoin-cli /usr/local/bin/
+        cd ~/ubicoin/src
+        cp ubicoind /usr/local/bin/
+        cp ubicoin-cli /usr/local/bin/
 
 Running
 -------
 
-Ubitcoin Core is now available at `./src/ubitcoind`
+Ubitcoin Core is now available at `./src/ubicoind`
 
 Before running, it's recommended that you create an RPC configuration file.
 
-    echo -e "rpcuser=ubitcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Ubitcoin/ubitcoin.conf"
+    echo -e "rpcuser=ubicoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Ubitcoin/ubicoin.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Ubitcoin/ubitcoin.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Ubitcoin/ubicoin.conf"
 
-The first time you run ubitcoind, it will start downloading the blockchain. This process could take several hours.
+The first time you run ubicoind, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
@@ -94,9 +94,9 @@ You can monitor the download process by looking at the debug.log file:
 Other commands:
 -------
 
-    ./src/ubitcoind -daemon # Starts the ubitcoin daemon.
-    ./src/ubitcoin-cli --help # Outputs a list of command-line options.
-    ./src/ubitcoin-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/ubicoind -daemon # Starts the ubicoin daemon.
+    ./src/ubicoin-cli --help # Outputs a list of command-line options.
+    ./src/ubicoin-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Notes
 -----

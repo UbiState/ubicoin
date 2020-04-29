@@ -43,11 +43,11 @@
     </message>
     <message>
         <source>Choose the address to send coins to</source>
-        <translation>Izvēlies adresi uz kuru sūtīt ubitcoins</translation>
+        <translation>Izvēlies adresi uz kuru sūtīt ubicoins</translation>
     </message>
     <message>
         <source>Choose the address to receive coins with</source>
-        <translation>Izvēlies adresi ar kuru saņemt ubitcoins</translation>
+        <translation>Izvēlies adresi ar kuru saņemt ubicoins</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -290,12 +290,12 @@
         <translation>Ciļņu rīkjosla</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and ubitcoin: URIs)</source>
-        <translation>Pieprasīt maksājumus (izveido QR kodu un ubitcoin: URIs)</translation>
+        <source>Request payments (generates QR codes and ubicoin: URIs)</source>
+        <translation>Pieprasīt maksājumus (izveido QR kodu un ubicoin: URIs)</translation>
     </message>
     <message>
-        <source>Open a ubitcoin: URI or payment request</source>
-        <translation>Atvērt ubitcoin URI vai maksājuma pieprasījumu</translation>
+        <source>Open a ubicoin: URI or payment request</source>
+        <translation>Atvērt ubicoin URI vai maksājuma pieprasījumu</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -563,7 +563,7 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>Ieslēgt ubitcoin &amp;kontroles funkcijas</translation>
+        <translation>Ieslēgt ubicoin &amp;kontroles funkcijas</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>

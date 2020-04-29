@@ -370,12 +370,12 @@
         <translation>Vahelehe tööriistariba</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and ubitcoin: URIs)</source>
-        <translation>Loo maksepäring (genereerib QR koodid ja ubitcoini: URId)</translation>
+        <source>Request payments (generates QR codes and ubicoin: URIs)</source>
+        <translation>Loo maksepäring (genereerib QR koodid ja ubicoini: URId)</translation>
     </message>
     <message>
-        <source>Open a ubitcoin: URI or payment request</source>
-        <translation>Ava ubitcoini: URI või maksepäring</translation>
+        <source>Open a ubicoin: URI or payment request</source>
+        <translation>Ava ubicoini: URI või maksepäring</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

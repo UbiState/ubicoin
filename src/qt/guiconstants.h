@@ -47,7 +47,7 @@ static const int MAX_URI_LENGTH = 255;
 #define SPINNER_FRAMES 36
 
 #define QAPP_ORG_NAME "Ubitcoin"
-#define QAPP_ORG_DOMAIN "ubitcoin.org"
+#define QAPP_ORG_DOMAIN "UbiState.org"
 #define QAPP_APP_NAME_DEFAULT "Ubitcoin-Qt"
 #define QAPP_APP_NAME_TESTNET "Ubitcoin-Qt-testnet"
 

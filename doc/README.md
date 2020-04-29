@@ -5,7 +5,7 @@ Setup
 ---------------------
 Ubitcoin Core is the original Ubitcoin client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Ubitcoin transactions (which is currently more than 7 GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Ubitcoin Core, visit [ubitcoin.org](https://ubitcoin.org).
+To download Ubitcoin Core, visit [UbiState.org](https://UbiState.org).
 
 Running
 ---------------------
@@ -15,12 +15,12 @@ The following are some helpful notes on how to run Ubitcoin Core on your native 
 
 Unpack the files into a directory and run:
 
-- `bin/ubitcoin-qt` (GUI) or
-- `bin/ubitcoind` (headless)
+- `bin/ubicoin-qt` (GUI) or
+- `bin/ubicoind` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run ubitcoin-qt.exe.
+Unpack the files into a directory, and then run ubicoin-qt.exe.
 
 ### macOS
 
@@ -28,10 +28,10 @@ Drag Ubitcoin Core to your applications folder, and then run Ubitcoin Core.
 
 ### Need Help?
 
-* See the documentation at the [Ubitcoin Wiki](https://ubitcoin.info/)
+* See the documentation at the [Ubitcoin Wiki](https://ubicoin.info/)
 for help and more information.
-* Ask for help on [#ubitcoin](http://webchat.freenode.net?channels=ubitcoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=ubitcoin).
-* Ask for help on the [UbitcoinTalk](https://ubitcointalk.io/) forums.
+* Ask for help on [#ubicoin](http://webchat.freenode.net?channels=ubicoin) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=ubicoin).
+* Ask for help on the [UbitcoinTalk](https://ubicointalk.io/) forums.
 
 Building
 ---------------------
@@ -62,8 +62,8 @@ The Ubitcoin repo's [root README](/README.md) contains relevant information on t
 - [Benchmarking](benchmarking.md)
 
 ### Resources
-* Discuss on the [UbitcoinTalk](https://ubitcointalk.io/) forums.
-* Discuss general Ubitcoin development on #ubitcoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=ubitcoin-dev).
+* Discuss on the [UbitcoinTalk](https://ubicointalk.io/) forums.
+* Discuss general Ubitcoin development on #ubicoin-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=ubicoin-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

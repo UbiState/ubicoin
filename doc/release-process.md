@@ -5,7 +5,7 @@ Before every release candidate:
 
 * Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md#synchronising-translations).
 
-* Update manpages, see [gen-manpages.sh](https://github.com/ubitcoin-project/ubitcoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update manpages, see [gen-manpages.sh](https://github.com/UbiState/ubicoin/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -34,10 +34,10 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/ubitcoin-project/gitian.sigs.ltc.git
-    git clone https://github.com/ubitcoin-project/ubitcoin-detached-sigs.git
+    git clone https://github.com/UbiState/gitian.sigs.ltc.git
+    git clone https://github.com/UbiState/ubicoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/ubitcoin-project/ubitcoin.git
+    git clone https://github.com/UbiState/ubicoin.git
 
 ### Ubitcoin maintainers/release engineers, suggestion for writing release notes
 
@@ -62,7 +62,7 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 
 Setup Gitian descriptors:
 
-    pushd ./ubitcoin
+    pushd ./ubicoin
     export SIGNER="(your Gitian key, ie bluematt, sipa, etc)"
     export VERSION=(new version, e.g. 0.8.0)
     git fetch
@@ -95,10 +95,10 @@ Create the macOS SDK tarball, see the [macOS readme](README_osx.md) for details,
 
 NOTE: Gitian is sometimes unable to download files. If you have errors, try the step below.
 
-By default, Gitian will fetch source files as needed. To cache them ahead of time, make sure you have checked out the tag you want to build in ubitcoin, then:
+By default, Gitian will fetch source files as needed. To cache them ahead of time, make sure you have checked out the tag you want to build in ubicoin, then:
 
     pushd ./gitian-builder
-    make -C ../ubitcoin/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../ubicoin/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -106,7 +106,7 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url ubitcoin=/path/to/ubitcoin,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url ubicoin=/path/to/ubicoin,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
@@ -117,39 +117,39 @@ The gbuild invocations below <b>DO NOT DO THIS</b> by default.
     export GITIAN_MEMORY=3000
     
     pushd ./gitian-builder
-    ./bin/gbuild --num-make $GITIAN_THREADS --memory $GITIAN_MEMORY --commit ubitcoin=v${VERSION} ../ubitcoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs.ltc/ ../ubitcoin/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/ubitcoin-*.tar.gz build/out/src/ubitcoin-*.tar.gz ../
+    ./bin/gbuild --num-make $GITIAN_THREADS --memory $GITIAN_MEMORY --commit ubicoin=v${VERSION} ../ubicoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-linux --destination ../gitian.sigs.ltc/ ../ubicoin/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/ubicoin-*.tar.gz build/out/src/ubicoin-*.tar.gz ../
 
-    ./bin/gbuild --num-make $GITIAN_THREADS --memory $GITIAN_MEMORY --commit ubitcoin=v${VERSION} ../ubitcoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs.ltc/ ../ubitcoin/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/ubitcoin-*-win-unsigned.tar.gz inputs/ubitcoin-win-unsigned.tar.gz
-    mv build/out/ubitcoin-*.zip build/out/ubitcoin-*.exe ../
+    ./bin/gbuild --num-make $GITIAN_THREADS --memory $GITIAN_MEMORY --commit ubicoin=v${VERSION} ../ubicoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-unsigned --destination ../gitian.sigs.ltc/ ../ubicoin/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/ubicoin-*-win-unsigned.tar.gz inputs/ubicoin-win-unsigned.tar.gz
+    mv build/out/ubicoin-*.zip build/out/ubicoin-*.exe ../
 
-    ./bin/gbuild --num-make $GITIAN_THREADS --memory $GITIAN_MEMORY --commit ubitcoin=v${VERSION} ../ubitcoin/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.ltc/ ../ubitcoin/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/ubitcoin-*-osx-unsigned.tar.gz inputs/ubitcoin-osx-unsigned.tar.gz
-    mv build/out/ubitcoin-*.tar.gz build/out/ubitcoin-*.dmg ../
+    ./bin/gbuild --num-make $GITIAN_THREADS --memory $GITIAN_MEMORY --commit ubicoin=v${VERSION} ../ubicoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.ltc/ ../ubicoin/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/ubicoin-*-osx-unsigned.tar.gz inputs/ubicoin-osx-unsigned.tar.gz
+    mv build/out/ubicoin-*.tar.gz build/out/ubicoin-*.dmg ../
     popd
 
 Build output expected:
 
-  1. source tarball (`ubitcoin-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`ubitcoin-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`ubitcoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `ubitcoin-${VERSION}-win[32|64].zip`)
-  4. macOS unsigned installer and dist tarball (`ubitcoin-${VERSION}-osx-unsigned.dmg`, `ubitcoin-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`ubicoin-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`ubicoin-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`ubicoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `ubicoin-${VERSION}-win[32|64].zip`)
+  4. macOS unsigned installer and dist tarball (`ubicoin-${VERSION}-osx-unsigned.dmg`, `ubicoin-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs.ltc/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
-Add other gitian builders keys to your gpg keyring, and/or refresh keys: See `../ubitcoin/contrib/gitian-keys/README.md`.
+Add other gitian builders keys to your gpg keyring, and/or refresh keys: See `../ubicoin/contrib/gitian-keys/README.md`.
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-linux ../ubitcoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-unsigned ../ubitcoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-unsigned ../ubitcoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-linux ../ubicoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-unsigned ../ubicoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-unsigned ../ubicoin/contrib/gitian-descriptors/gitian-osx.yml
     popd
 
 ### Next steps:
@@ -170,22 +170,22 @@ Codesigner only: Create Windows/macOS detached signatures:
 
 Codesigner only: Sign the macOS binary:
 
-    transfer ubitcoin-osx-unsigned.tar.gz to macOS for signing
-    tar xf ubitcoin-osx-unsigned.tar.gz
+    transfer ubicoin-osx-unsigned.tar.gz to macOS for signing
+    tar xf ubicoin-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the gitian host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf ubitcoin-win-unsigned.tar.gz
+    tar xf ubicoin-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Codesigner only: Commit the detached codesign payloads:
 
-    cd ~/ubitcoin-detached-sigs
+    cd ~/ubicoin-detached-sigs
     checkout the appropriate branch for this release series
     rm -rf *
     tar xf signature-osx.tar.gz
@@ -198,25 +198,25 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/macOS detached signatures:
 
 - Once the Windows/macOS builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [ubitcoin-detached-sigs](https://github.com/ubitcoin-project/ubitcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [ubicoin-detached-sigs](https://github.com/UbiState/ubicoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed macOS binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../ubitcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs.ltc/ ../ubitcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../ubitcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/ubitcoin-osx-signed.dmg ../ubitcoin-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../ubicoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-osx-signed --destination ../gitian.sigs.ltc/ ../ubicoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../ubicoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/ubicoin-osx-signed.dmg ../ubicoin-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../ubitcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs.ltc/ ../ubitcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-signed ../ubitcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/ubitcoin-*win64-setup.exe ../ubitcoin-${VERSION}-win64-setup.exe
-    mv build/out/ubitcoin-*win32-setup.exe ../ubitcoin-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../ubicoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer "$SIGNER" --release ${VERSION}-win-signed --destination ../gitian.sigs.ltc/ ../ubicoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-signed ../ubicoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/ubicoin-*win64-setup.exe ../ubicoin-${VERSION}-win64-setup.exe
+    mv build/out/ubicoin-*win32-setup.exe ../ubicoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed macOS/Windows binaries:
@@ -238,23 +238,23 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-ubitcoin-${VERSION}-aarch64-linux-gnu.tar.gz
-ubitcoin-${VERSION}-arm-linux-gnueabihf.tar.gz
-ubitcoin-${VERSION}-i686-pc-linux-gnu.tar.gz
-ubitcoin-${VERSION}-x86_64-linux-gnu.tar.gz
-ubitcoin-${VERSION}-osx64.tar.gz
-ubitcoin-${VERSION}-osx.dmg
-ubitcoin-${VERSION}.tar.gz
-ubitcoin-${VERSION}-win32-setup.exe
-ubitcoin-${VERSION}-win32.zip
-ubitcoin-${VERSION}-win64-setup.exe
-ubitcoin-${VERSION}-win64.zip
+ubicoin-${VERSION}-aarch64-linux-gnu.tar.gz
+ubicoin-${VERSION}-arm-linux-gnueabihf.tar.gz
+ubicoin-${VERSION}-i686-pc-linux-gnu.tar.gz
+ubicoin-${VERSION}-x86_64-linux-gnu.tar.gz
+ubicoin-${VERSION}-osx64.tar.gz
+ubicoin-${VERSION}-osx.dmg
+ubicoin-${VERSION}.tar.gz
+ubicoin-${VERSION}-win32-setup.exe
+ubicoin-${VERSION}-win32.zip
+ubicoin-${VERSION}-win64-setup.exe
+ubicoin-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the ubitcoin.org server, nor put them in the torrent*.
+space *do not upload these to the UbiState.org server, nor put them in the torrent*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -264,23 +264,23 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the ubitcoin.org server.
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the UbiState.org server.
 
 ```
-- Update ubitcoin.org version
+- Update UbiState.org version
 
 - Announce the release:
 
-  - ubitcoin-dev and ubitcoin-dev mailing list
+  - ubicoin-dev and ubicoin-dev mailing list
 
-  - blog.ubitcoin.org blog post
+  - blog.UbiState.org blog post
 
-  - Update title of #ubitcoin and #ubitcoin-dev on Freenode IRC
+  - Update title of #ubicoin and #ubicoin-dev on Freenode IRC
 
   - Optionally twitter, reddit /r/Ubitcoin, ... but this will usually sort out itself
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/ubitcoin-project/ubitcoin/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/UbiState/ubicoin/releases/new) with a link to the archived release notes.
 
   - Celebrate

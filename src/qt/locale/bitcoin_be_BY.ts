@@ -374,8 +374,8 @@
         <translation>Дапамога</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and ubitcoin: URIs)</source>
-        <translation>Запатрабаваць плацёж (генеруецца QR-код для ubitcoin URI)</translation>
+        <source>Request payments (generates QR codes and ubicoin: URIs)</source>
+        <translation>Запатрабаваць плацёж (генеруецца QR-код для ubicoin URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -386,8 +386,8 @@
         <translation>Паказаць спіс адрасоў і метак для прымання</translation>
     </message>
     <message>
-        <source>Open a ubitcoin: URI or payment request</source>
-        <translation>Адкрыць ubitcoin: URI ці запыт плацяжу</translation>
+        <source>Open a ubicoin: URI or payment request</source>
+        <translation>Адкрыць ubicoin: URI ці запыт плацяжу</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>

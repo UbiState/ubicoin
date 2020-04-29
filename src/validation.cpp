@@ -1685,7 +1685,7 @@ static bool WriteUndoDataForBlock(const CBlockUndo& blockundo, CValidationState&
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("ubitcoin-scriptch");
+    RenameThread("ubicoin-scriptch");
     scriptcheckqueue.Thread();
 }
 

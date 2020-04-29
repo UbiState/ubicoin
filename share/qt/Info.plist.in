@@ -38,7 +38,7 @@
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.ubitcoin.Ubitcoin-Qt</string>
+  <string>org.ubicoin.Ubitcoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,10 +46,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.ubitcoin.UbitcoinPayment</string>
+      <string>org.ubicoin.UbitcoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>ubitcoin</string>
+        <string>ubicoin</string>
       </array>
     </dict>
   </array>
@@ -58,7 +58,7 @@
   <array>
     <dict>
       <key>UTTypeIdentifier</key>
-      <string>org.ubitcoin.paymentrequest</string>
+      <string>org.ubicoin.paymentrequest</string>
       <key>UTTypeDescription</key>
       <string>Ubitcoin payment request</string>
       <key>UTTypeConformsTo</key>
@@ -68,10 +68,10 @@
       <key>UTTypeTagSpecification</key>
       <dict>
         <key>public.mime-type</key>
-        <string>application/x-ubitcoin-payment-request</string>
+        <string>application/x-ubicoin-payment-request</string>
         <key>public.filename-extension</key>
         <array>
-          <string>ubitcoinpaymentrequest</string>
+          <string>ubicoinpaymentrequest</string>
         </array>
       </dict>
     </dict>
@@ -84,7 +84,7 @@
       <string>Editor</string>
       <key>LSItemContentTypes</key>
       <array>
-        <string>org.ubitcoin.paymentrequest</string>
+        <string>org.ubicoin.paymentrequest</string>
       </array>
       <key>LSHandlerRank</key>
       <string>Owner</string>

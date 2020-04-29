@@ -1,17 +1,17 @@
 Ubitcoin Core version *0.15.1* is now available from:
 
-  <https://download.ubitcoin.org/ubitcoin-0.15.1/>
+  <https://download.UbiState.org/ubicoin-0.15.1/>
 
 This is a new minor version release, including various bugfixes and
 performance improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/ubitcoin-project/ubitcoin/issues>
+  <https://github.com/UbiState/ubicoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
-  <https://groups.google.com/forum/#!forum/ubitcoin-dev>
+  <https://groups.google.com/forum/#!forum/ubicoin-dev>
 
 How to Upgrade
 ==============
@@ -19,7 +19,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the 
 installer (on Windows) or just copy over `/Applications/Ubitcoin-Qt` (on Mac)
-or `ubitcoind`/`ubitcoin-qt` (on Linux).
+or `ubicoind`/`ubicoin-qt` (on Linux).
 
 The first time you run version 0.15.0 or higher, your chainstate database will
 be converted to a new format, which will take anywhere from a few minutes to

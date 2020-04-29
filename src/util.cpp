@@ -81,8 +81,8 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "ubitcoin.conf";
-const char * const BITCOIN_PID_FILENAME = "ubitcoin.pid";
+const char * const BITCOIN_CONF_FILENAME = "ubicoin.conf";
+const char * const BITCOIN_PID_FILENAME = "ubicoin.pid";
 
 ArgsManager gArgs;
 
@@ -685,7 +685,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "ubitcoin";
+    const char* pszModule = "ubicoin";
 #endif
     if (pex)
         return strprintf(
@@ -723,7 +723,7 @@ fs::path GetDefaultDataDir()
     return pathRet / "Library/Application Support/Ubitcoin";
 #else
     // Unix
-    return pathRet / ".ubitcoin";
+    return pathRet / ".ubicoin";
 #endif
 #endif
 }

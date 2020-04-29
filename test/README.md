@@ -1,4 +1,4 @@
-This directory contains integration tests that test ubitcoind and its
+This directory contains integration tests that test ubicoind and its
 utilities in their entirety. It does not contain unit tests, which
 can be found in [/src/test](/src/test), [/src/wallet/test](/src/wallet/test),
 etc.
@@ -6,10 +6,10 @@ etc.
 There are currently two sets of tests in this directory:
 
 - [functional](/test/functional) which test the functionality of
-ubitcoind and ubitcoin-qt by interacting with them through the RPC and P2P
+ubicoind and ubicoin-qt by interacting with them through the RPC and P2P
 interfaces.
-- [util](/test/util) which tests the ubitcoin utilities, currently only
-ubitcoin-tx.
+- [util](/test/util) which tests the ubicoin utilities, currently only
+ubicoin-tx.
 
 The util tests are run as part of `make check` target. The functional
 tests are run by the travis continuous build process whenever a pull
@@ -70,29 +70,29 @@ options. Run `test_runner.py -h` to see them all.
 
 ##### Resource contention
 
-The P2P and RPC ports used by the ubitcoind nodes-under-test are chosen to make
-conflicts with other processes unlikely. However, if there is another ubitcoind
+The P2P and RPC ports used by the ubicoind nodes-under-test are chosen to make
+conflicts with other processes unlikely. However, if there is another ubicoind
 process running on the system (perhaps from a previous test which hasn't successfully
-killed all its ubitcoind nodes), then there may be a port conflict which will
+killed all its ubicoind nodes), then there may be a port conflict which will
 cause the test to fail. It is recommended that you run the tests on a system
-where no other ubitcoind processes are running.
+where no other ubicoind processes are running.
 
 On linux, the test_framework will warn if there is another
-ubitcoind process running when the tests are started.
+ubicoind process running when the tests are started.
 
-If there are zombie ubitcoind processes after test failure, you can kill them
+If there are zombie ubicoind processes after test failure, you can kill them
 by running the following commands. **Note that these commands will kill all
-ubitcoind processes running on the system, so should not be used if any non-test
-ubitcoind processes are being run.**
+ubicoind processes running on the system, so should not be used if any non-test
+ubicoind processes are being run.**
 
 ```bash
-killall ubitcoind
+killall ubicoind
 ```
 
 or
 
 ```bash
-pkill -9 ubitcoind
+pkill -9 ubicoind
 ```
 
 
@@ -103,11 +103,11 @@ functional test is run and is stored in test/cache. This speeds up
 test startup times since new blockchains don't need to be generated for
 each test. However, the cache may get into a bad state, in which case
 tests will fail. If this happens, remove the cache directory (and make
-sure ubitcoind processes are stopped as above):
+sure ubicoind processes are stopped as above):
 
 ```bash
 rm -rf cache
-killall ubitcoind
+killall ubicoind
 ```
 
 ##### Test logging
@@ -120,13 +120,13 @@ default:
 - when run directly, *all* logs are written to `test_framework.log` and INFO
   level and above are output to the console.
 - when run on Travis, no logs are output to the console. However, if a test
-  fails, the `test_framework.log` and ubitcoind `debug.log`s will all be dumped
+  fails, the `test_framework.log` and ubicoind `debug.log`s will all be dumped
   to the console to help troubleshooting.
 
 To change the level of logs output to the console, use the `-l` command line
 argument.
 
-`test_framework.log` and ubitcoind `debug.log`s can be combined into a single
+`test_framework.log` and ubicoind `debug.log`s can be combined into a single
 aggregate log by running the `combine_logs.py` script. The output can be plain
 text, colorized text or html. For example:
 
@@ -153,9 +153,9 @@ import pdb; pdb.set_trace()
 ```
 
 anywhere in the test. You will then be able to inspect variables, as well as
-call methods that interact with the ubitcoind nodes-under-test.
+call methods that interact with the ubicoind nodes-under-test.
 
-If further introspection of the ubitcoind instances themselves becomes
+If further introspection of the ubicoind instances themselves becomes
 necessary, this can be accomplished by first setting a pdb breakpoint
 at an appropriate location, running the test to that point, then using
 `gdb` to attach to the process and debug.
@@ -169,8 +169,8 @@ For instance, to attach to `self.node[1]` during a run:
 use the directory path to get the pid from the pid file:
 
 ```bash
-cat /tmp/user/1000/testo9vsdjo3/node1/regtest/ubitcoind.pid
-gdb /home/example/ubitcoind <pid>
+cat /tmp/user/1000/testo9vsdjo3/node1/regtest/ubicoind.pid
+gdb /home/example/ubicoind <pid>
 ```
 
 Note: gdb attach step may require `sudo`

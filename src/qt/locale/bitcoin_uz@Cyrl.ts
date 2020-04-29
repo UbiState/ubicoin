@@ -226,8 +226,8 @@
         <translation>Ички ойналар асбоблар панели</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and ubitcoin: URIs)</source>
-        <translation>Тўловлар (QR кодлари ва ubitcoin ёрдамида яратишлар: URI’лар) сўраш</translation>
+        <source>Request payments (generates QR codes and ubicoin: URIs)</source>
+        <translation>Тўловлар (QR кодлари ва ubicoin ёрдамида яратишлар: URI’лар) сўраш</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -238,7 +238,7 @@
         <translation>Фойдаланилган қабул қилинган манзиллар ва ёрлиқлар рўйхатини кўрсатиш</translation>
     </message>
     <message>
-        <source>Open a ubitcoin: URI or payment request</source>
+        <source>Open a ubicoin: URI or payment request</source>
         <translation>Ubitcoin’ни очиш: URI ёки тўлов сўрови</translation>
     </message>
     <message>

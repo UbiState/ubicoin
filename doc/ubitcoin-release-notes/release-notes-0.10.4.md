@@ -1,6 +1,6 @@
 Ubitcoin Core version 0.10.4.0 is now available from:
 
-  <https://download.ubitcoin.org/ubitcoin-0.10.4.0/>
+  <https://download.UbiState.org/ubicoin-0.10.4.0/>
 
 This is a new minor version release, bringing bug fixes, the BIP65
 (CLTV) consensus change, and relay policy preparation for BIP113. It is
@@ -8,7 +8,7 @@ recommended to upgrade to this version as soon as possible.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/ubitcoin-project/ubitcoin/issues>
+  <https://github.com/UbiState/ubicoin/issues>
 
 Upgrading and downgrading
 =========================
@@ -19,7 +19,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the
 installer (on Windows) or just copy over /Applications/Ubitcoin-Qt (on Mac) or
-ubitcoind/ubitcoin-qt (on Linux).
+ubicoind/ubicoin-qt (on Linux).
 
 Downgrade warning
 ------------------
