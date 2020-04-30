@@ -85,12 +85,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Ubicoing addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>These are your Ubicoing addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -455,8 +455,8 @@
     </message>
     <message>
         <location line="-880"/>
-        <source>Send coins to a Ubicoing address</source>
-        <translation>Send coins to a Ubicoing address</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>Send coins to a Ubicoin address</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -485,8 +485,8 @@
     </message>
     <message>
         <location line="+570"/>
-        <source>Ubicoing</source>
-        <translation>Ubicoing</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <location line="-792"/>
@@ -520,13 +520,13 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your Ubicoing addresses to prove you own them</source>
-        <translation>Sign messages with your Ubicoing addresses to prove you own them</translation>
+        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
+        <translation>Sign messages with your Ubicoin addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Ubicoing addresses</source>
-        <translation>Verify messages to ensure they were signed with specified Ubicoing addresses</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
+        <translation>Verify messages to ensure they were signed with specified Ubicoin addresses</translation>
     </message>
     <message>
         <location line="+58"/>
@@ -575,10 +575,10 @@
     </message>
     <message numerus="yes">
         <location line="+410"/>
-        <source>%n active connection(s) to Ubicoing network</source>
+        <source>%n active connection(s) to Ubicoin network</source>
         <translation>
-            <numerusform>%n active connection to Ubicoing network</numerusform>
-            <numerusform>%n active connections to Ubicoing network</numerusform>
+            <numerusform>%n active connection to Ubicoin network</numerusform>
+            <numerusform>%n active connections to Ubicoin network</numerusform>
         </translation>
     </message>
     <message>
@@ -636,7 +636,7 @@
     </message>
     <message>
         <location line="-494"/>
-        <source>Show the %1 help message to get a list with possible Ubicoing command-line options</source>
+        <source>Show the %1 help message to get a list with possible Ubicoin command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -722,7 +722,7 @@
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+529"/>
-        <source>A fatal error occurred. Ubicoing can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. Ubicoin can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -960,7 +960,7 @@
     </message>
     <message>
         <location line="+75"/>
-        <source>The entered address &quot;%1&quot; is not a valid Ubicoing address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid Ubicoin address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1080,8 +1080,8 @@
     </message>
     <message>
         <location filename="../intro.cpp" line="+20"/>
-        <source>Ubicoing</source>
-        <translation type="unfinished">Ubicoing</translation>
+        <source>Ubicoin</source>
+        <translation type="unfinished">Ubicoin</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -1095,7 +1095,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>%1 will download and store a copy of the Ubicoing block chain.</source>
+        <source>%1 will download and store a copy of the Ubicoin block chain.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1382,8 +1382,8 @@
     </message>
     <message>
         <location line="+30"/>
-        <source>Automatically open the Ubicoing client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Ubicoing client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the Ubicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the Ubicoin client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1402,7 +1402,7 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Ubicoing network through a SOCKS5 proxy.</source>
+        <source>Connect to the Ubicoin network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1450,7 +1450,7 @@
     </message>
     <message>
         <location line="+25"/>
-        <source>Connect to the Ubicoing network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the Ubicoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1585,8 +1585,8 @@
     <message>
         <location line="+62"/>
         <location line="+386"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoing network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoing network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Ubicoin network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-139"/>
@@ -1711,7 +1711,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid Ubicoing address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Ubicoin address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1843,7 +1843,7 @@
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+115"/>
-        <source>Enter a Ubicoing address (e.g. %1)</source>
+        <source>Enter a Ubicoin address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2459,7 +2459,7 @@
     <message>
         <location line="-3"/>
         <location line="+46"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ubicoing network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Ubicoin network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3005,7 +3005,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+101"/>
-        <source>Warning: Invalid Ubicoing address</source>
+        <source>Warning: Invalid Ubicoin address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3060,7 +3060,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+39"/>
-        <source>The Ubicoing address to send the payment to</source>
+        <source>The Ubicoin address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3122,7 +3122,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+54"/>
-        <source>A message that was attached to the ubicoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ubicoing network.</source>
+        <source>A message that was attached to the ubicoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Ubicoin network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3184,7 +3184,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+18"/>
-        <source>The Ubicoing address to sign the message with</source>
+        <source>The Ubicoin address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3226,8 +3226,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Ubicoing address</source>
-        <translation>Sign the message to prove you own this Ubicoing address</translation>
+        <source>Sign the message to prove you own this Ubicoin address</source>
+        <translation>Sign the message to prove you own this Ubicoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3257,13 +3257,13 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+21"/>
-        <source>The Ubicoing address the message was signed with</source>
+        <source>The Ubicoin address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Verify the message to ensure it was signed with the specified Ubicoing address</source>
-        <translation>Verify the message to ensure it was signed with the specified Ubicoing address</translation>
+        <source>Verify the message to ensure it was signed with the specified Ubicoin address</source>
+        <translation>Verify the message to ensure it was signed with the specified Ubicoin address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4097,8 +4097,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="-184"/>
-        <source>Ubicoing Core</source>
-        <translation type="unfinished">Ubicoing Core</translation>
+        <source>Ubicoin Core</source>
+        <translation type="unfinished">Ubicoin Core</translation>
     </message>
     <message>
         <location line="+1"/>

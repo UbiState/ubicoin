@@ -66,12 +66,12 @@
         <translation>адрасы Прымання</translation>
     </message>
     <message>
-        <source>These are your Ubicoing addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Тут знаходзяцца Ubicoing-адрасы для высылання плацяжоў. Заўсёды спраўджвайце колькасць і адрас прызначэння перад здзяйсненнем транзакцыі.</translation>
+        <source>These are your Ubicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Тут знаходзяцца Ubicoin-адрасы для высылання плацяжоў. Заўсёды спраўджвайце колькасць і адрас прызначэння перад здзяйсненнем транзакцыі.</translation>
     </message>
     <message>
-        <source>These are your Ubicoing addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Тут знаходзяцца Ubicoing-адрасы для прымання плацяжоў. Пажадана выкарыстоўваць новы адрас для кожнай транзакцыі.</translation>
+        <source>These are your Ubicoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Тут знаходзяцца Ubicoin-адрасы для прымання плацяжоў. Пажадана выкарыстоўваць новы адрас для кожнай транзакцыі.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -302,8 +302,8 @@
         <translation>Пераіндэксацыя блокаў на дыску...</translation>
     </message>
     <message>
-        <source>Send coins to a Ubicoing address</source>
-        <translation>Даслаць манеты на Ubicoing-адрас</translation>
+        <source>Send coins to a Ubicoin address</source>
+        <translation>Даслаць манеты на Ubicoin-адрас</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -326,8 +326,8 @@
         <translation>Праверыць паведамленне...</translation>
     </message>
     <message>
-        <source>Ubicoing</source>
-        <translation>Ubicoing</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -354,12 +354,12 @@
         <translation>Зашыфраваць прыватныя ключы, якия належаць вашаму гаманцу</translation>
     </message>
     <message>
-        <source>Sign messages with your Ubicoing addresses to prove you own them</source>
-        <translation>Падпісаць паведамленне з дапамогай Ubicoing-адраса каб даказаць, што яно належыць вам</translation>
+        <source>Sign messages with your Ubicoin addresses to prove you own them</source>
+        <translation>Падпісаць паведамленне з дапамогай Ubicoin-адраса каб даказаць, што яно належыць вам</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Ubicoing addresses</source>
-        <translation>Спраўдзіць паведамленне з дапамогай Ubicoing-адраса каб даказаць, што яно належыць вам</translation>
+        <source>Verify messages to ensure they were signed with specified Ubicoin addresses</source>
+        <translation>Спраўдзіць паведамленне з дапамогай Ubicoin-адраса каб даказаць, што яно належыць вам</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -659,8 +659,8 @@
         <translation>Вітаем</translation>
     </message>
     <message>
-        <source>Ubicoing</source>
-        <translation>Ubicoing</translation>
+        <source>Ubicoin</source>
+        <translation>Ubicoin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1226,8 +1226,8 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Ubicoing Core</source>
-        <translation>Ubicoing Core</translation>
+        <source>Ubicoin Core</source>
+        <translation>Ubicoin Core</translation>
     </message>
     <message>
         <source>Do you want to rebuild the block database now?</source>

@@ -46,9 +46,9 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Ubicoing"
+#define QAPP_ORG_NAME "Ubicoin"
 #define QAPP_ORG_DOMAIN "ubistate.org"
-#define QAPP_APP_NAME_DEFAULT "Ubicoing-Qt"
-#define QAPP_APP_NAME_TESTNET "Ubicoing-Qt-testnet"
+#define QAPP_APP_NAME_DEFAULT "Ubicoin-Qt"
+#define QAPP_APP_NAME_TESTNET "Ubicoin-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

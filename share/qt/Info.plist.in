@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Ubicoing-Qt</string>
+  <string>Ubicoin-Qt</string>
   
   <key>CFBundleName</key>
-  <string>Ubicoing-Qt</string>
+  <string>Ubicoin-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.ubicoin.Ubicoing-Qt</string>
+  <string>org.ubicoin.Ubicoin-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.ubicoin.UbicoingPayment</string>
+      <string>org.ubicoin.UbicoinPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>ubicoin</string>
@@ -60,7 +60,7 @@
       <key>UTTypeIdentifier</key>
       <string>org.ubicoin.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>Ubicoing payment request</string>
+      <string>Ubicoin payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>

@@ -1,4 +1,4 @@
-Ubicoing Core version *0.15.0* is now available from:
+Ubicoin Core version *0.15.0* is now available from:
 
   <https://download.ubistate.org/ubicoin-0.15.0/>
 
@@ -18,7 +18,7 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes for older versions), then run the 
-installer (on Windows) or just copy over `/Applications/Ubicoing-Qt` (on Mac)
+installer (on Windows) or just copy over `/Applications/Ubicoin-Qt` (on Mac)
 or `ubicoind`/`ubicoin-qt` (on Linux).
 
 The first time you run version 0.15.0, your chainstate database will be converted to a
@@ -48,10 +48,10 @@ processing the entire blockchain.
 Compatibility
 ==============
 
-Ubicoing Core is extensively tested on multiple operating systems using
+Ubicoin Core is extensively tested on multiple operating systems using
 the Linux kernel, macOS 10.8+, and Windows Vista and later. Windows XP is not supported.
 
-Ubicoing Core should also work on most other Unix-like systems but is not
+Ubicoin Core should also work on most other Unix-like systems but is not
 frequently tested on them.
 
 Notable changes
@@ -116,7 +116,7 @@ Fee estimation has been significantly improved in version 0.15, with more accura
     - The `nblocks` argument has been renamed to `conf_target` (to be consistent with other RPC methods).
     - An `estimate_mode` argument has been added. This argument takes one of the following strings: `CONSERVATIVE`, `ECONOMICAL` or `UNSET` (which defaults to `CONSERVATIVE`).
     - The RPC return object now contains an `errors` member, which returns errors encountered during processing.
-    - If Ubicoing Core has not been running for long enough and has not seen enough blocks or transactions to produce an accurate fee estimation, an error will be returned (previously a value of -1 was used to indicate an error, which could be confused for a feerate).
+    - If Ubicoin Core has not been running for long enough and has not seen enough blocks or transactions to produce an accurate fee estimation, an error will be returned (previously a value of -1 was used to indicate an error, which could be confused for a feerate).
 - A new `estimaterawfee` RPC is added to provide raw fee data. External clients can query and use this data in their own fee estimation logic.
 
 Opt into RBF When Sending
@@ -135,17 +135,17 @@ In version 0.15, creating an opt-in RBF transaction and replacing the unconfirme
 Multi-wallet support
 --------------------
 
-Ubicoing Core now supports loading multiple, separate wallets (See [PR 8694](https://github.com/bitcoin/bitcoin/pull/8694), [PR 10849](https://github.com/bitcoin/bitcoin/pull/10849)). The wallets are completely separated, with individual balances, keys and received transactions.
+Ubicoin Core now supports loading multiple, separate wallets (See [PR 8694](https://github.com/bitcoin/bitcoin/pull/8694), [PR 10849](https://github.com/bitcoin/bitcoin/pull/10849)). The wallets are completely separated, with individual balances, keys and received transactions.
 
-Multi-wallet is enabled by using more than one `-wallet` argument when starting Ubicoing, either on the command line or in the Ubicoing config file.
+Multi-wallet is enabled by using more than one `-wallet` argument when starting Ubicoin, either on the command line or in the Ubicoin config file.
 
-**In Ubicoing-Qt, only the first wallet will be displayed and accessible for creating and signing transactions.** GUI selectable multiple wallets will be supported in a future version. However, even in 0.15 other loaded wallets will remain synchronized to the node's current tip in the background. This can be useful if running a pruned node, since loading a wallet where the most recent sync is beyond the pruned height results in having to download and revalidate the whole blockchain. Continuing to synchronize all wallets in the background avoids this problem.
+**In Ubicoin-Qt, only the first wallet will be displayed and accessible for creating and signing transactions.** GUI selectable multiple wallets will be supported in a future version. However, even in 0.15 other loaded wallets will remain synchronized to the node's current tip in the background. This can be useful if running a pruned node, since loading a wallet where the most recent sync is beyond the pruned height results in having to download and revalidate the whole blockchain. Continuing to synchronize all wallets in the background avoids this problem.
 
-Ubicoing Core 0.15.0 contains the following changes to the RPC interface and `ubicoin-cli` for multi-wallet:
+Ubicoin Core 0.15.0 contains the following changes to the RPC interface and `ubicoin-cli` for multi-wallet:
 
-* When running Ubicoing Core with a single wallet, there are **no** changes to the RPC interface or `ubicoin-cli`. All RPC calls and `ubicoin-cli` commands continue to work as before.
-* When running Ubicoing Core with multi-wallet, all *node-level* RPC methods continue to work as before. HTTP RPC requests should be send to the normal `<RPC IP address>:<RPC port>/` endpoint, and `ubicoin-cli` commands should be run as before. A *node-level* RPC method is any method which does not require access to the wallet.
-* When running Ubicoing Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>/` endpoint, for example `127.0.0.1:9772/wallet/wallet1.dat/`. `ubicoin-cli` commands should be run with a `-rpcwallet` option, for example `ubicoin-cli -rpcwallet=wallet1.dat getbalance`.
+* When running Ubicoin Core with a single wallet, there are **no** changes to the RPC interface or `ubicoin-cli`. All RPC calls and `ubicoin-cli` commands continue to work as before.
+* When running Ubicoin Core with multi-wallet, all *node-level* RPC methods continue to work as before. HTTP RPC requests should be send to the normal `<RPC IP address>:<RPC port>/` endpoint, and `ubicoin-cli` commands should be run as before. A *node-level* RPC method is any method which does not require access to the wallet.
+* When running Ubicoin Core with multi-wallet, *wallet-level* RPC methods must specify the wallet for which they're intended in every request. HTTP RPC requests should be send to the `<RPC IP address>:<RPC port>/wallet/<wallet name>/` endpoint, for example `127.0.0.1:9772/wallet/wallet1.dat/`. `ubicoin-cli` commands should be run with a `-rpcwallet` option, for example `ubicoin-cli -rpcwallet=wallet1.dat getbalance`.
 * A new *node-level* `listwallets` RPC method is added to display which wallets are currently loaded. The names returned by this method are the same as those used in the HTTP endpoint and for the `rpcwallet` argument.
 
 Note that while multi-wallet is now fully supported, the RPC multi-wallet interface should be considered unstable for version 0.15.0, and there may backwards-incompatible changes in future versions.
@@ -153,7 +153,7 @@ Note that while multi-wallet is now fully supported, the RPC multi-wallet interf
 Removal of Coin Age Priority
 ----------------------------
 
-In previous versions of Ubicoing Core, a portion of each block could be reserved for transactions based on the age and value of UTXOs they spent. This concept (Coin Age Priority) is a policy choice by miners, and there are no consensus rules around the inclusion of Coin Age Priority transactions in blocks. In practice, only a few miners continue to use Coin Age Priority for transaction selection in blocks. Ubicoing Core 0.15 removes all remaining support for Coin Age Priority (See [PR 9602](https://github.com/bitcoin/bitcoin/pull/9602)). This has the following implications:
+In previous versions of Ubicoin Core, a portion of each block could be reserved for transactions based on the age and value of UTXOs they spent. This concept (Coin Age Priority) is a policy choice by miners, and there are no consensus rules around the inclusion of Coin Age Priority transactions in blocks. In practice, only a few miners continue to use Coin Age Priority for transaction selection in blocks. Ubicoin Core 0.15 removes all remaining support for Coin Age Priority (See [PR 9602](https://github.com/bitcoin/bitcoin/pull/9602)). This has the following implications:
 
 - The concept of *free transactions* has been removed. High Coin Age Priority transactions would previously be allowed to be relayed even if they didn't attach a miner fee. This is no longer possible since there is no concept of Coin Age Priority. The `-limitfreerelay` and `-relaypriority` options which controlled relay of free transactions have therefore been removed.
 - The `-sendfreetransactions` option has been removed, since almost all miners do not include transactions which do not attach a transaction fee.
@@ -186,7 +186,7 @@ Version 0.15 introduces several new RPC methods:
 Low-level RPC changes
 ---------------------
 
-- When using Ubicoing Core in multi-wallet mode, RPC requests for wallet methods must specify
+- When using Ubicoin Core in multi-wallet mode, RPC requests for wallet methods must specify
   the wallet that they're intended for. See [Multi-wallet support](#multi-wallet-support) for full details.
 
 - The new database model no longer stores information about transaction

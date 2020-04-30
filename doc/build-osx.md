@@ -38,17 +38,17 @@ from the root of the repository.
 
 **Note**: You only need Berkeley DB if the wallet is enabled (see the section *Disable-Wallet mode* below).
 
-Build Ubicoing Core
+Build Ubicoin Core
 ------------------------
 
-1. Clone the Ubicoing Core source code and cd into `ubicoin`
+1. Clone the Ubicoin Core source code and cd into `ubicoin`
 
         git clone https://github.com/UbiState/ubicoin
         cd ubicoin
 
-2.  Build Ubicoing Core:
+2.  Build Ubicoin Core:
 
-    Configure and build the headless Ubicoing Core binaries as well as the GUI (if Qt is found).
+    Configure and build the headless Ubicoin Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
 
@@ -77,19 +77,19 @@ Build Ubicoing Core
 Running
 -------
 
-Ubicoing Core is now available at `./src/ubicoind`
+Ubicoin Core is now available at `./src/ubicoind`
 
 Before running, it's recommended that you create an RPC configuration file.
 
-    echo -e "rpcuser=ubicoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Ubicoing/ubicoin.conf"
+    echo -e "rpcuser=ubicoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Ubicoin/ubicoin.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/Ubicoing/ubicoin.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Ubicoin/ubicoin.conf"
 
 The first time you run ubicoind, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/Ubicoing/debug.log
+    tail -f $HOME/Library/Application\ Support/Ubicoin/debug.log
 
 Other commands:
 -------

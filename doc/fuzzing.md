@@ -1,4 +1,4 @@
-Fuzz-testing Ubicoing Core
+Fuzz-testing Ubicoin Core
 ==========================
 
 A special test harness `test_ubicoin_fuzzy` is provided to provide an easy
@@ -20,7 +20,7 @@ export AFLPATH=$PWD
 Instrumentation
 ----------------
 
-To build Ubicoing Core using AFL instrumentation (this assumes that the
+To build Ubicoin Core using AFL instrumentation (this assumes that the
 `AFLPATH` was set as above):
 ```
 ./configure --disable-ccache --disable-shared --enable-tests CC=${AFLPATH}/afl-gcc CXX=${AFLPATH}/afl-g++

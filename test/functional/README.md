@@ -82,7 +82,7 @@ implements the test logic.
 
 - `P2PConnection` is the class used to connect to a ubicoind.  `P2PInterface`
 contains the higher level logic for processing P2P payloads and connecting to
-the Ubicoing Core node application logic. For custom behaviour, subclass the
+the Ubicoin Core node application logic. For custom behaviour, subclass the
 P2PInterface object and override the callback methods.
 
 - Can be used to write tests where specific P2P protocol behavior is tested.
