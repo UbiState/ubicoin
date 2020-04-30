@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+#
+#  ubicoind The ubicoin core server.
+#
+#
+# chkconfig: 345 80 20
+# description: ubicoind
+# processname: ubicoind
+#
+
+# Source function library.
+. /etc/init.d/functions
+
+# you can override defaults in /etc/sysconfig/ubicoind, see below
+if [ -f /etc/sysconfig/ubicoind ]; then
+        . /etc/sysconfig/ubicoind
+fi
+
+RETVAL=0
+
+prog=ubicoind
+# you can override the lockfile via UBICOIND_LOCKFILE in /etc/sysconfig/ubicoind
+lockfile=${UBICOIND_LOCKFILE-/var/lock/subsys/ubicoind}
+
+# ubicoind defaults to /usr/bin/ubicoind, override with UBICOIND_BIN
+ubicoind=${UBICOIND_BIN-/usr/bin/ubicoind}
+
+# ubicoind opts default to -disablewallet, override with UBICOIND_OPTS
+ubicoind_opts=${UBICOIND_OPTS--disablewallet}
+
+start() {
+    echo -n $"Starting $prog: "
+    daemon $DAEMONOPTS $ubicoind $ubicoind_opts
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && touch $lockfile
+    return $RETVAL
+}
+
+stop() {
+    echo -n $"Stopping $prog: "
+    killproc $prog
+    RETVAL=$?
+    echo
+    [ $RETVAL -eq 0 ] && rm -f $lockfile
+    return $RETVAL
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    status)
+        status $prog
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    *)
+        echo "Usage: service $prog {start|stop|status|restart}"
+        exit 1
+        ;;
+esac
