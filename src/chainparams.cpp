@@ -130,8 +130,8 @@ public:
         // This is fine at runtime as we'll fall back to using them as a oneshot if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("52.136.119.221");
-        vSeeds.emplace_back("51.143.38.195");
+        vSeeds.emplace_back("node.ubinodes.online");
+        vSeeds.emplace_back("node2.ubinodes.online");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,68);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -152,14 +152,15 @@ public:
             {
                 {  0, uint256S("0x80ad2ffeab336f1805e465872c027abb861d7855e1f1f92b293ff2fc5663873e")},
 		{  2304, uint256S("0x43b41082fbfe005c78744a2e3ff149d9a531baaeca126c9f1891df4a6b1cf4d7")},
+		{  16357, uint256S("0x50af41d9776c96a5b8792655d7b2450a502890223dfe8151c950716fe313dd74")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data from rpc: getchaintxstats 148 80ad2ffeab336f1805e465872c027abb861d7855e1f1f92b293ff2fc5663873e
-            /* nTime    */ 1588306947,
-            /* nTxCount */ 0,
-            /* dTxRate  */ 0.00245
+            // Data from rpc: getchaintxstats 16357 50af41d9776c96a5b8792655d7b2450a502890223dfe8151c950716fe313dd74
+            /* nTime    */ 1588781199,
+            /* nTxCount */ 16358,
+            /* dTxRate  */ 0.06
         };
 
         /* disable fallback fee on mainnet */
