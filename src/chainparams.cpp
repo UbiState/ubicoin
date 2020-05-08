@@ -216,10 +216,10 @@ public:
         nDefaultPort = 19335;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1588312168, 33564, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1588951508, 3641857, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0xfafd259484516f1205915258c20b9e65a720ea65a0e389cdfb21ecbb214d92c3"));
-        assert(genesis.hashMerkleRoot == uint256S("0x1e5252cbaa47d84f4a9ca4e567802ad6bda5b11a54bbf6068108e58175e9295b"));
+        assert(consensus.hashGenesisBlock == uint256S("0x76e94478c87faf0d978e007c771548122badbb6e6576fa27da897554b3eb5464"));
+        assert(genesis.hashMerkleRoot == uint256S("0x84b460915ae89104c94de2ea3d0ade0245203dc36906f3a9508169b5da0b0d57"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -244,13 +244,13 @@ public:
 
         checkpointData = (CCheckpointData) {
             {
-                {0, uint256S("0xfafd259484516f1205915258c20b9e65a720ea65a0e389cdfb21ecbb214d92c3")},
+                {0, uint256S("0x76e94478c87faf0d978e007c771548122badbb6e6576fa27da897554b3eb5464")},
             }
         };
 
         chainTxData = ChainTxData{
-            // Data from rpc: getchaintxstats 4096 438b7e1c86f58b4e62e8cf2d0f9f256e3dddaebc5d1cc568e633a38e0db6c025
-            /* nTime    */ 1588312168,
+            // Data from rpc: getchaintxstats 0 76e94478c87faf0d978e007c771548122badbb6e6576fa27da897554b3eb5464
+            /* nTime    */ 1588951508,
             /* nTxCount */ 0,
             /* dTxRate  */ 1.907
         };
