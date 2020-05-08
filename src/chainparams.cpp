@@ -132,6 +132,7 @@ public:
         // release ASAP to avoid it where possible.
         vSeeds.emplace_back("node.ubinodes.online");
         vSeeds.emplace_back("node2.ubinodes.online");
+	vSeeds.emplace_back("node3.ubinodes.online");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,68);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
