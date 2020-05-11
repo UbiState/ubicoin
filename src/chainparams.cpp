@@ -153,14 +153,15 @@ public:
             checkpointData = {
             {
                 {  0, uint256S("0x1e4679fd8872fa63de5eaf6e651615c2aea22bf4dd3fc8eb2bedf0ed9f970355")},
+		{  5072, uint256S("0xe2f9b51a4461b23c844537c52728d255235a5e7877d4817642a273f3c7208b1a")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 0 1e4679fd8872fa63de5eaf6e651615c2aea22bf4dd3fc8eb2bedf0ed9f970355
-            /* nTime    */ 1588951191,
-            /* nTxCount */ 0,
-            /* dTxRate  */ 0.06
+            /* nTime    */ 1589175802,
+            /* nTxCount */ 5817,
+            /* dTxRate  */ 0.028
         };
 
         /* disable fallback fee on mainnet */
