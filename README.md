@@ -24,11 +24,20 @@ Legancy : U
 Bench/Segwit : Ubi
 
 ## Links
-Social Media :
 
-Twitter : https://twitter.com/UbicoinOfficial
+MiningPoolStats
+https://miningpoolstats.stream/ubicoin
 
-Facebook : https://www.facebook.com/UbicoinOfficial
+###Social Media
+
+Bitcointalk :
+https://bitcointalk.org/index.php?topic=5247767.0
+
+Twitter : 
+https://twitter.com/UbicoinOfficial
+
+Facebook : 
+https://www.facebook.com/UbicoinOfficial
 
 Page Official Facebook :
 https://www.facebook.com/UbicoinOfficials/
@@ -36,15 +45,14 @@ https://www.facebook.com/UbicoinOfficials/
 Community Group Facebook :
 https://www.facebook.com/UbicoinCommunity/
 
-Telegram Channel : https://t.me/ubitchan
+Telegram Channel : 
+https://t.me/ubitchan
 
 Global Group : 
 https://t.me/ubistate
 
-Temporary Explorer : http://chain.ubinodes.online
-
-Mining Pool :
-https://pool.ubinodes.online
+Temporary Explorer : 
+http://chain.ubinodes.online
 
 Telegram Bot :
 https://t.me/ubicoin_bot
