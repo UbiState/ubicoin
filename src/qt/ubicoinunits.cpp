@@ -43,9 +43,9 @@ QString UbicoinUnits::longName(int unit)
     switch(unit)
     {
     case BTC: return QString("ÜBI");
-    case mBTC: return QString("piggyes");
-    case uBTC: return QString("puppys");
-    case SAT: return QString("pigyoshi");
+    case mBTC: return QString("mUBI");
+    case uBTC: return QString("sUBI");
+    case SAT: return QString("uBioshi");
     default: return QString("???");
     }
 }
