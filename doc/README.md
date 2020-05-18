@@ -24,7 +24,7 @@ Unpack the files into a directory, and then run ubicoin-qt.exe.
 
 ### Need Help?
 
-* Ask for help on [#litecoin](http://t.me/ubistate) on Telegram.
+* Ask for help on [Ubicoin](http://t.me/ubistate) on Telegram.
 * Ask for help on the [Forum Ubicoin](https://forum.ubistate.org/) forums.
 
 Building
