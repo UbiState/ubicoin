@@ -9,59 +9,65 @@ Ubicoin uses peer-to-peer technology to operate with no central authority: manag
 <p align="center">
   <img src="images/preview.PNG" alt="ubicoin">
 </p>
-#
 
-## Coin Information : 
-Total Supply : 21M UBI
+Coin | Information
+:--|:--
+Total Supply | 21.000.000 UBI
+Block Reward | 50 UBI
+Block Time | 15 Minutes
+Block diff adjustment | 2016 Block
+Halving | 210000 Block
+Segwit | Active
 
-Block Reward : 50 UBI
-
-Block Time : 15 Minutes.
-
-Block diff adjustment : 2016 Block
-
-Halving : 210000 Block
-
-Segwit : Active
- 
-Address Prefix
-
-Normal : V
-
-Legancy : U
-
-Bench/Segwit : Ubi
+Address Prefix | Started
+:--|:--
+Normal | V
+Legancy | U
+Segwit/Bench | Ubi
 
 ## Links
 
-MiningPoolStats
-https://miningpoolstats.stream/ubicoin
+* [MiningPoolStats](https://miningpoolstats.stream/ubicoin)
+* [NewRewardCoins](https://newrewardcoins.com/coin/ubi/)
+* [Block Explorer](http://chain.ubinodes.online)
 
-### Social Media
+## Known Mining Pools
 
-Bitcointalk :
-https://bitcointalk.org/index.php?topic=5247767.0
+* [SmithPool.net](https://smithpool.net/)
+```
+-a scrypt -o stratum+tcp://stratum.smithpool.net:6540-u Uy9ksGUAx8V3P2Fh7NWxfmTebzQF71a3FE -p c=UBI
+```
+* [XpoolX.com](https://xpoolx.com/)
+```
+-a scrypt -o stratum+tcp://mining.xpoolx.com:2020 -u Uy9ksGUAx8V3P2Fh7NWxfmTebzQF71a3FE -p c=UBI,mine=UBI
+```
+* [Bsod.pw](https://bsod.pw/en/pool/dashboard/UBI/)
+```
+-a scrypt -o stratum+tcp://pool.bsod.pw:2650 -u Uy9ksGUAx8V3P2Fh7NWxfmTebzQF71a3FE
+```
+SOLO
+```
+-a scrypt -o stratum+tcp://pool.bsod.pw:2650 -u Uy9ksGUAx8V3P2Fh7NWxfmTebzQF71a3FE -p m=solo
+```
+PARTY
+```
+-a scrypt -o stratum+tcp://pool.bsod.pw:2650 -u Uy9ksGUAx8V3P2Fh7NWxfmTebzQF71a3FE m=party.yourpassword
+```
+* [0769.it](https://www.0769.it/)
+```
+-a scrypt -o stratum+tcp://us.0769.it:3431 -u Uy9ksGUAx8V3P2Fh7NWxfmTebzQF71a3FE -p c=UBI
+```
 
-Twitter : 
-https://twitter.com/UbicoinOfficial
+## Social Media
 
-Facebook : 
-https://www.facebook.com/UbicoinOfficial
+* [Bitcointalk](https://bitcointalk.org/index.php?topic=5247767.0)
+* [Twitter](https://twitter.com/UbicoinOfficial)
+* [Facebook](https://www.facebook.com/UbicoinOfficials/)
+* [Telegram Channel](https://t.me/ubitchan)
+* [Global Group](https://t.me/ubistate)
+* [Bitcointalk](https://bitcointalk.org/index.php?topic=5247767.0)
+* [Bitcointalk](https://bitcointalk.org/index.php?topic=5247767.0)
 
-Page Official Facebook :
-https://www.facebook.com/UbicoinOfficials/
+## BOT
 
-Community Group Facebook :
-https://www.facebook.com/UbicoinCommunity/
-
-Telegram Channel : 
-https://t.me/ubitchan
-
-Global Group : 
-https://t.me/ubistate
-
-Temporary Explorer : 
-http://chain.ubinodes.online
-
-Telegram Bot :
-https://t.me/ubicoin_bot
+* [Telegram Bot](https://t.me/ubicoin_bot)
