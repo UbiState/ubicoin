@@ -4,6 +4,8 @@ Ubicoin uses peer-to-peer technology to operate with no central authority: manag
 
 ![](ubicoin.gif)
 
+![](images/preview.png)
+
 ## Coin Information : 
 Total Supply : 21M UBI
 
@@ -30,7 +32,7 @@ Bench/Segwit : Ubi
 MiningPoolStats
 https://miningpoolstats.stream/ubicoin
 
-###Social Media
+### Social Media
 
 Bitcointalk :
 https://bitcointalk.org/index.php?topic=5247767.0
