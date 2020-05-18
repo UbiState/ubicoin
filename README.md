@@ -4,7 +4,7 @@ Ubicoin uses peer-to-peer technology to operate with no central authority: manag
 
 ![](ubicoin.gif)
 
-![](images/preview.png)
+![](images/preview.PNG)
 
 ## Coin Information : 
 Total Supply : 21M UBI
