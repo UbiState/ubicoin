@@ -10,6 +10,20 @@ Ubicoin uses peer-to-peer technology to operate with no central authority: manag
   <img src="images/preview.PNG" alt="ubicoin">
 </p>
 
+License
+-------
+
+Litecoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+information or see https://opensource.org/licenses/MIT.
+
+Testing
+-------
+
+Testing and code review is the bottleneck for development; we get more pull
+requests than we can review and test on short notice. Please be patient and help out by testing
+other people's pull requests, and remember this is a security-critical project where any mistake might cost people
+lots of money.
+
 Coin | Information
 :--|:--
 Total Supply | 21.000.000 UBI
@@ -71,3 +85,14 @@ PARTY
 ## BOT
 
 * [Telegram Bot](https://t.me/ubicoin_bot)
+
+Translations
+------------
+
+We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
+Translations are converted to Litecoin periodically.
+
+Translations are periodically pulled from Transifex and merged into the git repository.
+
+**Important**: We do not accept translation changes as GitHub pull requests because the next
+pull from Transifex would automatically overwrite them again.
