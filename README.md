@@ -1,6 +1,9 @@
 # Ubicoin
 Ubicoin is an experimental digital currency that enables instant payments to anyone, anywhere in the world.
 Ubicoin uses peer-to-peer technology to operate with no central authority: managing transactions and issuing money are carried out collectively by the network. Ubicoin Core is the name of open source software which enables the use of this currency.
+
+We built this coin with the aim of opening up jobs like miners, traders, and many other sources of income. Our team consists of volunteers who support the success of this project even though it will take a long time, but we are fully convinced that one day we will be one of the candidates to replace Bitcoin.
+
 #
 <p align="center">
   <img src="ubicoin.gif" alt="ubicoin">
