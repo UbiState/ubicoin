@@ -47,6 +47,7 @@ Segwit/Bench | Ubi
 * [MiningPoolStats](https://miningpoolstats.stream/ubicoin)
 * [NewRewardCoins](https://newrewardcoins.com/coin/ubi/)
 * [Block Explorer](http://chain.ubinodes.online)
+* [Ubistate.org](http://ubistate.org)
 
 ## Known Mining Pools
 
