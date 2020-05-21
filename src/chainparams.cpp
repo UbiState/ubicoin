@@ -136,6 +136,8 @@ public:
 	vSeeds.emplace_back("node4.ubinodes.online");
 	vSeeds.emplace_back("node5.ubinodes.online");
 	vSeeds.emplace_back("node6.ubinodes.online");
+	vSeeds.emplace_back("node6.ubinodes.online");
+	vSeeds.emplace_back("ec2-54-173-7-198.compute-1.amazonaws.com");
 	vSeeds.emplace_back("ec2-54-242-203-49.compute-1.amazonaws.com");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,68);
