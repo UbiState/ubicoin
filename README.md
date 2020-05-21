@@ -46,7 +46,7 @@ Segwit/Bench | Ubi
 
 * [MiningPoolStats](https://miningpoolstats.stream/ubicoin)
 * [NewRewardCoins](https://newrewardcoins.com/coin/ubi/)
-* [Block Explorer](http://chain.ubinodes.online)
+* [Block Explorer](https://ubistate.info)
 * [Ubistate.org](http://ubistate.org)
 
 ## Known Mining Pools
@@ -84,11 +84,10 @@ PARTY
 * [Telegram Channel](https://t.me/ubitchan)
 * [Global Group](https://t.me/ubistate)
 * [Bitcointalk](https://bitcointalk.org/index.php?topic=5247767.0)
-* [Bitcointalk](https://bitcointalk.org/index.php?topic=5247767.0)
 
 ## BOT
 
-* [Telegram Bot](https://t.me/ubicoin_bot)
+* [Telegram Bot](https://t.me/ubicoin_bot) Will Stop maintain this bot
 
 Translations
 ------------
