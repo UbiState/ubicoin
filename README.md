@@ -79,6 +79,7 @@ PARTY
 ## Social Media
 
 * [Bitcointalk](https://bitcointalk.org/index.php?topic=5247767.0)
+* [Discord](https://discord.gg/n6wn7Bb)
 * [Twitter](https://twitter.com/UbicoinOfficial)
 * [Facebook](https://www.facebook.com/UbicoinOfficials/)
 * [Telegram Channel](https://t.me/ubitchan)
