@@ -103,7 +103,7 @@ public:
 
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010");
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000298c2962295f60");
 
         // By default assume that the signatures in ancestors of this block are valid.
         consensus.defaultAssumeValid = uint256S("0xa601455787cb65ffc325dda4751a99cf01d1567799ec4b04f45bb05f9ef0cbde"); //1503191
@@ -135,6 +135,10 @@ public:
 	vSeeds.emplace_back("node3.ubinodes.online");
 	vSeeds.emplace_back("node4.ubinodes.online");
 	vSeeds.emplace_back("node5.ubinodes.online");
+	vSeeds.emplace_back("node6.ubinodes.online");
+	vSeeds.emplace_back("node6.ubinodes.online");
+	vSeeds.emplace_back("ec2-54-173-7-198.compute-1.amazonaws.com");
+	vSeeds.emplace_back("ec2-54-242-203-49.compute-1.amazonaws.com");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,68);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -160,10 +164,10 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data from rpc: getchaintxstats 0 1e4679fd8872fa63de5eaf6e651615c2aea22bf4dd3fc8eb2bedf0ed9f970355
-            /* nTime    */ 1589649089,
-            /* nTxCount */ 23568,
-            /* dTxRate  */ 0.01
+            // Data from rpc: getchaintxstats 0 72e10939c540cad79489a6b32cf6a4b8d87913fc19620b199ae8a3758e5f66b0
+            /* nTime    */ 1589913845,
+            /* nTxCount */ 25105,
+            /* dTxRate  */ 0.006
         };
 
         /* disable fallback fee on mainnet */
