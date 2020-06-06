@@ -1,0 +1,4 @@
+crypto/libbitcoinconsensus_la-scrypt-sse2.lo: crypto/scrypt-sse2.cpp \
+ /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:
