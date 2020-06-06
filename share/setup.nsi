@@ -10,11 +10,11 @@ SetCompressor /SOLID lzma
 !define URL https://ubistate.org/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/root/sum/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/sum/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/root/ubicoin/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/root/ubicoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/root/sum/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/root/ubicoin/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -23,7 +23,7 @@ SetCompressor /SOLID lzma
 !define MUI_FINISHPAGE_RUN "$WINDIR\explorer.exe"
 !define MUI_FINISHPAGE_RUN_PARAMETERS $INSTDIR\ubicoin-qt
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/sum/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/root/ubicoin/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -49,7 +49,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /root/sum/ubicoin-${VERSION}-win-setup.exe
+OutFile /root/ubicoin/ubicoin-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\Ubicoin
 !else
@@ -74,15 +74,15 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /root/sum/release/ubicoin-qt
-    File /oname=COPYING.txt /root/sum/COPYING
-    File /oname=readme.txt /root/sum/doc/README_windows.txt
+    File /root/ubicoin/release/ubicoin-qt
+    File /oname=COPYING.txt /root/ubicoin/COPYING
+    File /oname=readme.txt /root/ubicoin/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /root/sum/release/ubicoind
-    File /root/sum/release/ubicoin-cli
-    File /root/sum/release/ubicoin-tx
+    File /root/ubicoin/release/ubicoind
+    File /root/ubicoin/release/ubicoin-cli
+    File /root/ubicoin/release/ubicoin-tx
     SetOutPath $INSTDIR\doc
-    File /r /x Makefile* /root/sum/doc\*.*
+    File /r /x Makefile* /root/ubicoin/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 SectionEnd
